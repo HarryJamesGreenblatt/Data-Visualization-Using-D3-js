@@ -62,7 +62,7 @@ function App() {
 
   return (
 
-    <BrowserRouter>
+    <BrowserRouter basename="/Data-Visualization-Using-D3-js/">
       <Routes>
         <Route path="/" element={
               <Layout 
