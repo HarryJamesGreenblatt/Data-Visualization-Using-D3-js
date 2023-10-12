@@ -67,7 +67,7 @@ function App() {
         <Route path="/" element={
               <Layout 
                 notes={notes}
-                videos={videos}
+                videos={videos}s
                 examples={examples} 
                 handleClickNotes={handleClickNotes}
                 handleClickHome={handleClickHome}
