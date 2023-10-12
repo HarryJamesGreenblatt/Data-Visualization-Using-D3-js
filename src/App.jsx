@@ -10,7 +10,7 @@ import ExampleDetails from './pages/ExampleDetails.jsx';
 import { noteData } from './data/noteData.jsx';
 import { videoData } from './data/videoData.jsx';
 import { exampleData } from './data/exampleData.jsx';
-import { useEffect } from 'react';
+
 
 function App() {
 
@@ -62,12 +62,12 @@ function App() {
 
   return (
 
-    <BrowserRouter >
-      <Routes basename="/Data-Visualization-Using-D3-js/">
+    <BrowserRouter basename="/">
+      <Routes>
         <Route path="/" element={
               <Layout 
                 notes={notes}
-                videos={videos}s
+                videos={videos}
                 examples={examples} 
                 handleClickNotes={handleClickNotes}
                 handleClickHome={handleClickHome}
