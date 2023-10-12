@@ -14,7 +14,7 @@ import { exampleData } from './data/exampleData.jsx';
 
 function App() {
 
-  const [ pathname, setPathname ] = React.useState(null);
+  const [ pathname, setPathname ] = React.useState('/');
 
   const [ notes , setNotes ] = React.useState( noteData ); 
   const [ videos , setVideos ] = React.useState( videoData ); 
@@ -37,14 +37,14 @@ function App() {
   function handleClickNotes( selection ){
     setWithRespectTo( selection );
     setPathname(
-      noteData.filter( note => note.withRespectTo === pathname )[0].pathname
+      noteData.find( note => note.pathname === pathname ).pathname
     );
   }
 
 
   function handleClickHome( selection ){
     setWithRespectTo( selection );
-    setPathname('/');
+    // setPathname('/');
   }
 
 
@@ -56,7 +56,7 @@ function App() {
 
   function clearOnClick( ){
     setWithRespectTo( null );
-    setPathname( null );
+    setPathname( '/' );
   }
 
 

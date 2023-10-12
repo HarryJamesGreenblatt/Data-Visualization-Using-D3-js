@@ -28,6 +28,14 @@ capabilities of the svg image format.`
 
 export const noteData = [
     {   
+        id : 0,
+        pathname : "/",
+        withRespectTo : "",
+        img : "",
+        description: "",
+        keyTakeAways: [ ]
+    },
+    {   
         id : 1,
         pathname : "/svg",
         withRespectTo : "image format",

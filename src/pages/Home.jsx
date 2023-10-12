@@ -5,7 +5,7 @@ export default function Home( { videos, withRespectTo } ) {
     )[0]
 
     return(
-        withRespectTo
+        withRespectTo && courseVideo
         ?
         <div className="home-container">
             <h3>{courseVideo.title}</h3>
