@@ -6,7 +6,7 @@ export default function Navigation() {
         <nav className="navigation">
 
             <Link className="nav-logo" to="/">
-                Notes On Data Viz <span>feat. D3.js</span>
+                Data Visualization <span>using D3.js</span>
             </Link>
 
             <div className="nav-links">
