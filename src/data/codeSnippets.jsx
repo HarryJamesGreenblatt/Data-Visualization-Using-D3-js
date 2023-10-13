@@ -17,7 +17,20 @@ const yStart = scrnHeight/2;
 </svg>
 
 `,
-    DataViz2018_2 : `
+DataViz2018_2 : `
+<svg height={scrnHeight}>
+    <line 
+        x1={xStart}
+        y1={yStart}
+        x2={xStart + lineLength}
+        y2={yStart + lineLength}
+        stroke="black"
+        strokeWidth={lineWidth}
+    >
+    </line>
+</svg>
+`,
+    DataViz2018_3 : `
 <svg height={scrnHeight}>
     {
         for(let y = yStart; y <= 500; y +=75){
