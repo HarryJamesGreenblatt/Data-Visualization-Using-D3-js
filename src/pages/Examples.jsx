@@ -41,29 +41,4 @@ export default function Examples({examples, withRespectTo}) {
         </div>
     );
 
-    // const selectedExample = examples.filter( 
-    //     example => example.title
-    // )[0]
-    // console.log(selectedExample)
-
-    // return(
-    //     withRespectTo
-    //     ?
-    //     <div className="example-container">
-    //         <h2>{selectedExample.title}</h2>
-    //         <div className="example-content-container">
-    //             {selectedExample.component}
-    //             <div className="example-content-component-description">
-    //                 {selectedExample.description}
-    //             </div>
-    //         </div>
-    //     </div>
-    //     :
-    //     <div className="example-container">
-    //         <div className="example-content-container">
-    //             <h2>Select an example below:</h2>
-    //         </div>
-    //     </div>
-    // );
-
 }

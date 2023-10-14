@@ -247,6 +247,9 @@ code{
 .examples-list-content-container{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 3em;
+    justify-content: space-around;
 }
 
 .examples-list-item-container{
@@ -254,7 +257,6 @@ code{
     flex-direction: column;
     background-color: rgb(189, 185, 185);
     padding: .1em;
-    margin: 0 1em;
     border-radius: 5px;
 }
 
@@ -357,6 +359,17 @@ code{
     align-items: center;
     font-size: 1.1rem;
 }
+.example-description span{
+    font-style: italic;
+    margin: 0 0.25rem;
+}
+
+.css-styled-svg{
+    fill: #1792D2;
+    stroke-width: 1rem;
+    stroke: chocolate;
+}
+
 
 
 

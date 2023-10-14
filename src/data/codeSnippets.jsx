@@ -1,4 +1,5 @@
 export const codeSnippets = {
+
     DataViz2018_1: `
 const scrnHeight   = 500;
 const circleRadius = 100;
@@ -17,7 +18,8 @@ const yStart = scrnHeight/2;
 </svg>
 
 `,
-DataViz2018_2 : `
+
+    DataViz2018_2 : `
 <svg height={scrnHeight}>
     <line 
         x1={xStart}
@@ -29,8 +31,34 @@ DataViz2018_2 : `
     >
     </line>
 </svg>
-`,
+`,    
+
     DataViz2018_3 : `
+<style>
+    .css-styled-svg{
+        fill: #1792D2;
+        stroke-width: 1rem;
+        stroke: chocolate;
+    }
+</style>
+
+
+
+<svg 
+    className={"css-styled-svg"} 
+    height={scrnHeight}
+>
+    <rect 
+        x={xStart}
+        y={yStart}
+        width={sideLength}
+        height={sideLength}
+    >
+    </rect>
+</svg>
+`,
+
+    DataViz2018_4 : `
 <svg height={scrnHeight}>
     {
         for(let y = yStart; y <= 500; y +=75){
@@ -57,5 +85,5 @@ DataViz2018_2 : `
     }
 </svg>
 
-`
+`,
 }

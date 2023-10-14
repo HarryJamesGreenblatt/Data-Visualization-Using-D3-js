@@ -37,7 +37,7 @@ function App() {
   function handleClickNotes( selection ){
     setWithRespectTo( selection );
     setPathname(
-      noteData.find( note => note.pathname === pathname ).pathname
+      noteData.find( note => note.pathname === pathname )?.pathname
     );
   }
 

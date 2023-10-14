@@ -56,7 +56,6 @@ export const noteData = [
         keyTakeAways: [
             "Like canvas, uses a coordinate system where point (0,0) is at the to left-hand corner. Thus, WIDTH increases from left-to-right and HEIGHT increases from top-to-bottom.",
             "Multiple svg components may be grouped together using the <g> element",
-            "CSS can be used to style svg elements",
             <p key={nanoid()}>
                 For more information, chek out the <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial">SVG Tutorial on MDN</a>
             </p>
