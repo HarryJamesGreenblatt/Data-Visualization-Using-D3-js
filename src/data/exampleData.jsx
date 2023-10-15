@@ -6,6 +6,7 @@ import LineExample from '../components/examples/LineExample.jsx';
 import LineImage from "../../public/LineExample.jpg";
 import CssStylingExample from '../components/examples/CssStylingExample';
 import CssStylingImage from "../../public/CssStylingExample.jpg";
+import Example from '../components/examples/Example';
 import { codeSnippets } from "./codeSnippets.jsx";
 
 
@@ -57,6 +58,16 @@ export const exampleData = [
         component: <GroupOfShapesExample />,
         codeSnippet: codeSnippets['DataViz2018_4']
     },
+    // {
+    //     id: 5,
+    //     source: "Data Viz 2018",
+    //     title: "Groups of Shapes2",
+    //     img: GroupOfShapesImage,
+    //     description: 
+    //     "Wrapping svg geometries within a group element (<g>) allows us to define our geometry once, then iterate over a loop while translating each component's coordinates, or automating other properties, such as their fill color, stroke-width, etc.",
+    //     component: <Example />,
+    //     codeSnippet: codeSnippets['DataViz2018_4']
+    // },
 ]
 
 
