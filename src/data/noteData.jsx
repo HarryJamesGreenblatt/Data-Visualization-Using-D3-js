@@ -1,6 +1,7 @@
 import SVGPathNoteImage from '../../public/SVGPathNote.jpg';
 
 import { nanoid } from "nanoid";
+import GroupElementNote from '../components/notes/GroupElementNote';
 
 const svgMarkup = `
 <svg 
@@ -49,14 +50,40 @@ d - A list of points and other information about how to draw the path.
 Contains a series of five commands and parameters used by those commands.
 `
 
+const groupsDescription = `
+
+const transformedCircles = [];
 
 
+
+for (let i = -25; i <= radius; i += radius) {
+    transformedCircles.push(
+
+        <circle cx={i} cy={i} r={radius}></circle>
+        
+    );
+}
+
+
+
+<svg height={scrnHeight} width={scrnHeight}>
+    <g
+        transform={\`translate(\${scrnHeight/2} \${scrnHeight/2})\`}
+        fill="white"
+        stroke="goldenrod"
+        strokeWidth={7}
+    >
+        {transformedCircles}
+    </g>
+</svg>
+`
 
 export const noteData = [
     {   
         id : 0,
         pathname : "/",
         withRespectTo : "",
+        component: null,
         img : "",
         description: "",
         keyTakeAways: [ ]
@@ -65,6 +92,7 @@ export const noteData = [
         id : 1,
         pathname : "/svg",
         withRespectTo : "image format",
+        component: null,
         img : "https://upload.wikimedia.org/wikipedia/commons/f/fd/Ghostscript_Tiger.svg",
         description: ghostscriptTigerDescription,
         keyTakeAways: [
@@ -76,6 +104,7 @@ export const noteData = [
     {   
         id : 2,
         pathname : "/svg",
+        component: null,
         withRespectTo : "html",
         img : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/SVG_example_markup_grid.svg/391px-SVG_example_markup_grid.svg.png",
         description: svgMarkup,
@@ -91,22 +120,20 @@ export const noteData = [
     {   
         id : 3,
         pathname : "/svg",
-        withRespectTo : "transformations",
-        img : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/SVG_example_markup_grid.svg/391px-SVG_example_markup_grid.svg.png",
-        description: svgMarkup,
+        withRespectTo : "groups",
+        component: <GroupElementNote/>,
+        img : null,
+        description: groupsDescription,
         keyTakeAways: [
-            "HTML provides elements for defining headers, paragraphs, tables, and so on. In much the same way, SVG provides elements for circles, rectangles, and simple and complex curves.",
-            "Like canvas, uses a coordinate system where point (0,0) is at the to left-hand corner. Thus, WIDTH increases from left-to-right and HEIGHT increases from top-to-bottom.",
-            "Multiple svg components may be grouped together using the <g> element.",
-            <p key={nanoid()}>
-                For more information, chek out the <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial">SVG Tutorial on MDN</a>
-            </p>
+            "The <g> SVG element is a container used to group other SVG elements.",
+            "Transformations applied to the <g> element are performed on its child elements, and its attributes are inherited by its children. It can also group multiple elements to be referenced later with the <use> element.",
         ]
     },
     {   
         id : 4,
         pathname : "/svg",
         withRespectTo : "path",
+        component: null,
         img : SVGPathNoteImage,
         description: pathDescription,
         keyTakeAways: [

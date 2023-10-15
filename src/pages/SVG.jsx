@@ -44,7 +44,13 @@ export default function SVG( { notes, withRespectTo, clearOnClick } ) {
                 ?
                 <div className="svg-content-container">
                     <div className="svg-content-left-column-container">
-                        <img src={svgNotes.img}/>
+                        {
+                            svgNotes.img
+                            ?
+                            <img src={svgNotes.img}/>
+                            :
+                            svgNotes.component
+                        }
                         <pre>{svgNotes.description}</pre>
                     </div>
                     <div className="svg-content-right-column-container">
