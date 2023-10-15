@@ -1,3 +1,5 @@
+import getRandomColor from "./utils";
+
 export default function GroupOfShapesExample() {
 
     const scrnHeight = 500;
@@ -10,12 +12,6 @@ export default function GroupOfShapesExample() {
     const circleRadius = 35;
 
     const rectWidth = 50, rectHeight = 50;
-
-
-
-    const getRandomColor = () => (
-        "#" + ((1 << 24) * Math.random() | 0).toString(16).padStart(6, "0")
-    )
      
     
     const groupElements = [];

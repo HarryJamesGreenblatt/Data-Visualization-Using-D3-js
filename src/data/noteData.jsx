@@ -91,6 +91,21 @@ export const noteData = [
     {   
         id : 3,
         pathname : "/svg",
+        withRespectTo : "transformations",
+        img : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/SVG_example_markup_grid.svg/391px-SVG_example_markup_grid.svg.png",
+        description: svgMarkup,
+        keyTakeAways: [
+            "HTML provides elements for defining headers, paragraphs, tables, and so on. In much the same way, SVG provides elements for circles, rectangles, and simple and complex curves.",
+            "Like canvas, uses a coordinate system where point (0,0) is at the to left-hand corner. Thus, WIDTH increases from left-to-right and HEIGHT increases from top-to-bottom.",
+            "Multiple svg components may be grouped together using the <g> element.",
+            <p key={nanoid()}>
+                For more information, chek out the <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial">SVG Tutorial on MDN</a>
+            </p>
+        ]
+    },
+    {   
+        id : 4,
+        pathname : "/svg",
         withRespectTo : "path",
         img : SVGPathNoteImage,
         description: pathDescription,

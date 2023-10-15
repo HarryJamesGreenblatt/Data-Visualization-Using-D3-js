@@ -272,6 +272,9 @@ code{
     height: 10em;
 }
 
+.examples-list-item p{
+    text-align: center;
+}
 
 .examples-list-item-container img{
     width: 4rem;
