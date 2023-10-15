@@ -36,6 +36,9 @@ const pathDescription = `
 />
 
 
+This is a simple bezier curved svg path
+
+
 A <path> is the most general shape that can be 
 used in SVG. Using a path element, you can draw 
 rectangles, circles, ellipses, polylines, polygons, 
