@@ -1,3 +1,5 @@
+import SVGPathNoteImage from '../../public/SVGPathNote.jpg';
+
 import { nanoid } from "nanoid";
 
 const svgMarkup = `
@@ -87,7 +89,7 @@ export const noteData = [
         id : 3,
         pathname : "/svg",
         withRespectTo : "path",
-        img : "../../public/SVGPathNote.jpg",
+        img : SVGPathNoteImage,
         description: pathDescription,
         keyTakeAways: [
             <>
