@@ -36,7 +36,7 @@ const pathDescription = `
 />
 
 
-This is a simple bezier curved svg path
+This is a simple bezier curved svg path.
 
 
 A <path> is the most general shape that can be 
