@@ -186,8 +186,6 @@ code{
 
 
 
-
-
 /*********  HOME  **********/
 .home-container{
     width: 95%;
@@ -195,12 +193,12 @@ code{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: burlywood;
+    background-color: rgb(182, 157, 124);
 }
 .home-container h3{
     margin: 0.75em;
     font-size: 1.3rem;
-    color: white;
+    color: beige;
 }
 
 .home-content-container{
