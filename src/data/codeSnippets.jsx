@@ -117,4 +117,15 @@ for( let i=25; i < 300; i += 50 ) {
 </svg>
 
 `,
+
+    DataViz2018_6 : `
+<svg height={scrnHeight}>
+    <circle
+        cx={xStart}
+        cy={yStart}
+        r={radius}
+    >
+    </circle>
+</svg>
+`,
 }

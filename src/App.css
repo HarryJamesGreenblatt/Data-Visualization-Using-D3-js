@@ -374,6 +374,22 @@ code{
 }
 
 
+.happy-face-example {
+    /* background: red; */
+}
+
+.happy-face-example .happy-face{
+    fill: yellow;
+    stroke: black;
+    stroke-width: 2;
+}
+
+.happy-face-example .eye{
+    fill: black;
+}
+
+
+
 
 
 

@@ -54,17 +54,16 @@ const groupsDescription = `
 
 const transformedCircles = [];
 
-
-
 for (let i = -25; i <= radius; i += radius) {
     transformedCircles.push(
-
-        <circle cx={i} cy={i} r={radius}></circle>
-        
+        <circle 
+            cx={i} 
+            cy={i} 
+            r={radius}
+        >
+        </circle>  
     );
 }
-
-
 
 <svg height={scrnHeight} width={scrnHeight}>
     <g

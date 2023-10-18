@@ -8,6 +8,8 @@ import CssStylingExample from '../components/examples/CssStylingExample';
 import CssStylingImage from "../../public/CssStylingExample.jpg";
 import CompooundTransformationsExample from '../components/examples/CompooundTransformationsExample';
 import CoumpoundTransformationsImage from '../../public/CompoundTransformationsExample.jpg';
+import HappyFaceExample from '../components/examples/HappyFaceExample';
+import HappyFaceImage from "../../public/HappyFaceExample.jpg";
 import { codeSnippets } from "./codeSnippets.jsx";
 
 
@@ -75,6 +77,18 @@ export const exampleData = [
         </>, 
         component: <CompooundTransformationsExample />,
         codeSnippet: codeSnippets['DataViz2018_5']
+    },
+    {
+        id: 6,
+        source: "Data Viz 2018",
+        title: "A Happy Face",
+        img: HappyFaceImage,
+        description:
+        <>
+            Shit Happens :)
+        </>, 
+        component: <HappyFaceExample />,
+        codeSnippet: codeSnippets['DataViz2018_6']
     },
 ]
 
