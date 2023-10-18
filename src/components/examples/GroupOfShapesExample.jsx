@@ -23,13 +23,15 @@ export default function GroupOfShapesExample() {
                 fill={getRandomColor()}
                 stroke={getRandomColor()}
             >
-                <circle 
+                <circle
+                    key={y} 
                     cx={xStart} 
                     cy={yStart} 
                     r={circleRadius}
                 >
                 </circle>
-                <rect 
+                <rect
+                    key={y} 
                     x={xStart + (rectWidth * 1.1)} 
                     y={yStart - (rectHeight / 2)} 
                     width={rectWidth} 

@@ -62,7 +62,7 @@ export default function SVG( { notes, withRespectTo, clearOnClick } ) {
                 :
                 <div className="selection-container">
                     <iframe src="https://en.wikipedia.org/wiki/SVG"/>
-                    <p>Select one of the <span>note topics</span> below for more information:</p>
+                    <p>Select one of the <span>note topics</span> below for a deeper dive:</p>
                 </div>
             }
 

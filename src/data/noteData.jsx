@@ -56,12 +56,7 @@ const transformedCircles = [];
 
 for (let i = -25; i <= radius; i += radius) {
     transformedCircles.push(
-        <circle 
-            cx={i} 
-            cy={i} 
-            r={radius}
-        >
-        </circle>  
+        <circle  cx={i} cy={i} r={radius}></circle>  
     );
 }
 
@@ -110,7 +105,6 @@ export const noteData = [
         keyTakeAways: [
             "HTML provides elements for defining headers, paragraphs, tables, and so on. In much the same way, SVG provides elements for circles, rectangles, and simple and complex curves.",
             "Like canvas, uses a coordinate system where point (0,0) is at the to left-hand corner. Thus, WIDTH increases from left-to-right and HEIGHT increases from top-to-bottom.",
-            "Multiple svg components may be grouped together using the <g> element.",
             <p key={nanoid()}>
                 For more information, chek out the <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial">SVG Tutorial on MDN</a>
             </p>
