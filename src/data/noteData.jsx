@@ -1,5 +1,5 @@
-import SVGPathNoteImage from '../../public/SVGPathNote.jpg';
 import { nanoid } from "nanoid";
+import SVGPathNoteImage from '../../public/SVGPathNote.jpg';
 import GroupElementNote from '../notes/GroupElementNote';
 import { noteSnippets } from './snippets/noteSnippets';
 
