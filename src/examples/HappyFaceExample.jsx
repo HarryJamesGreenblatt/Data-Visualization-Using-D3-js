@@ -33,12 +33,8 @@ export default function HappyFaceExample() {
 
 
     const renderMouth = () => {
-
         return(
-
-            <g
-                transform="translate(162, 175) rotate(90) "
-            >
+            <g  transform="translate(162, 175) rotate(90) ">
                 <path
                     d={arc()({
                         innerRadius: 93,
@@ -49,7 +45,6 @@ export default function HappyFaceExample() {
                 >
                 </path>
             </g>
-
         )
     }
 

@@ -119,13 +119,22 @@ for( let i=25; i < 300; i += 50 ) {
 `,
 
     DataViz2018_6 : `
-<svg height={scrnHeight}>
+<svg 
+    height={scrnHeight} 
+    width={scrnWidth}
+    className="happy-face-example" 
+>
     <circle
-        cx={xStart}
-        cy={yStart}
-        r={radius}
+        key={nanoid()}
+        className="happy-face"
+        cx={faceInitialX}
+        cy={faceInitialY}
+        r={faceRadius}
     >
     </circle>
+    {renderEyes()}
+    {renderMouth()}
 </svg>
+);
 `,
 }

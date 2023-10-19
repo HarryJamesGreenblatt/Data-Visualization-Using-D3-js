@@ -1,16 +1,16 @@
 import CircleImage from '../../public/CircleExample.jpg';
-import CircleExample from "../components/examples/CircleExample.jsx";
+import CircleExample from "../examples/CircleExample.jsx";
 import GroupOfShapesImage from '../../public/GroupOfShapesExample.jpg';
-import GroupOfShapesExample from '../components/examples/GroupOfShapesExample.jsx';
-import LineExample from '../components/examples/LineExample.jsx';
+import GroupOfShapesExample from '../examples/GroupOfShapesExample.jsx';
+import LineExample from '../examples/LineExample.jsx';
 import LineImage from "../../public/LineExample.jpg";
-import CssStylingExample from '../components/examples/CssStylingExample';
+import CssStylingExample from '../examples/CssStylingExample';
 import CssStylingImage from "../../public/CssStylingExample.jpg";
-import CompooundTransformationsExample from '../components/examples/CompooundTransformationsExample';
+import CompooundTransformationsExample from '../examples/CompooundTransformationsExample';
 import CoumpoundTransformationsImage from '../../public/CompoundTransformationsExample.jpg';
-import HappyFaceExample from '../components/examples/HappyFaceExample';
+import HappyFaceExample from '../examples/HappyFaceExample';
 import HappyFaceImage from "../../public/HappyFaceExample.jpg";
-import { codeSnippets } from "./codeSnippets.jsx";
+import { codeSnippets } from "./snippets/codeSnippets.jsx";
 
 
 export const exampleData = [
