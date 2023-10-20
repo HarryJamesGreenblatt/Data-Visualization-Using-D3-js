@@ -384,8 +384,18 @@ code{
     stroke-width: 2;
 }
 
-.happy-face-example .eye{
+.happy-face-example .eyeball{
     fill: black;
+}
+
+@keyframes raiseBrow {
+    0% { y: 0 }
+    50% { y: 25 }
+    75% { y: 20 }
+    100% { y: 0 }
+}
+.happy-face-example .eyebrow{
+    animation: raiseBrow 3s ease infinite;
 }
 
 

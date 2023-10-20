@@ -119,14 +119,24 @@ for( let i=25; i < 300; i += 50 ) {
 `,
 
     DataViz2018_6 : `
+<style>
+    @keyframes raiseBrow {
+        0% { y: 0 }
+        50% { y: 25 }
+        75% { y: 20 }
+        100% { y: 0 }
+    }
+    .happy-face-example .eyebrow{
+        animation: raiseBrow 3s ease infinite;
+    }
+</style>
+
+
 <svg 
     height={scrnHeight} 
     width={scrnWidth}
-    className="happy-face-example" 
 >
     <circle
-        key={nanoid()}
-        className="happy-face"
         cx={faceInitialX}
         cy={faceInitialY}
         r={faceRadius}
@@ -135,6 +145,5 @@ for( let i=25; i < 300; i += 50 ) {
     {renderEyes()}
     {renderMouth()}
 </svg>
-);
 `,
 }

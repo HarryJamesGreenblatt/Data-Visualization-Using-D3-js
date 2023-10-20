@@ -1,5 +1,6 @@
 import { arc } from "d3";
 import { nanoid } from "nanoid";
+import { select } from "d3";
 
 export default function HappyFaceExample() {
 
@@ -11,37 +12,37 @@ export default function HappyFaceExample() {
     
     const faceRadius = 140;
 
-
-
     const renderEyes = () => { 
+        
         const eyes = [];
 
         for(let x = faceInitialX - 50; x <= faceInitialX + 100; x += 100)
             eyes.push(
-                <>
-                        <rect
-                            key={nanoid()}
-                            className="eye"
-                            width={50}
-                            height={8}
-                            transform={`
-                                translate(
-                                    ${x-25} ${faceInitialY-100}
-                                )
-
-                                rotate(${x > faceInitialX ?  x/25 : -x/15})
-                            `}
-                        >
-                        </rect>
-                        <circle
-                            key={nanoid()}
-                            className="eyebrow"
-                            cx={x}
-                            cy={faceInitialY-50}
-                            r={faceRadius/8}
-                        >
-                        </circle>
-                </>
+                <g key={nanoid()}>
+                    <rect
+                        key={nanoid()}
+                        className="eyebrow"
+                        width={50}
+                        height={8}
+                        transform={`
+                            translate(
+                                ${x-25} ${faceInitialY-100}
+                            )
+                            rotate(
+                                ${x > faceInitialX ?  x/25 : -x/15}
+                            )
+                        `}
+                    >
+                    </rect>
+                    <circle
+                        key={nanoid()}
+                        className="eyeball"
+                        cx={x}
+                        cy={faceInitialY-50}
+                        r={faceRadius/8}
+                    >
+                    </circle>
+                </g>
             );
         
         return eyes;
@@ -63,6 +64,7 @@ export default function HappyFaceExample() {
             </g>
         )
     }
+
 
     return(
         <svg 
