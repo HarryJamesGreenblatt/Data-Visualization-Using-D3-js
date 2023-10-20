@@ -1,5 +1,13 @@
 export const noteSnippets = {
-    DataViz2018_1 : `
+    DataViz2018_1 :  `
+    This is the Ghostscript Tiger.
+    
+    It's one of the earlier examples which used to 
+    be commonly referred to demonstrate the 
+    capabilities of the svg image format.
+`
+,
+    DataViz2018_2 : `
 <svg 
     width="391" 
     height="391" 
@@ -17,38 +25,7 @@ export const noteSnippets = {
 </svg>
 `,
 
-    DataViz2018_2 :  `
-    This is the Ghostscript Tiger.
-    
-    It's one of the earlier examples which used to 
-    be commonly referred to demonstrate the 
-    capabilities of the svg image format.
-`
-,
-    DataViz2018_3 : `
-<path 
-    d="M20,230 Q40,205 50,230 T90,230" 
-    fill="none" 
-    stroke="darkgoldenrod" 
-    stroke-width="5"
-/>
-
-
-This is a simple bezier curved svg path.
-
-
-A <path> is the most general shape that can be 
-used in SVG. Using a path element, you can draw 
-rectangles, circles, ellipses, polylines, polygons, 
-bezier curves, quadratic curves, and more.
-
-
-d - A list of points and other information about how to draw the path.  
-Contains a series of five commands and parameters used by those commands.
-`    
-,
-
-    DataViz2018_4 : `
+DataViz2018_3 : `
 const transformedCircles = [];
 
 for (let i = -25; i <= radius; i += radius) {
@@ -71,4 +48,26 @@ for (let i = -25; i <= radius; i += radius) {
 ,
 
 
+    DataViz2018_4 : `
+<path 
+    d="M20,230 Q40,205 50,230 T90,230" 
+    fill="none" 
+    stroke="darkgoldenrod" 
+    stroke-width="5"
+/>
+
+
+This is a simple bezier curved svg path.
+
+
+A <path> is the most general shape that can be 
+used in SVG. Using a path element, you can draw 
+rectangles, circles, ellipses, polylines, polygons, 
+bezier curves, quadratic curves, and more.
+
+
+d - A list of points and other information about how to draw the path.  
+Contains a series of five commands and parameters used by those commands.
+`    
+,
 }

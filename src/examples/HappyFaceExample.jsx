@@ -18,14 +18,30 @@ export default function HappyFaceExample() {
 
         for(let x = faceInitialX - 50; x <= faceInitialX + 100; x += 100)
             eyes.push(
-                <circle
-                    key={nanoid()}
-                    className="eye"
-                    cx={x}
-                    cy={faceInitialY-50}
-                    r={faceRadius/8}
-                >
-                </circle>
+                <>
+                        <rect
+                            key={nanoid()}
+                            className="eye"
+                            width={50}
+                            height={8}
+                            transform={`
+                                translate(
+                                    ${x-25} ${faceInitialY-100}
+                                )
+
+                                rotate(${x > faceInitialX ?  x/25 : -x/15})
+                            `}
+                        >
+                        </rect>
+                        <circle
+                            key={nanoid()}
+                            className="eyebrow"
+                            cx={x}
+                            cy={faceInitialY-50}
+                            r={faceRadius/8}
+                        >
+                        </circle>
+                </>
             );
         
         return eyes;
@@ -34,7 +50,7 @@ export default function HappyFaceExample() {
 
     const renderMouth = () => {
         return(
-            <g  transform="translate(162, 175) rotate(90) ">
+            <g  transform="translate(162, 165) rotate(90) ">
                 <path
                     d={arc()({
                         innerRadius: 93,
