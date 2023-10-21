@@ -85,7 +85,13 @@ export const exampleData = [
         img: HappyFaceImage,
         description:
         <>
-            The <code>renderEyes()</code> function provides an array of 2
+            <p>
+                The <a href='https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/src/examples/HappyFaceExample.jsx'><code>renderEyes()</code></a> function provides an array of 2 groups of svg elements, each respectively containing an <em>eyeball</em> and <em>eyebrow</em> class element.
+            </p>
+            <br/>
+            <p>
+                Selecting these classes enables the deployment of <code>animation</code> through CSS.
+            </p>
         </>, 
         component: <HappyFaceExample />,
         codeSnippet: codeSnippets['DataViz2018_6']
