@@ -4,7 +4,7 @@ import GroupOfShapesImage from '../../public/GroupOfShapesExample.jpg';
 import GroupOfShapesExample from '../examples/GroupOfShapesExample.jsx';
 import LineExample from '../examples/LineExample.jsx';
 import LineImage from "../../public/LineExample.jpg";
-import CssStylingExample from '../examples/CssStylingExample';
+import CssStylingExample from '../examples/CssStylingExample'; 
 import CssStylingImage from "../../public/CssStylingExample.jpg";
 import CompooundTransformationsExample from '../examples/CompooundTransformationsExample';
 import CoumpoundTransformationsImage from '../../public/CompoundTransformationsExample.jpg';
@@ -85,7 +85,7 @@ export const exampleData = [
         img: HappyFaceImage,
         description:
         <>
-            Shit Happens :)
+            The <code>renderEyes()</code> function provides an array of 2
         </>, 
         component: <HappyFaceExample />,
         codeSnippet: codeSnippets['DataViz2018_6']

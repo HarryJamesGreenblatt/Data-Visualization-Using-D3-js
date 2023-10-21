@@ -5,12 +5,13 @@ import { select } from "d3";
 export default function HappyFaceExample() {
 
     
-    const scrnHeight  = 350, scrnWidth  = 500;
-
+    const scrnHeight   = 350, scrnWidth    = 500;
 
     const faceInitialX = 160, faceInitialY = 170;
     
-    const faceRadius = 140;
+    const faceRadius   = 140;
+
+
 
     const renderEyes = () => { 
         
@@ -49,6 +50,7 @@ export default function HappyFaceExample() {
     }
 
 
+    
     const renderMouth = () => {
         return(
             <g  transform="translate(162, 165) rotate(90) ">
