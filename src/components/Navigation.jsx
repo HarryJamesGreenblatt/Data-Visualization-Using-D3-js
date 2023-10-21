@@ -18,6 +18,13 @@ export default function Navigation() {
                 </NavLink>
 
                 <NavLink 
+                    to="/viz-theory"
+                    className={"nav-link"}
+                >
+                    Viz Theory
+                </NavLink>
+
+                <NavLink 
                     to="/examples"
                     className={"nav-link"}
                 >
