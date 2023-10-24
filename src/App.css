@@ -296,10 +296,11 @@ code{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: lightblue;
+    background-color: rgb(108, 174, 196);
 }
 .example-container h2{
     margin: 0.5em 0;
+    color: rgb(252, 255, 254);
 }
 
 .example-content-container{

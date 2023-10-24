@@ -17,12 +17,12 @@ export default function Navigation() {
                     SVG
                 </NavLink>
 
-                <NavLink 
+                {/* <NavLink 
                     to="/viz-theory"
                     className={"nav-link"}
                 >
                     Viz Theory
-                </NavLink>
+                </NavLink> */}
 
                 <NavLink 
                     to="/examples"
