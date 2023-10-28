@@ -127,7 +127,7 @@ export const noteData = [
         description: noteSnippets['DataViz2018_7'],
         keyTakeAways: [
             "Statisitcal summaries tend to obscure certain information.",
-            "Visualizations provide better outcomes for identifying outliers in the data.",
+            "Visualizations provide better results for identifying outliers in the data.",
             "Even a single outlier may cause a sigficant visual skew of the data."
         ]
     },
@@ -137,7 +137,7 @@ export const noteData = [
         withRespectTo : "dataset types",
         component: null,
         img : "https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/public/DatasetTypeNote.jpg?raw=true",
-        description: noteSnippets['DataViz2018_7'],
+        description: noteSnippets['DataViz2018_8'],
         keyTakeAways: [
 
         ]

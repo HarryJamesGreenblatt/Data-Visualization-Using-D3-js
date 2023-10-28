@@ -77,7 +77,7 @@ Contains a series of five commands and parameters used by those commands.
 
     DataViz2018_5 :
 <>
-    <p className="viz-theory-purpose-description">
+    <p className="viz-theory-description">
         Computer-based visuaization systems provide  
         <br/> 
         visual representations of <span>datasets</span> 
@@ -86,6 +86,7 @@ Contains a series of five commands and parameters used by those commands.
         <br/>
         <br/>
         more effectively.
+        <br/>
         <br/>
         <br/>
         <br/>
@@ -104,7 +105,7 @@ Contains a series of five commands and parameters used by those commands.
 
     DataViz2018_6 :
 <>
-    <p className="viz-theory-external-representation-description">
+    <p className="viz-theory-description">
         In the stacked bar chart depicted above, 
         <br/>
         the colors correspond to various <span>religions</span>, 
@@ -132,7 +133,7 @@ Contains a series of five commands and parameters used by those commands.
 
     DataViz2018_7 :
 <>
-    <p className="viz-theory-anscombes-quartet-description">
+    <p className="viz-theory-description">
         <span>Anscombe's Quartet</span> ,
         <br/>
         depicted above, demonstrates the importance of considering visualizations, 
@@ -147,8 +148,44 @@ Contains a series of five commands and parameters used by those commands.
         It comprises <em>four data sets</em> that have <em>nearly identical simple descriptive statistics</em>, 
         <br/>
         yet have <b>very different distributions</b> and <b>appear very different</b> when graphed.
-
     </p>
-</>
+</>,
+
+
+    DataViz2018_8 :
+<>
+    <p className="viz-theory-description">
+        Broadly speaking,
+        <br/>
+        there are <em>3 General Types of Datasets</em> :
+        <br/>
+        <br/>
+        <span>Table</span>,
+        <br/>
+        Where each row represents <em>a single item/event</em>, 
+        or, 
+        <br/>
+        in the case of a <b>Multidimensional Table</b> an <b>aggregation (i.e sum, avg., etc.)</b>.
+        <br/>
+        <br/>
+        <span>Network</span>, 
+        <br/>
+        Where <em>nodes</em> of data are logically connected together using referential <b>links</b>,
+        <br/>
+        which may be optionally configured to take the form of a <b>hierarchical structure</b>,
+        <br/>
+        such as a <b>Tree</b>.
+        <br/>
+        <br/>
+        and 
+        <br/>
+        <br/>
+        <span>Spatial</span>
+        <br/>
+        Where there's an element of the data that relationally <em> maps</em> 
+        <br/>
+        either onto a <b>grid of positions</b>, or a <b>geographic reagion</b>.
+    </p>
+</>,
 
 }

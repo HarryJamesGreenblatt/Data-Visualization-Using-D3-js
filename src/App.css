@@ -240,9 +240,7 @@ code{
 
 
 
-.viz-theory-purpose-description span,
-.viz-theory-external-representation-description span,
-.viz-theory-anscombes-quartet-description span{
+.viz-theory-description span{
     font-size: 2rem;
     margin: 0 .25em
 }
