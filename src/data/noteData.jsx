@@ -136,7 +136,7 @@ export const noteData = [
         pathname : "/viz-theory",
         withRespectTo : "dataset types",
         component: null,
-        img : "https://th-thumbnailer.cdn-si-edu.com/CMUymnnyexPs2GUPFGZNvcGkjTU=/fit-in/1072x0/https://tf-cmsv2-photocontest-smithsonianmag-prod-approved.s3.amazonaws.com/c40c4620-2b4b-4551-915c-2f0612392f2b.jpg",
+        img : "https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/public/DatasetTypeNote.jpg?raw=true",
         description: noteSnippets['DataViz2018_7'],
         keyTakeAways: [
 
@@ -147,7 +147,7 @@ export const noteData = [
         pathname : "/viz-theory",
         withRespectTo : "attribute types",
         component: null,
-        img : "https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/public/DatasetTypeNote.jpg?raw=true",
+        img : "https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/public/AttributeTypeNote.jpg?raw=true",
         description: noteSnippets['DataViz2018_7'],
         keyTakeAways: [
 
