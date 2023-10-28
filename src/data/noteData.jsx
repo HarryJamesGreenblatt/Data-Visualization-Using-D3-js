@@ -110,7 +110,7 @@ export const noteData = [
     {   
         id : 6,
         pathname : "/viz-theory",
-        withRespectTo : "external representation",
+        withRespectTo : "ext. representation",
         component: null,
         img : "https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/public/ExternalRepresentationNote.jpg?raw=true",
         description: noteSnippets['DataViz2018_6'],
@@ -129,6 +129,28 @@ export const noteData = [
             "Statisitcal summaries tend to obscure certain information.",
             "Visualizations provide better outcomes for identifying outliers in the data.",
             "Even a single outlier may cause a sigficant visual skew of the data."
+        ]
+    },
+    {   
+        id : 8,
+        pathname : "/viz-theory",
+        withRespectTo : "dataset types",
+        component: null,
+        img : "https://th-thumbnailer.cdn-si-edu.com/CMUymnnyexPs2GUPFGZNvcGkjTU=/fit-in/1072x0/https://tf-cmsv2-photocontest-smithsonianmag-prod-approved.s3.amazonaws.com/c40c4620-2b4b-4551-915c-2f0612392f2b.jpg",
+        description: noteSnippets['DataViz2018_7'],
+        keyTakeAways: [
+
+        ]
+    },
+    {   
+        id : 8,
+        pathname : "/viz-theory",
+        withRespectTo : "attribute types",
+        component: null,
+        img : "https://th-thumbnailer.cdn-si-edu.com/CMUymnnyexPs2GUPFGZNvcGkjTU=/fit-in/1072x0/https://tf-cmsv2-photocontest-smithsonianmag-prod-approved.s3.amazonaws.com/c40c4620-2b4b-4551-915c-2f0612392f2b.jpg",
+        description: noteSnippets['DataViz2018_7'],
+        keyTakeAways: [
+
         ]
     },
 ]

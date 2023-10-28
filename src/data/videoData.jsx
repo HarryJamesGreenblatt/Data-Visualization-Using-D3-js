@@ -1,7 +1,7 @@
 export const videoData = [
     {
         if: 1,
-        url: "https://www.youtube.com/embed/nGhSauu93vY?list=PL9yYRbwpkykvOXrZumtZWbuaXWHvjD8gi",
+        url: "https://www.youtube.com/embed/nGhSauu93vY?list=PL9yYRbwpkykvOXrZumtZWbuaXWHvjD8gi&start=103",
         title:"Data Viz 2018",
         description: 
             <p>

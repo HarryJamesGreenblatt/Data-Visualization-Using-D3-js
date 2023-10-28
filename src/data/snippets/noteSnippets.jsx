@@ -114,7 +114,6 @@ Contains a series of five commands and parameters used by those commands.
         of people belonging to that religion, by <span>country</span> .
         <br/>
         <br/>
-        <br/>
         The figure above illustrates how an <span>external representation</span>
         <br/>
         of data effectively replaces 
