@@ -148,7 +148,7 @@ export const noteData = [
         withRespectTo : "attribute types",
         component: null,
         img : "https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/public/AttributeTypeNote.jpg?raw=true",
-        description: noteSnippets['DataViz2018_7'],
+        description: noteSnippets['DataViz2018_9'],
         keyTakeAways: [
 
         ]

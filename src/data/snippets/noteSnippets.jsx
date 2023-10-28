@@ -188,4 +188,28 @@ Contains a series of five commands and parameters used by those commands.
     </p>
 </>,
 
+
+    DataViz2018_9 :
+<>
+    <p className="viz-theory-description">
+         There are <em>2 Attributes Types</em> which provide a broad taxonomy for visualization design:
+         <br/>
+         <br/>
+         <span>Catagorical</span>
+         <br/>
+         consist of <em>logically distinctive things</em> 
+         which <em>don't have any intrinsic ordering between them.</em>
+         <br/>
+         <br/>
+         and 
+         <br/>
+         <br/>
+         <span>Ordered</span>
+         <br/>
+         1) Ordinal - <em>Different sizes/dimensions of same type of nonnumerical thing  </em> 
+         <br/>
+         2) Quantitative - <em>Strictly numerical</em>
+    </p>
+</>,
+
 }
