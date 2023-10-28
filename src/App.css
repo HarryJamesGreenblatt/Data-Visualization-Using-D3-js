@@ -95,6 +95,59 @@ code{
 
 
 
+/*********  HOME  **********/
+.home-container{
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(182, 157, 124);
+}
+.home-container h3{
+    margin: 0.75em;
+    font-size: 1.3rem;
+    color: beige;
+}
+
+.home-content-container{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: beige;
+}
+
+.home-content-iframe-container {
+    display: flex;
+    width: 95%;
+    height: 70%;
+}
+.home-content-iframe-container iframe{
+    width: 100%;
+    height: 100%;
+    margin-top: 1em;
+}
+
+.home-content-iframe-description-container {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.home-content-iframe-description-container p{
+    font-size: 1.1rem;
+    margin:  1em;
+    text-align: center;
+}
+
+
+
+
+
 
 /*********  NOTES  **********/
 .notes-container{
@@ -193,57 +246,6 @@ code{
     margin: 0 .25em
 }
 
-
-
-
-/*********  HOME  **********/
-.home-container{
-    width: 95%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(182, 157, 124);
-}
-.home-container h3{
-    margin: 0.75em;
-    font-size: 1.3rem;
-    color: beige;
-}
-
-.home-content-container{
-    width: 90%;
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: beige;
-}
-
-.home-content-iframe-container {
-    display: flex;
-    width: 95%;
-    height: 70%;
-}
-.home-content-iframe-container iframe{
-    width: 100%;
-    height: 100%;
-    margin-top: 1em;
-}
-
-.home-content-iframe-description-container {
-    width: 100%;
-    height: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.home-content-iframe-description-container p{
-    font-size: 1.1rem;
-    margin:  1em;
-    text-align: center;
-}
 
 
 
