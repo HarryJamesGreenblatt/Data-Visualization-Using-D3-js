@@ -1,6 +1,10 @@
 import { nanoid } from "nanoid";
 import SVGPathNoteImage from '../../public/SVGPathNote.jpg';
 import GroupElementNote from '../notes/GroupElementNote';
+import ExternalRepresentationImage from "../../public/ExternalRepresentationNote.jpg";
+import AnscombeQuartetImage from "../../public/AnscombeQuartetNote.jpg";
+import DatasetTypeImage from "../../public/DatasetTypeNote.jpg";
+import AttributeTypeImage from "../../public/AttributeTypeNote.jpg";
 import { noteSnippets } from './snippets/noteSnippets';
 
 
@@ -112,7 +116,7 @@ export const noteData = [
         pathname : "/viz-theory",
         withRespectTo : "ext. representation",
         component: null,
-        img : "/public/ExternalRepresentationNote.jpg",
+        img : ExternalRepresentationImage,
         description: noteSnippets['DataViz2018_6'],
         keyTakeAways: [
 
@@ -123,7 +127,7 @@ export const noteData = [
         pathname : "/viz-theory",
         withRespectTo : "anscombe's quartet",
         component: null,
-        img : "/public/AnscombeQuartetNote.jpg",
+        img : AnscombeQuartetImage,
         description: noteSnippets['DataViz2018_7'],
         keyTakeAways: [
             "Statisitcal summaries tend to obscure certain information.",
@@ -136,7 +140,7 @@ export const noteData = [
         pathname : "/viz-theory",
         withRespectTo : "dataset types",
         component: null,
-        img : "/public/DatasetTypeNote.jpg",
+        img : DatasetTypeImage,
         description: noteSnippets['DataViz2018_8'],
         keyTakeAways: [
 
@@ -147,7 +151,7 @@ export const noteData = [
         pathname : "/viz-theory",
         withRespectTo : "attribute types",
         component: null,
-        img : "/public/AttributeTypeNote.jpg",
+        img : AttributeTypeImage,
         description: noteSnippets['DataViz2018_9'],
         keyTakeAways: [
 
