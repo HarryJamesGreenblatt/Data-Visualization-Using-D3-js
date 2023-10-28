@@ -14,7 +14,6 @@ export default function VizTheory( { notes, withRespectTo, clearOnClick } ) {
         <li key={nanoid()}> {takeAway} </li>
     )
 
-
     return(
 
         <div className="notes-container">
@@ -51,7 +50,7 @@ export default function VizTheory( { notes, withRespectTo, clearOnClick } ) {
                                         width: takeAways.length >= 1 ? "90%":"170%"
                                     }
                                 } 
-                                src={vizTheoryNotes.img}
+                                src={ vizTheoryNotes.img }
                                 loading="lazy"
                             />
                             :

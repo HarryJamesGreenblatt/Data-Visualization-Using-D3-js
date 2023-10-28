@@ -99,7 +99,7 @@ export const noteData = [
             "Many analysis problems are ill-specified (don't know which questions to ask in advance)",
             <>
                 Some possibilities for long term usage are: 
-                <ul>
+                <ul key={nanoid()}>
                     <li>Exploratory analysis of scientific data</li>
                     <li>Presentation of known results</li>
                     <li style={{marginBottom: 0}}>Stepping stone to better understanding of requirements</li>
@@ -112,7 +112,7 @@ export const noteData = [
         pathname : "/viz-theory",
         withRespectTo : "ext. representation",
         component: null,
-        img : "https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/public/ExternalRepresentationNote.jpg?raw=true",
+        img : "/public/ExternalRepresentationNote.jpg",
         description: noteSnippets['DataViz2018_6'],
         keyTakeAways: [
 
@@ -123,7 +123,7 @@ export const noteData = [
         pathname : "/viz-theory",
         withRespectTo : "anscombe's quartet",
         component: null,
-        img : "https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/public/AnscombeQuartetNote.jpg?raw=true",
+        img : "/public/AnscombeQuartetNote.jpg",
         description: noteSnippets['DataViz2018_7'],
         keyTakeAways: [
             "Statisitcal summaries tend to obscure certain information.",
@@ -136,7 +136,7 @@ export const noteData = [
         pathname : "/viz-theory",
         withRespectTo : "dataset types",
         component: null,
-        img : "https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/public/DatasetTypeNote.jpg?raw=true",
+        img : "/public/DatasetTypeNote.jpg",
         description: noteSnippets['DataViz2018_8'],
         keyTakeAways: [
 
@@ -147,7 +147,7 @@ export const noteData = [
         pathname : "/viz-theory",
         withRespectTo : "attribute types",
         component: null,
-        img : "https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/public/AttributeTypeNote.jpg?raw=true",
+        img : "/public/AttributeTypeNote.jpg",
         description: noteSnippets['DataViz2018_9'],
         keyTakeAways: [
 
