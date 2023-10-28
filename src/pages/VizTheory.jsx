@@ -52,6 +52,7 @@ export default function VizTheory( { notes, withRespectTo, clearOnClick } ) {
                                     }
                                 } 
                                 src={vizTheoryNotes.img}
+                                loading="lazy"
                             />
                             :
                             vizTheoryNotes.component
