@@ -126,7 +126,10 @@ export const noteData = [
         img : "../../public/AnscombeQuartetNote.jpg",
         description: noteSnippets['DataViz2018_7'],
         keyTakeAways: [
-            "I nutted on myself!"
+            "Statisitcal summaries tend to obscure certain information.",
+            "Visualizations provide better outcomes for identifying outliers in the data.",
+            "Even a single outlier may cause a sigficant visual skew of the data."
+
         ]
     },
 ]

@@ -115,7 +115,7 @@ Contains a series of five commands and parameters used by those commands.
         <br/>
         <br/>
         <br/>
-        The figure above illustrates how an <span>external representation</span>, 
+        The figure above illustrates how an <span>external representation</span>
         <br/>
         of data effectively replaces 
         <br/>
@@ -133,11 +133,22 @@ Contains a series of five commands and parameters used by those commands.
 
     DataViz2018_7 :
 <>
-    <p>
+    <p className="viz-theory-anscombes-quartet-description">
         <span>Anscombe's Quartet</span> ,
         <br/>
-        depicted above, demonstrates the effectiveness of relying
-        on visualizations, rather than strictly statistical summary data.
+        depicted above, demonstrates the importance of considering visualizations, 
+        <br/>
+        <br/>
+        rather than relying strictly on <em>statistical summary data</em>, 
+        <br/>
+        <br/>
+        such as <em>mean</em>, <em>variance</em>, <em>correlation</em>, etc.
+        <br/>
+        <br/>
+        It comprises <em>four data sets</em> that have <em>nearly identical simple descriptive statistics</em>, 
+        <br/>
+        yet have <b>very different distributions</b> and <b>appear very different</b> when graphed.
+
     </p>
 </>
 
