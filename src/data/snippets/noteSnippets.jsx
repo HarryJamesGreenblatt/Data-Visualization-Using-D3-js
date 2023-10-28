@@ -7,6 +7,8 @@ export const noteSnippets = {
     capabilities of the svg image format.
 `
 ,
+
+
     DataViz2018_2 : `
 <svg 
     width="391" 
@@ -23,9 +25,11 @@ export const noteSnippets = {
         <line x1="50" y1="50" x2="200" y2="200" stroke="blue" stroke-width="4"/>
     </g>
 </svg>
-`,
+`
+,
 
-DataViz2018_3 : `
+
+    DataViz2018_3 : `
 const transformedCircles = [];
 
 for (let i = -25; i <= radius; i += radius) {
@@ -70,4 +74,71 @@ d - A list of points and other information about how to draw the path.
 Contains a series of five commands and parameters used by those commands.
 `    
 ,
+
+    DataViz2018_5 :
+<>
+    <p className="viz-theory-purpose-description">
+        Computer-based visuaization systems provide  
+        <br/> 
+        visual representations of <span>datasets</span> 
+        <br/> 
+        designed to help <span>people</span> carry out tasks  
+        <br/>
+        <br/>
+        more effectively.
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        Visualization is suitable when there is a need to 
+        <br/>
+        <br/>
+        <span>augment human capabilities,</span>  
+        <br/>
+        <br/>
+        rather than replace people with computational decision-making methods.
+    </p>
+</>,
+
+
+    DataViz2018_6 :
+<>
+    <p className="viz-theory-external-representation-description">
+        In the stacked bar chart depicted above, 
+        <br/>
+        the colors correspond to various <span>religions</span>, 
+        <br/>
+        while the lengths of bars correspond to the <span>population</span> 
+        <br/>
+        of people belonging to that religion, by <span>country</span> .
+        <br/>
+        <br/>
+        <br/>
+        The figure above illustrates how an <span>external representation</span>, 
+        <br/>
+        of data effectively replaces 
+        <br/>
+        <br/>
+        <em>cognition</em> (<em>searching for the highest values in a table or spreadsheet</em>) 
+        <br/>
+        <br/>
+        with
+        <br/>
+        <br/>
+        <em>perception</em> (<em>searching for the longest subsection of color in a stacked bar chart</em>)
+    </p>
+</>,
+
+
+    DataViz2018_7 :
+<>
+    <p>
+        <span>Anscombe's Quartet</span> ,
+        <br/>
+        depicted above, demonstrates the effectiveness of relying
+        on visualizations, rather than strictly statistical summary data.
+    </p>
+</>
+
 }

@@ -1,18 +1,16 @@
 import {useLocation} from "react-router-dom";
 import {nanoid} from "nanoid"; 
 
-export default function SVG( { notes, withRespectTo, clearOnClick } ) {
+export default function VizTheory( { notes, withRespectTo, clearOnClick } ) {
 
     const { pathname } = useLocation();
 
-
-
-    const svgNotes = notes && withRespectTo && notes.filter( 
+    const vizTheoryNotes = notes && withRespectTo && notes.filter( 
         note => note.pathname === pathname && note.withRespectTo === withRespectTo 
     )[0];
 
 
-    const takeAways = svgNotes && withRespectTo && svgNotes.keyTakeAways.map(takeAway => 
+    const takeAways = vizTheoryNotes && withRespectTo && vizTheoryNotes.keyTakeAways.map(takeAway => 
         <li key={nanoid()}> {takeAway} </li>
     )
 
@@ -23,15 +21,15 @@ export default function SVG( { notes, withRespectTo, clearOnClick } ) {
             <div className="notes-header-container">
                 <h3>
                 {
-                    svgNotes && withRespectTo
+                    vizTheoryNotes && withRespectTo
                     ?
-                    `SVG notes with respect to --  ${withRespectTo}`
+                    `Viz Theory notes with respect to --  ${withRespectTo}`
                     :
-                    "Scalable Vector Graphics (SVG)"
+                    "Visualization (Viz) Theory "
                 }
                 </h3>
                 {
-                    svgNotes 
+                    vizTheoryNotes 
                     && 
                     withRespectTo 
                     && 
@@ -40,18 +38,25 @@ export default function SVG( { notes, withRespectTo, clearOnClick } ) {
             </div>
         
             {
-                svgNotes && withRespectTo
+                vizTheoryNotes && withRespectTo
                 ?
                 <div className="notes-content-container">
                     <div className="notes-content-left-column-container">
                         {
-                            svgNotes.img
+                            vizTheoryNotes.img
                             ?
-                            <img src={svgNotes.img}/>
+                            <img 
+                                style={
+                                    {
+                                        width: takeAways.length >= 1 ? "90%":"160%"
+                                    }
+                                } 
+                                src={vizTheoryNotes.img}
+                            />
                             :
-                            svgNotes.component
+                            vizTheoryNotes.component
                         }
-                        <pre>{svgNotes.description}</pre>
+                        <pre>{vizTheoryNotes.description}</pre>
                     </div>
                     <div className="notes-content-right-column-container">
                         <ul>
@@ -61,8 +66,12 @@ export default function SVG( { notes, withRespectTo, clearOnClick } ) {
                 </div>
                 :
                 <div className="selection-container">
-                    <iframe src="https://en.wikipedia.org/wiki/SVG"/>
-                    <p>Select one of the <span>note topics</span> below for a deeper dive:</p>
+                    <iframe src="https://en.wikipedia.org/wiki/Data_and_information_visualization"/>
+                    {
+                        vizTheoryNotes
+                        &&
+                        <p>Select one of the <span>note topics</span> below for a deeper dive:</p>
+                    }
                 </div>
             }
 

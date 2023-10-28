@@ -1,11 +1,11 @@
 export const videoData = [
     {
         if: 1,
-        url: "https://www.youtube.com/embed/7qJY6Rq9e2w?list=PL9yYRbwpkykvOXrZumtZWbuaXWHvjD8gi&start=33",
+        url: "https://www.youtube.com/embed/7qJY6Rq9e2w?list=PL9yYRbwpkykvOXrZumtZWbuaXWHvjD8gi&start=642",
         title:"Data Viz 2018",
         description: 
             <p>
-                This course is about <span className="emphasis">Data Visualizations</span>. 
+                This <a href="https://curran.github.io/dataviz-course-2018/">course</a> is about <span className="emphasis">Data Visualizations</span>. 
                 <br/>
                 It delves into their <span className="emphasis">Analysis</span>, their <span className="emphasis">Design</span>, and their <span className="emphasis">
                 Construction</span>, 

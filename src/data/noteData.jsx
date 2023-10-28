@@ -87,4 +87,46 @@ export const noteData = [
             </>,
         ]
     },
+    {   
+        id : 5,
+        pathname : "/viz-theory",
+        withRespectTo : "purpose",
+        component: null,
+        img : "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Data_visualization_process_v1.png/800px-Data_visualization_process_v1.png",
+        description: noteSnippets['DataViz2018_5'],
+        keyTakeAways: [
+            "We don't need vis when fully automatic solution exists and is trusted",
+            "Many analysis problems are ill-specified (don't know which questions to ask in advance)",
+            <>
+                Some possibilities for long term usage are: 
+                <ul>
+                    <li>Exploratory analysis of scientific data</li>
+                    <li>Presentation of known results</li>
+                    <li style={{marginBottom: 0}}>Stepping stone to better understanding of requirements</li>
+                </ul>   
+            </>
+        ]
+    },
+    {   
+        id : 6,
+        pathname : "/viz-theory",
+        withRespectTo : "external representation",
+        component: null,
+        img : "../../public/ExternalRepresentationNote.jpg",
+        description: noteSnippets['DataViz2018_6'],
+        keyTakeAways: [
+
+        ]
+    },
+    {   
+        id : 7,
+        pathname : "/viz-theory",
+        withRespectTo : "anscombe's quartet",
+        component: null,
+        img : "../../public/AnscombeQuartetNote.jpg",
+        description: noteSnippets['DataViz2018_7'],
+        keyTakeAways: [
+            "I nutted on myself!"
+        ]
+    },
 ]

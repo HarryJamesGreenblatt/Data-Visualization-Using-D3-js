@@ -4,6 +4,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Layout from './components/Layout.jsx';
 import Home from './pages/Home.jsx';
+import VizThoery from './pages/VizTheory';
 import SVG from './pages/SVG.jsx';
 import Examples from './pages/Examples.jsx';
 import ExampleDetails from './pages/ExampleDetails.jsx';
@@ -81,6 +82,14 @@ function App() {
               handleClick={handleClickHome}
               withRespectTo={withRespectTo}
             /> 
+            } 
+          />
+          <Route path="viz-theory" element={
+              <VizThoery 
+                notes={notes} 
+                withRespectTo={withRespectTo}
+                clearOnClick={clearOnClick}  
+              />
             } 
           />
           <Route path="svg" element={

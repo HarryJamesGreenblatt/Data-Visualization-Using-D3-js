@@ -60,6 +60,7 @@ code{
 .nav-logo{
     margin-left: .5em;
     font-weight: 600;
+    font-size: 1.2rem;
 }
 .nav-logo span{
     font-size: .75rem;
@@ -95,16 +96,16 @@ code{
 
 
 
-/*********  SVG  **********/
-.svg-container{
+/*********  NOTES  **********/
+.notes-container{
     background-color: aliceblue;
     height: 100%;
-    width: 95%;
+    width: 96%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.svg-content-container{
+.notes-content-container{
     background-color: rgb(104, 104, 104);
     height: 92%;
     width: 95%;
@@ -113,7 +114,7 @@ code{
     justify-content: space-between;
     align-items: center;
 }
-.svg-content-left-column-container{
+.notes-content-left-column-container{
     height: 100%;
     width: 50%;
     display: flex;
@@ -121,16 +122,16 @@ code{
     justify-content: space-evenly;
     flex-direction: column;
 }
-.svg-content-left-column-container img{
+.notes-content-left-column-container img{
     width: 75%;
     margin: 1em;
 }
-.svg-content-left-column-container pre{
+.notes-content-left-column-container pre{
     margin-left: 0.5em;
     font-size: 0.86rem;
     color: white;
 }
-.svg-content-right-column-container{
+.notes-content-right-column-container{
     width: 50%;
     height: 100%;
     display: flex;
@@ -138,7 +139,7 @@ code{
     align-items: flex-start;
     margin-top: 6.5em;
 }
-.svg-content-right-column-container ul{
+.notes-content-right-column-container ul{
     width: 92%;
     /* height: 80%; */
     display: flex;
@@ -147,18 +148,18 @@ code{
     align-items: flex-start;
     background-color: antiquewhite;
 }
-.svg-content-right-column-container li{
+.notes-content-right-column-container li{
     margin: 1em 2.4em;
     word-break: break-word;
 }
-.svg-content-right-column-container li:first-child{
+.notes-content-right-column-container li:first-child{
     margin-top: 2em;
 }
-.svg-content-right-column-container li:last-child{
+.notes-content-right-column-container li:last-child{
     margin-bottom: 2em;
 }
 
-.svg-header-container {
+.notes-header-container {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -183,6 +184,15 @@ code{
 .selection-container p{
     font-style: italic;
 }
+
+
+
+.viz-theory-purpose-description span,
+.viz-theory-external-representation-description span{
+    font-size: 2rem;
+    margin: 0 .25em
+}
+
 
 
 
