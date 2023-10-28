@@ -112,7 +112,7 @@ export const noteData = [
         pathname : "/viz-theory",
         withRespectTo : "external representation",
         component: null,
-        img : "../../public/ExternalRepresentationNote.jpg",
+        img : "https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/public/ExternalRepresentationNote.jpg?raw=true",
         description: noteSnippets['DataViz2018_6'],
         keyTakeAways: [
 
@@ -123,13 +123,12 @@ export const noteData = [
         pathname : "/viz-theory",
         withRespectTo : "anscombe's quartet",
         component: null,
-        img : "../../public/AnscombeQuartetNote.jpg",
+        img : "https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/public/AnscombeQuartetNote.jpg?raw=true",
         description: noteSnippets['DataViz2018_7'],
         keyTakeAways: [
             "Statisitcal summaries tend to obscure certain information.",
             "Visualizations provide better outcomes for identifying outliers in the data.",
             "Even a single outlier may cause a sigficant visual skew of the data."
-
         ]
     },
 ]

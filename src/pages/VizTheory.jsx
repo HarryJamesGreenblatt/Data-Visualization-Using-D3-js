@@ -67,11 +67,7 @@ export default function VizTheory( { notes, withRespectTo, clearOnClick } ) {
                 :
                 <div className="selection-container">
                     <iframe src="https://en.wikipedia.org/wiki/Data_and_information_visualization"/>
-                    {
-                        vizTheoryNotes
-                        &&
-                        <p>Select one of the <span>note topics</span> below for a deeper dive:</p>
-                    }
+                    <p>Select one of the <span>note topics</span> below for a deeper dive:</p>
                 </div>
             }
 
