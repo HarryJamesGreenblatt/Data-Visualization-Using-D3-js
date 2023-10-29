@@ -1,7 +1,7 @@
 export const videoData = [
     {
         if: 1,
-        url: "https://www.youtube.com/embed/NlBt-7PuaLk?list=PL9yYRbwpkykvOXrZumtZWbuaXWHvjD8gi&start=3",
+        url: "https://www.youtube.com/embed/NlBt-7PuaLk?list=PL9yYRbwpkykvOXrZumtZWbuaXWHvjD8gi&start=135",
         title:"Data Viz 2018",
         description: 
             <p>
@@ -17,6 +17,5 @@ export const videoData = [
                 <br/>
                  by Tamara Manzner.
             </p>
-
     },
 ]
