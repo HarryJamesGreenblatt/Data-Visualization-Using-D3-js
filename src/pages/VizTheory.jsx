@@ -50,7 +50,7 @@ export default function VizTheory( { notes, withRespectTo, clearOnClick } ) {
                                         width: takeAways.length >= 1 ? "90%":"170%"
                                     }
                                 } 
-                                src={ vizTheoryNotes.img }
+                                src={ vizTheoryNotes.img  }
                                 loading="lazy"
                             />
                             :

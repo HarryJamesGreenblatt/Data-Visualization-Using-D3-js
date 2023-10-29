@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
-import SVGPathNoteImage from '../../public/SVGPathNote.jpg';
 import GroupElementNote from '../notes/GroupElementNote';
+import SVGPathNoteImage from '../../public/SVGPathNote.jpg';
 import ExternalRepresentationImage from "../../public/ExternalRepresentationNote.jpg";
 import AnscombeQuartetImage from "../../public/AnscombeQuartetNote.jpg";
 import DatasetTypeImage from "../../public/DatasetTypeNote.jpg";
