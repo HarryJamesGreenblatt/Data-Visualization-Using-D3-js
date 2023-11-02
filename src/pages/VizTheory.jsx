@@ -47,7 +47,7 @@ export default function VizTheory( { notes, withRespectTo, clearOnClick } ) {
                             <img 
                                 style={
                                     {
-                                        width: takeAways.length >= 1 ? "90%":"170%"
+                                        width: takeAways.length >= 1 ? "90%":"160%"
                                     }
                                 } 
                                 src={ vizTheoryNotes.img  }
