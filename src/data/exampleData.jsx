@@ -96,6 +96,15 @@ export const exampleData = [
         component: <HappyFaceExample />,
         codeSnippet: codeSnippets['DataViz2018_6']
     },
+    {
+        id: 7,
+        source: "React + D3.js",
+        title: "A Plain Circle",
+        img: CircleImage,
+        description: "A plain, black-filled circle drawn within an svg element whose dimensions are defined by values stored in variables.",
+        component: <CircleExample />,
+        codeSnippet: codeSnippets['DataViz2018_1']
+    },
 ]
 
 

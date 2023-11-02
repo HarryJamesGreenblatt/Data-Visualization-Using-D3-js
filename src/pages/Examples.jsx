@@ -26,7 +26,7 @@ export default function Examples({examples, withRespectTo}) {
 
 
     return(
-        ["Data Viz 2018"].find(d => d == withRespectTo)
+        examples.find(d => d.source == withRespectTo)
         ?
         <div className="examples-list-container">
             <div className="examples-list-content-container">

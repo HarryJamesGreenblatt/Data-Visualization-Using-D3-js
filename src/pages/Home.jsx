@@ -16,6 +16,7 @@ export default function Home( { videos, withRespectTo } ) {
                         title={courseVideo.title}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowFullScreen
+                        id={withRespectTo === "React + D3.js" ? "wattenberg-frame": ""}
                     >
                     </iframe>
                 </div>

@@ -145,7 +145,10 @@ code{
     text-align: center;
 }
 
-
+#wattenberg-frame{
+    zoom: .25;
+    height: 105%;
+}
 
 
 
