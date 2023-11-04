@@ -292,8 +292,7 @@ code{
 }
 
 .examples-list-item-container img{
-    width: 4rem;
-    margin: 1em 1em;
+    width: 6rem;
 }
 
 .examples-list-item-container a{
@@ -414,9 +413,12 @@ code{
     animation: raiseBrow 3s ease infinite;
 }
 
-
-
-
+.bottom-axis-d3-way {
+    stroke-width: 3;
+}
+.bottom-axis-d3-way text{
+    font-size: 1rem;
+}
 
 
 /*********  FOOTER  **********/

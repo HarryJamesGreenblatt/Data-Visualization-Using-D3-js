@@ -24,9 +24,9 @@ export const videoData = [
         title:"React + D3.js",
         description: 
             <p>
-                This blog post, authored by <em>Amelia Wattenberger</em> and published on <a href="https://2019.wattenberger.com/">her site</a>,
+                This blog post, authored by <span className="emphasis">Amelia Wattenberger</span> and published on <a href="https://2019.wattenberger.com/">her site</a>,
                 <br/>
-                provides very illustrative and technically descriptive guidance useful for various topics related to <b>integrating <code>D3 Data Visualizations</code> within web-facing <code>React</code> applications</b>.
+                provides very <span className="emphasis">illustrative</span> and <span className="emphasis">technically descriptive guidance</span> useful for various topics related to <b>integrating <code>D3 Data Visualizations</code> within web-facing <code>React</code> applications</b>.
 
                 <br/>
             </p>

@@ -10,6 +10,8 @@ import CompooundTransformationsExample from '../examples/CompooundTransformation
 import CoumpoundTransformationsImage from '../../public/CompoundTransformationsExample.jpg';
 import HappyFaceExample from '../examples/HappyFaceExample';
 import HappyFaceImage from "../../public/HappyFaceExample.jpg";
+import BotomAxisD3WayExample from "../examples/axis/BotomAxisD3WayExample.jsx";
+import BotomAxisD3WayImage from "../../public/BottomAxisD3WayExample.jpg";
 import { codeSnippets } from "./snippets/codeSnippets.jsx";
 
 
@@ -99,11 +101,22 @@ export const exampleData = [
     {
         id: 7,
         source: "React + D3.js",
-        title: "A Plain Circle",
-        img: CircleImage,
-        description: "A plain, black-filled circle drawn within an svg element whose dimensions are defined by values stored in variables.",
-        component: <CircleExample />,
-        codeSnippet: codeSnippets['DataViz2018_1']
+        title:
+        <>
+            A Bottom Axis: 
+            <br/>
+            The D3 Way
+        </>,
+        img: BotomAxisD3WayImage,
+        description: 
+        <>
+            <code>D3</code> provides helper functions which <span>generate coordinate axes</span>. 
+            <br/>
+            <br/>
+            Although convenient and brisk, this technique's reliance on <code>useRef()</code> and <code>useEffect()</code> Hooks to give D3 passive control over the DOM may make it unstable, or difficult to scale?.
+        </>,
+        component: <BotomAxisD3WayExample />,
+        codeSnippet: codeSnippets['DataViz2018_7']
     },
 ]
 

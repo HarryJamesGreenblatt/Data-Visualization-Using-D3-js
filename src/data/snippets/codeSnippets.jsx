@@ -146,4 +146,31 @@ for( let i=25; i < 300; i += 50 ) {
     {renderMouth()}
 </svg>
 `,
+
+    DataViz2018_7 : `
+export default function BottomAxis(){
+    const ref = useRef();
+    
+    useEffect(()=>{
+        const xScale = scaleLinear()
+            .domain( [0,100] )
+            .range( [10, 290] )
+    
+        const svgElement = select(
+            ref.current
+        );
+    
+        const axisGenerator = axisBottom(
+            xScale 
+        );
+    
+        svgElement.append("g")
+            .call( axisGenerator )
+    }, []);
+    
+    return(
+        <svg ref={ref}></svg>
+    )
+}
+`,
 }
