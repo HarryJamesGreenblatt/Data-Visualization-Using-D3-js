@@ -25,6 +25,13 @@ export default function Navigation() {
                 </NavLink>
 
                 <NavLink 
+                    to="/fetch-data"
+                    className={"nav-link"}
+                >
+                    Fetch Data
+                </NavLink>
+
+                <NavLink 
                     to="/examples"
                     className={"nav-link"}
                 >

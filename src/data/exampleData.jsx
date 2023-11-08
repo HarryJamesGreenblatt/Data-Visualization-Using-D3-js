@@ -12,6 +12,7 @@ import HappyFaceExample from '../examples/HappyFaceExample';
 import HappyFaceImage from "../../public/HappyFaceExample.jpg";
 import BotomAxisD3WayExample from "../examples/axis/BotomAxisD3WayExample.jsx";
 import BotomAxisD3WayImage from "../../public/BottomAxisD3WayExample.jpg";
+import ImportCsvDataExample from '../examples/ImportCsvDataExample';
 import { codeSnippets } from "./snippets/codeSnippets.jsx";
 
 
@@ -100,6 +101,24 @@ export const exampleData = [
     },
     {
         id: 7,
+        source: "Data Viz (React)",
+        title:
+        <>
+            Placeholder for Example
+        </>,
+        img: BotomAxisD3WayImage,
+        description: 
+        <>
+            <code>D3</code> provides helper functions which <span>generate coordinate axes</span>. 
+            <br/>
+            <br/>
+            Although convenient and brisk, this technique's reliance on <code>useRef()</code> and <code>useEffect()</code> Hooks to give D3 passive control over the DOM may make it unstable, or difficult to scale?.
+        </>,
+        component: <ImportCsvDataExample />,
+        codeSnippet: codeSnippets['DataViz2018_7']
+    },
+    {
+        id: 8,
         source: "React + D3.js",
         title:
         <>

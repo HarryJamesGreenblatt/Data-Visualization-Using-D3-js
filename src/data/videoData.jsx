@@ -20,6 +20,21 @@ export const videoData = [
     },
     {
         id: 2,
+        url: "https://www.youtube.com/embed/2LhoCfjm8R4?start=17049",
+        title:"Data Viz (React)",
+        description: 
+            <p>
+                This <a href="https://www.youtube.com/watch?v=2LhoCfjm8R4">course</a> is a follow up to <em>Data Viz 2018</em> which explicitly focuses on
+                <br/>
+                <span className="emphasis">
+                    techniques for translating <code>D3.js</code> data visualization techniques
+                </span> 
+                <br/>
+                into a format that is compatible with <code>React</code> development.
+            </p>
+    },
+    {
+        id: 3,
         url: "https://2019.wattenberger.com/blog/react-and-d3#axes",
         title:"React + D3.js",
         description: 

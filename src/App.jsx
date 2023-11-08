@@ -4,8 +4,9 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Layout from './components/Layout.jsx';
 import Home from './pages/Home.jsx';
-import VizThoery from './pages/VizTheory';
 import SVG from './pages/SVG.jsx';
+import VizThoery from './pages/VizTheory';
+import FetchData from './pages/FetchData.jsx';
 import Examples from './pages/Examples.jsx';
 import ExampleDetails from './pages/ExampleDetails.jsx';
 import { noteData } from './data/noteData.jsx';
@@ -84,6 +85,14 @@ function App() {
             /> 
             } 
           />
+          <Route path="svg" element={
+              <SVG 
+                notes={notes} 
+                withRespectTo={withRespectTo}
+                clearOnClick={clearOnClick}  
+              />
+            } 
+          />
           <Route path="viz-theory" element={
               <VizThoery 
                 notes={notes} 
@@ -92,8 +101,8 @@ function App() {
               />
             } 
           />
-          <Route path="svg" element={
-              <SVG 
+          <Route path="fetch-data" element={
+              <FetchData 
                 notes={notes} 
                 withRespectTo={withRespectTo}
                 clearOnClick={clearOnClick}  

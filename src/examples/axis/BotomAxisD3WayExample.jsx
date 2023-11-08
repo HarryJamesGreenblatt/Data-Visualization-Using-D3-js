@@ -8,14 +8,14 @@ export default function BotomAxisD3WayExample() {
     useEffect(()=>{
         const xScale = scaleLinear()
             .domain( [0,100] )
-            .range( [10, 240] )
+            .range( [10, 270] )
     
         const svgElement = select(
             ref.current
         );
     
         const axisGenerator = axisBottom(
-            xScale 
+            xScale
         );
     
         svgElement.append("g")
