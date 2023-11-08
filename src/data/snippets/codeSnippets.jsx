@@ -19,6 +19,7 @@ const yStart = scrnHeight/2;
 
 `,
 
+
     DataViz2018_2 : `
 <svg height={scrnHeight}>
     <line 
@@ -32,6 +33,7 @@ const yStart = scrnHeight/2;
     </line>
 </svg>
 `,    
+
 
     DataViz2018_3 : `
 <style>
@@ -57,6 +59,7 @@ const yStart = scrnHeight/2;
     </rect>
 </svg>
 `,
+
 
     DataViz2018_4 : `
 <svg height={scrnHeight}>
@@ -86,6 +89,7 @@ const yStart = scrnHeight/2;
 </svg>
 
 `,
+
 
     DataViz2018_5 : `
 const transformedRects = []
@@ -117,6 +121,7 @@ for( let i=25; i < 300; i += 50 ) {
 </svg>
 
 `,
+
 
     DataViz2018_6 : `
 <style>
@@ -173,4 +178,36 @@ export default function BottomAxis(){
     )
 }
 `,
+
+    DataVizReact_1 : `
+import { csv } from "d3";
+
+const [csvData, setCsvData] = React.useState(null);
+
+React.useEffect( () => {
+    csv( csvInputUrl )
+        .then( d => setCsvData( d ) ); 
+}, [] );
+                .
+                .
+                .
+<table>
+    <tr>
+        <td>Country</td>
+        <td>,</td>
+        <td>
+            Population
+        </td>
+    </tr>
+    {
+        csvData?.map( d =>
+            <tr key={ +d.Population }>
+                <td>{ d.Country }</td>
+                <td>,</td>
+                <td>{ +d.Population * 1000 }</td>
+            </tr>
+        ) 
+    }
+</table>
+`
 }

@@ -134,7 +134,7 @@ Contains a series of five commands and parameters used by those commands.
     DataViz2018_7 :
 <>
     <p className="viz-theory-description">
-        <span>Anscombe's Quartet</span> ,
+        <span>Anscombes Quartet</span> ,
         <br/>
         depicted above, demonstrates the importance of considering visualizations, 
         <br/>
@@ -182,7 +182,7 @@ Contains a series of five commands and parameters used by those commands.
         <br/>
         <span>Spatial</span>
         <br/>
-        Where there's an element of the data that relationally <em> maps</em> 
+        Where theres an element of the data that relationally <em> maps</em> 
         <br/>
         either onto a <b>grid of positions</b>, or a <b>geographic reagion</b>.
     </p>
@@ -198,7 +198,7 @@ Contains a series of five commands and parameters used by those commands.
          <span>Catagorical</span>
          <br/>
          consist of <em>logically distinctive things</em> 
-         which <em>don't have any intrinsic ordering between them.</em>
+         which <em>dont have any intrinsic ordering between them.</em>
          <br/>
          <br/>
          and 
@@ -211,5 +211,4 @@ Contains a series of five commands and parameters used by those commands.
          2) Quantitative - <em>Strictly numerical</em>
     </p>
 </>,
-
 }

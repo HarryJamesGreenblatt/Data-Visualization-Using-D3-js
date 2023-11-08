@@ -20,7 +20,7 @@ export const videoData = [
     },
     {
         id: 2,
-        url: "https://www.youtube.com/embed/2LhoCfjm8R4?start=17049",
+        url: "https://www.youtube.com/embed/2LhoCfjm8R4?start=10108",
         title:"Data Viz (React)",
         description: 
             <p>
@@ -42,7 +42,6 @@ export const videoData = [
                 This blog post, authored by <span className="emphasis">Amelia Wattenberger</span> and published on <a href="https://2019.wattenberger.com/">her site</a>,
                 <br/>
                 provides very <span className="emphasis">illustrative</span> and <span className="emphasis">technically descriptive guidance</span> useful for various topics related to <b>integrating <code>D3 Data Visualizations</code> within web-facing <code>React</code> applications</b>.
-
                 <br/>
             </p>
     },

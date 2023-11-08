@@ -13,6 +13,7 @@ import HappyFaceImage from "../../public/HappyFaceExample.jpg";
 import BotomAxisD3WayExample from "../examples/axis/BotomAxisD3WayExample.jsx";
 import BotomAxisD3WayImage from "../../public/BottomAxisD3WayExample.jpg";
 import ImportCsvDataExample from '../examples/ImportCsvDataExample';
+import ImportCsvDataImage from '../../public/ImportCsvDataExample.jpg';
 import { codeSnippets } from "./snippets/codeSnippets.jsx";
 
 
@@ -102,20 +103,18 @@ export const exampleData = [
     {
         id: 7,
         source: "Data Viz (React)",
-        title:
-        <>
-            Placeholder for Example
-        </>,
-        img: BotomAxisD3WayImage,
+        title:"Fetching CSV Data",
+        img: ImportCsvDataImage,
         description: 
         <>
-            <code>D3</code> provides helper functions which <span>generate coordinate axes</span>. 
+            <code><a href='https://devdocs.io/d3~7/d3-fetch#csv'>d3.csv</a></code> fetches the CSV file at the 
+            <span> <b> specified input URL </b> </span>.
             <br/>
             <br/>
-            Although convenient and brisk, this technique's reliance on <code>useRef()</code> and <code>useEffect()</code> Hooks to give D3 passive control over the DOM may make it unstable, or difficult to scale?.
+            It returns a <code>Promise</code> which can be assigned a <code>callback function</code> that iterates through the csv data for processeing. 
         </>,
         component: <ImportCsvDataExample />,
-        codeSnippet: codeSnippets['DataViz2018_7']
+        codeSnippet: codeSnippets['DataVizReact_1']
     },
     {
         id: 8,
