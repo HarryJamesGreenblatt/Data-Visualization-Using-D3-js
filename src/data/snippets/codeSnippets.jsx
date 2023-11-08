@@ -188,9 +188,7 @@ React.useEffect( () => {
     csv( csvInputUrl )
         .then( d => setCsvData( d ) ); 
 }, [] );
-                .
-                .
-                .
+...
 <table>
     <tr>
         <td>Country</td>
