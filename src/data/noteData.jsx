@@ -167,7 +167,7 @@ export const noteData = [
         img : ImportCSVDataImage,
         description: noteSnippets['DataVizReact_1'],
         keyTakeAways: [
-            "Invoking d3.csv is a more consise alternative to combining the use of fetch, async, and await",
+            "Invoking d3.csv is a more consise alternative to combining the use of fetch, async, and await for programmatic access to csv data",
             "Using d3.csv alone does not immeadiately produce the desired array of data, but rather returns a Promise which needs to have its data exposed using a callback function",
             "In order to effectively load the data for use in React development, the callback function assigned following the call to d3.csv should store the csv data as state by way of a setState function"
         ]

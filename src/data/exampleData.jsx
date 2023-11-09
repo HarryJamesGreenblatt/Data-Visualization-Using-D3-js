@@ -128,10 +128,15 @@ export const exampleData = [
         img: BotomAxisD3WayImage,
         description: 
         <>
-            <code>D3</code> provides helper functions which <span>generate coordinate axes</span>. 
+            <code>d3</code> provides helper functions such as <a href='https://devdocs.io/d3~7/d3-scale#scalelinear'><code>scaleLinear</code></a> and <a href='https://devdocs.io/d3~7/d3-axis#axisbottom'><code>axisBottom</code></a> which <span>generate coordinate axes</span>. 
             <br/>
             <br/>
-            Although convenient and brisk, this technique's reliance on <code>useRef()</code> and <code>useEffect()</code> Hooks to give D3 passive control over the DOM may make it unstable, or difficult to scale?.
+            Although convenient and brisk, this technique's reliance on <code>useRef()</code> and <code>useEffect()</code> hooks, which give D3 passive control over the DOM, may make this approach unstable and/or difficult to scale. 
+            <br/>
+            <br/>
+            <p style={{marginBottom:"1.5rem"}}>
+              The worst shortfall surrounding reliance on this method is that any <b>custom changes to the axis require direct modification to the d3 source code</b>. 
+            </p>
         </>,
         component: <BotomAxisD3WayExample />,
         codeSnippet: codeSnippets['DataViz2018_7']
