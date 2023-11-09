@@ -181,6 +181,7 @@ code{
 }
 .notes-content-left-column-container img{
     max-width: 600px;
+    max-height: 600px;
     margin: 1em;
 }
 .notes-content-left-column-container pre{
@@ -243,8 +244,7 @@ code{
 }
 
 
-
-.viz-theory-description span{
+.description span{
     font-size: 2rem;
     margin: 0 .25em
 }

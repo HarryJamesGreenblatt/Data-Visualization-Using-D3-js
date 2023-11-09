@@ -77,7 +77,7 @@ Contains a series of five commands and parameters used by those commands.
 
     DataViz2018_5 :
 <>
-    <p className="viz-theory-description">
+    <p className="description">
         Computer-based visuaization systems provide  
         <br/> 
         visual representations of <span>datasets</span> 
@@ -105,7 +105,7 @@ Contains a series of five commands and parameters used by those commands.
 
     DataViz2018_6 :
 <>
-    <p className="viz-theory-description">
+    <p className="description">
         In the stacked bar chart depicted above, 
         <br/>
         the colors correspond to various <span>religions</span>, 
@@ -133,7 +133,7 @@ Contains a series of five commands and parameters used by those commands.
 
     DataViz2018_7 :
 <>
-    <p className="viz-theory-description">
+    <p className="description">
         <span>Anscombes Quartet</span> ,
         <br/>
         depicted above, demonstrates the importance of considering visualizations, 
@@ -154,7 +154,7 @@ Contains a series of five commands and parameters used by those commands.
 
     DataViz2018_8 :
 <>
-    <p className="viz-theory-description">
+    <p className="description">
         Broadly speaking,
         <br/>
         there are <em>3 General Types of Datasets</em> :
@@ -191,7 +191,7 @@ Contains a series of five commands and parameters used by those commands.
 
     DataViz2018_9 :
 <>
-    <p className="viz-theory-description">
+    <p className="description">
          There are <em>2 Attributes Types</em> which provide a broad taxonomy for visualization design:
          <br/>
          <br/>
@@ -211,4 +211,17 @@ Contains a series of five commands and parameters used by those commands.
          2) Quantitative - <em>Strictly numerical</em>
     </p>
 </>,
+
+
+    DataVizReact_1 :
+<>
+    <p className="description">
+        By using the <a href="https://devdocs.io/d3~7/d3-fetch#csv" style={{color:"whitesmoke", fontWeight:"700"}}><code>d3.csv</code></a> method,
+        <br/>
+        <br/>
+        a <span>CSV file</span> stored on the web 
+        <br/>
+        can be quickly transformed into an <span>Array of objects</span>.
+    </p>
+</>
 }

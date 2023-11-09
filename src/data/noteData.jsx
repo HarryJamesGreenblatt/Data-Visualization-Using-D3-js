@@ -1,5 +1,7 @@
 import { nanoid } from "nanoid";
-import GroupElementNote from '../notes/GroupElementNote';
+import GroupElementNote from '../notes/GroupElementNote.jsx';
+import ImportCSVDataNote from '../notes/ImportCsvDataNote.jsx';
+import ImportCSVDataImage from '../../public/ImportCsvDataNote.jpg';
 import SVGPathNoteImage from '../../public/SVGPathNote.jpg';
 import ExternalRepresentationImage from "../../public/ExternalRepresentationNote.jpg";
 import AnscombeQuartetImage from "../../public/AnscombeQuartetNote.jpg";
@@ -155,6 +157,19 @@ export const noteData = [
         description: noteSnippets['DataViz2018_9'],
         keyTakeAways: [
 
+        ]
+    },
+    {   
+        id : 9,
+        pathname : "/fetch-data",
+        withRespectTo : "importing csv",
+        component: <ImportCSVDataNote/>,
+        img : ImportCSVDataImage,
+        description: noteSnippets['DataVizReact_1'],
+        keyTakeAways: [
+            "Invoking d3.csv is a more consise alternative to combining the use of fetch, async, and await",
+            "Using d3.csv alone does not immeadiately produce the desired array of data, but rather returns a Promise which needs to have its data exposed using a callback function",
+            "In order to effectively load the data for use in React development, the callback function assigned following the call to d3.csv should store the csv data as state by way of a setState function"
         ]
     },
 ]

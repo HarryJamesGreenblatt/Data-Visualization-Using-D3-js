@@ -6,12 +6,12 @@ export default function FetchData( { notes, withRespectTo, clearOnClick } ) {
     const { pathname } = useLocation();
 
 
-    const fetchingDataNotes = notes && withRespectTo && notes.filter( 
+    const fetchDataNotes = notes && withRespectTo && notes.filter( 
         note => note.pathname === pathname && note.withRespectTo === withRespectTo 
     )[0];
 
 
-    const takeAways = fetchingDataNotes && withRespectTo && fetchingDataNotes.keyTakeAways.map(takeAway => 
+    const takeAways = fetchDataNotes && withRespectTo && fetchDataNotes.keyTakeAways.map(takeAway => 
         <li key={nanoid()}> {takeAway} </li>
     )
 
@@ -22,15 +22,15 @@ export default function FetchData( { notes, withRespectTo, clearOnClick } ) {
             <div className="notes-header-container">
                 <h3>
                 {
-                    fetchingDataNotes && withRespectTo
+                    fetchDataNotes && withRespectTo
                     ?
-                    `fetchingData notes with respect to --  ${withRespectTo}`
+                    `Fetch Data notes with respect to --  ${withRespectTo}`
                     :
-                    "D3 Data Fetching Methods"
+                    "D3 Data fetch Methods"
                 }
                 </h3>
                 {
-                    fetchingDataNotes 
+                    fetchDataNotes 
                     && 
                     withRespectTo 
                     && 
@@ -39,18 +39,25 @@ export default function FetchData( { notes, withRespectTo, clearOnClick } ) {
             </div>
         
             {
-                fetchingDataNotes && withRespectTo
+                fetchDataNotes && withRespectTo
                 ?
                 <div className="notes-content-container">
                     <div className="notes-content-left-column-container">
                         {
-                            fetchingDataNotes.img
+                            fetchDataNotes.img
                             ?
-                            <img src={fetchingDataNotes.img}/>
+                            <img 
+                                src={fetchDataNotes.img}
+                                style={
+                                    withRespectTo === "importing csv" 
+                                        ? {width:"345px"}
+                                        : null
+                                }    
+                            />
                             :
-                            fetchingDataNotes.component
+                            fetchDataNotes.component
                         }
-                        <pre>{fetchingDataNotes.description}</pre>
+                        <pre>{fetchDataNotes.description}</pre>
                     </div>
                     <div className="notes-content-right-column-container">
                         <ul>

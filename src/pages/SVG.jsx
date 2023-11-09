@@ -47,7 +47,14 @@ export default function SVG( { notes, withRespectTo, clearOnClick } ) {
                         {
                             svgNotes.img
                             ?
-                            <img src={svgNotes.img}/>
+                            <img 
+                                src={svgNotes.img}
+                                style={
+                                    withRespectTo === "html" 
+                                        ? {width:"320px"}
+                                        : null
+                                }    
+                            />
                             :
                             svgNotes.component
                         }
