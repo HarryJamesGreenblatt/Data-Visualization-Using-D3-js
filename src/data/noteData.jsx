@@ -7,6 +7,7 @@ import ExternalRepresentationImage from "../../public/ExternalRepresentationNote
 import AnscombeQuartetImage from "../../public/AnscombeQuartetNote.jpg";
 import DatasetTypeImage from "../../public/DatasetTypeNote.jpg";
 import AttributeTypeImage from "../../public/AttributeTypeNote.jpg";
+import MarginConventionImage from '../../public/MarginConventionExample.jpg';
 import { noteSnippets } from './snippets/noteSnippets';
 
 
@@ -170,6 +171,35 @@ export const noteData = [
             "Invoking d3.csv is a more consise alternative to combining the use of fetch, async, and await for programmatic access to csv data",
             "Using d3.csv alone does not immeadiately produce the desired array of data, but rather returns a Promise which needs to have its data exposed using a callback function",
             "In order to effectively load the data for use in React development, the callback function assigned following the call to d3.csv should store the csv data as state by way of a setState function"
+        ]
+    },
+    {   
+        id : 10,
+        pathname : "/charts",
+        withRespectTo : "margin convention",
+        component: <ImportCSVDataNote/>,
+        img : MarginConventionImage,
+        description: noteSnippets['DataVizReact_2'],
+        keyTakeAways: [
+            "The components [Marks] of the visualization are contained within the gray shaded area.",
+            "The visualization area should itself be represented by a collection of svg subcomponents contained within a group (<g>) element.",
+            "The margin distances (i.e. top, right, bottom, left) define the offsets by which the group element should be translated to provide enough room to accomodate each axis.",
+            <>
+                For a detailed example, check out 
+                <br/>
+                <a href="https://observablehq.com/@d3/margin-convention">this Margin Convention Article on Observable</a>
+            </>
+        ]
+    },
+    {   
+        id : 11,
+        pathname : "/charts",
+        withRespectTo : "axis",
+        component: <ImportCSVDataNote/>,
+        img : null,
+        description: null,
+        keyTakeAways: [
+    
         ]
     },
 ]

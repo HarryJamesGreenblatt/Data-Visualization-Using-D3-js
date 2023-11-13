@@ -21,14 +21,22 @@ export default function Navigation() {
                     to="/viz-theory"
                     className={"nav-link"}
                 >
-                    Viz Theory
+                    Theory
                 </NavLink>
 
                 <NavLink 
                     to="/fetch-data"
                     className={"nav-link"}
                 >
-                    Fetch Data
+                    Data
+                </NavLink>
+                
+
+                <NavLink 
+                    to="/charts"
+                    className={"nav-link"}
+                >
+                    Charts
                 </NavLink>
 
                 <NavLink 

@@ -223,5 +223,21 @@ Contains a series of five commands and parameters used by those commands.
         <br/>
         can be quickly transformed into an <span>Array of objects</span>.
     </p>
-</>
+</>,
+
+
+    DataVizReact_2 :
+<>
+    <p 
+        className="description"
+        style={{marginTop: '5em'}}
+    >
+        In <code>D3</code>, the <span>Margin Convention</span> ensures that a visualization  
+        <br/>
+        is both <span>the right size</span> and <span>in the right place</span> 
+        <br/>
+        to support the inclusion of additional <span>coordinate axes</span>.
+
+    </p>
+</>,
 }
