@@ -125,9 +125,19 @@ export const exampleData = [
         img: MarginConventionImage,
         description: 
         <>
+            The <b>Margin</b> apportions space for any desired coordinate axes. 
+            <br/> 
+            <br/> 
+            The <b>Visualization</b> area is first drawn <span>having the dimensions of the Inner Width and Inner Height</span> and is then <span>translated by the dimensions of the Margin</span>. 
+            <br/>
+            <br/>
+            <blockquote style={{marginLeft:"5em", fontSize:".95rem"}}>
+                The <span>Inner Width</span> and <span>Inner Height</span> is the remaining space after <span>subtracting a fixed sized margin</span> from the width and height of the SVG containing the visualization.
+            </blockquote>
+            <br/>
         </>,
         component: <MarginConventionExample />,
-        codeSnippet:null
+        codeSnippet: codeSnippets['DataVizReact_2']
     },
     {
         id: 9,

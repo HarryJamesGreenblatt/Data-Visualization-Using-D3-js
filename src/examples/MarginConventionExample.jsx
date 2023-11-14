@@ -19,14 +19,9 @@ export default function MarginConventionExample(){
     const innerWidth = width - margin.left - margin.right;
 
 
-
-
-
     return(
         <svg
-            className="margin-convention-example"
             height={height}
-            width={height}
             style={{background:"black"}}    
         >
 

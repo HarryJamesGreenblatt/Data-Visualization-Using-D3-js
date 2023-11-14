@@ -207,5 +207,34 @@ React.useEffect( () => {
         ) 
     }
 </table>
+`,
+
+    DataVizReact_2 : `
+const margin = { 
+    top: 20, right: 20, bottom: 20, left: 20 
+}
+
+const innerHeight = 
+    height - margin.top - margin.bottom;
+
+const innerWidth = 
+    width - margin.left - margin.right;
+...
+<svg height={height}>
+    <g
+        transform={
+            \`translate(
+                \${margin.left} \${margin.top}
+            )\`
+        }
+    >
+        <rect
+            height={innerHeight}
+            width={innerWidth}
+            fill="pink"
+        >
+        </rect>
+    </g>
+</svg>
 `
 }
