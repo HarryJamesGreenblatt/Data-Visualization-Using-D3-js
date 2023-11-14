@@ -14,6 +14,8 @@ import BotomAxisD3WayExample from "../examples/axis/BotomAxisD3WayExample.jsx";
 import BotomAxisD3WayImage from "../../public/BottomAxisD3WayExample.jpg";
 import ImportCsvDataExample from '../examples/ImportCsvDataExample';
 import ImportCsvDataImage from '../../public/ImportCsvDataExample.jpg';
+import MarginConventionExample from '../examples/MarginConventionExample.jsx';
+import MarginConventionImage  from '../../public/MarginConventionExample2.jpg';
 import { codeSnippets } from "./snippets/codeSnippets.jsx";
 
 
@@ -118,6 +120,17 @@ export const exampleData = [
     },
     {
         id: 8,
+        source: "Data Viz (React)",
+        title:"The Margin Convention",
+        img: MarginConventionImage,
+        description: 
+        <>
+        </>,
+        component: <MarginConventionExample />,
+        codeSnippet:null
+    },
+    {
+        id: 9,
         source: "React + D3.js",
         title:
         <>
