@@ -275,7 +275,7 @@ Contains a series of five commands and parameters used by those commands.
 ,
 
     DataVizReact_6 :
-`<svg style={{background:"white"}} >
+`<svg style={{background:"white"}}>
     <g
         transform={
             \`translate(
