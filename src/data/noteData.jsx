@@ -198,9 +198,9 @@ export const noteData = [
         withRespectTo : "axis",
         component: <AxesNote/>,
         img : null,
-        description: noteSnippets['DataVizReact_3'],
+        description: noteSnippets['DataVizReact_6'],
         keyTakeAways: [
-            <pre key={nanoid()}>{noteSnippets['DataVizReact_4']}</pre>,
+            noteSnippets['DataVizReact_3']
     
         ]
     },

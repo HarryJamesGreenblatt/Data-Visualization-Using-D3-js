@@ -244,23 +244,44 @@ Contains a series of five commands and parameters used by those commands.
     DataVizReact_3 :
 <>
     <p
-        className="description"
     >
-        The <a href="#">AxesNote() React component</a> provides the 
-        <br/>
-        <span><code>xAxis()</code></span> and <span><code>yAxis()</code></span> functions
+        The <code><a style={{color:"darkblue"}} href="https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/src/notes/AxesNote.jsx">AxesNote() React component</a></code> provides the 
+        <span><code style={{color:"red"}}>xAxis()</code></span> and <span><code style={{color:"blue"}}>yAxis()</code></span> functions,
+        each of which leveraging d3's <code>scaleLinear()</code> and <code>ticks()</code> functions to generate its own respective axis in an iterative pattern.
     </p>
 </>
 ,
 
     DataVizReact_4 :
+<>
+    <p
+    >
+        The <code><a style={{color:"darkblue"}} href="https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/src/notes/AxesNote.jsx">AxesNote React component</a></code> provides the 
+        <span><code style={{color:"red"}}>xAxis()</code></span> and <span><code style={{color:"blue"}}>yAxis()</code></span> functions,
+        each of which leveraging d3's <code>scaleLinear()</code> and <code>ticks()</code> functions to generate its own respective axis.
+    </p>
+</>
+,
+
+    DataVizReact_5 :
+<>
+    <p
+    >
+        The <code><a style={{color:"darkblue"}} href="https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/src/notes/AxesNote.jsx">AxesNote() React component</a></code> provides the 
+        <span><code style={{color:"red"}}>xAxis()</code></span> and <span><code style={{color:"blue"}}>yAxis()</code></span> functions,
+        each of which <span>generates its own respective axis</span>.
+    </p>
+</>
+,
+
+    DataVizReact_6 :
 `<svg style={{background:"white"}} >
     <g
         transform={
             \`translate(
                 \${margin.left} \${margin.top}
-            )
-        \`}
+            )\`
+        }
     >
         <rect
             height={innerHeight}
