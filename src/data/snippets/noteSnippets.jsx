@@ -240,4 +240,38 @@ Contains a series of five commands and parameters used by those commands.
 
     </p>
 </>,
+
+    DataVizReact_3 :
+<>
+    <p
+        className="description"
+    >
+        The <a href="#">AxesNote() React component</a> provides the 
+        <br/>
+        <span><code>xAxis()</code></span> and <span><code>yAxis()</code></span> functions
+    </p>
+</>
+,
+
+    DataVizReact_4 :
+`<svg style={{background:"white"}} >
+    <g
+        transform={
+            \`translate(
+                \${margin.left} \${margin.top}
+            )
+        \`}
+    >
+        <rect
+            height={innerHeight}
+            width={innerWidth}
+            fill="green"
+            opacity={.3}
+        >
+        </rect>
+        { xAxis() }
+        { yAxis() }
+    </g>
+</svg>
+`,
 }

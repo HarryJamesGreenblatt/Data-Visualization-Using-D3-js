@@ -236,5 +236,30 @@ const innerWidth =
         </rect>
     </g>
 </svg>
-`
+`,
+
+    DataVizReact_3 : `
+<svg
+    height={height}
+    style={{background:"white"}}
+    transform="translate(50 0)"    
+>
+    <g
+        transform={
+            \`translate(\${margin.left} \${margin.top})\`
+        }
+    >
+        <rect
+            height={innerHeight}
+            width={innerWidth}
+            fill="green"
+            opacity={.3}
+        >
+        </rect>
+        { xAxis }
+        { yAxis }
+    </g>
+</svg>
+)
+`,
 }

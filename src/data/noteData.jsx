@@ -1,6 +1,7 @@
 import { nanoid } from "nanoid";
 import GroupElementNote from '../notes/GroupElementNote.jsx';
 import ImportCSVDataNote from '../notes/ImportCsvDataNote.jsx';
+import AxesNote from "../notes/AxesNote.jsx";
 import ImportCSVDataImage from '../../public/ImportCsvDataNote.jpg';
 import SVGPathNoteImage from '../../public/SVGPathNote.jpg';
 import ExternalRepresentationImage from "../../public/ExternalRepresentationNote.jpg";
@@ -195,10 +196,11 @@ export const noteData = [
         id : 11,
         pathname : "/charts",
         withRespectTo : "axis",
-        component: <ImportCSVDataNote/>,
+        component: <AxesNote/>,
         img : null,
-        description: null,
+        description: noteSnippets['DataVizReact_3'],
         keyTakeAways: [
+            <pre key={nanoid()}>{noteSnippets['DataVizReact_4']}</pre>,
     
         ]
     },
