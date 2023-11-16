@@ -257,7 +257,7 @@ Contains a series of five commands and parameters used by those commands.
 <>
     <p
     >
-        d3 includes a number of utilties which help calculate various <code><a style={{color:"darkblue"}} href="https://d3js.org/d3-scale#d3-scale">Scales</a></code> which themsleves <b>map a dimension of abstract data to a visual representation</b>.
+        D3 includes a number of utilties which help calculate various <code><a style={{color:"darkblue"}} href="https://d3js.org/d3-scale#d3-scale">Scales</a></code> which themsleves <b>map a dimension of abstract data to a visual representation</b>.
     </p>
 </>,
 
