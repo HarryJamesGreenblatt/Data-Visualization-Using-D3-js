@@ -241,29 +241,38 @@ Contains a series of five commands and parameters used by those commands.
     </p>
 </>,
 
+
     DataVizReact_3 :
 <>
     <p
     >
-        The <code><a style={{color:"darkblue"}} href="https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/src/notes/AxesNote.jsx">AxesNote() React component</a></code> provides the 
-        <span><code style={{color:"red"}}>xAxis()</code></span> and <span><code style={{color:"blue"}}>yAxis()</code></span> functions,
-        each of which leveraging d3's <code>scaleLinear()</code> and <code>ticks()</code> functions to generate its own respective axis in an iterative pattern.
+        Once a visualization
+        <br/>
+        (whose height = <em>innerHeight</em> and whose width = <em>innerWidth</em>) has been <b>contained within a group element</b> and then <b>translated a distance relative to it's margin</b>, it may then support the inclusion of <b>coordinate axes</b>.
     </p>
-</>
-,
+</>,
+
 
     DataVizReact_4 :
 <>
     <p
     >
-        The <code><a style={{color:"darkblue"}} href="https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/src/notes/AxesNote.jsx">AxesNote React component</a></code> provides the 
+        d3 includes a number of utilties which help calculate various <code><a style={{color:"darkblue"}} href="https://d3js.org/d3-scale#d3-scale">Scales</a></code> which themsleves <b>map a dimension of abstract data to a visual representation</b>.
+    </p>
+</>,
+
+    DataVizReact_5 :
+<>
+    <p
+    >
+        The <code><a style={{color:"darkblue"}} href="https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/src/notes/AxesNote.jsx">AxesNote() React component</a></code> provides the 
         <span><code style={{color:"red"}}>xAxis()</code></span> and <span><code style={{color:"blue"}}>yAxis()</code></span> functions,
-        each of which leveraging d3's <code>scaleLinear()</code> and <code>ticks()</code> functions to generate its own respective axis.
+        each of which leveraging d3's <a style={{color:"darkblue"}}  href="https://d3js.org/d3-scale/linear#scaleLinear"><code>scaleLinear()</code></a> and <a style={{color:"darkblue"}} href="https://d3js.org/d3-axis#axis_ticks"><code>ticks()</code></a> functions to <b>generate their own respective axis in an iterative pattern</b>.
     </p>
 </>
 ,
 
-    DataVizReact_5 :
+    DataVizReact_6 :
 <>
     <p
     >
@@ -274,7 +283,7 @@ Contains a series of five commands and parameters used by those commands.
 </>
 ,
 
-    DataVizReact_6 :
+    DataVizReact_7 :
 `<svg style={{background:"white"}}>
     <g
         transform={
