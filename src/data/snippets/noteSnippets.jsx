@@ -266,7 +266,7 @@ Contains a series of five commands and parameters used by those commands.
     <p
     >
         The <code><a style={{color:"darkblue"}} href="https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/src/notes/AxesNote.jsx">AxesNote() React component</a></code> provides the 
-        <span><code style={{color:"red"}}>xAxis()</code></span> and <span><code style={{color:"blue"}}>yAxis()</code></span> functions,
+        <span><code style={{ fontSize: "1.025rem", fontWeight: "bold", color:"red"}}>xAxis()</code></span> and <span><code style={{ fontSize: "1.025rem", fontWeight: "bold", color:"blue"}}>yAxis()</code></span> functions,
         each of which leveraging d3's <a style={{color:"darkblue"}}  href="https://d3js.org/d3-scale/linear#scaleLinear"><code>scaleLinear()</code></a> and <a style={{color:"darkblue"}} href="https://d3js.org/d3-axis#axis_ticks"><code>ticks()</code></a> functions to <b>generate their own respective axis in an iterative pattern</b>.
     </p>
 </>
