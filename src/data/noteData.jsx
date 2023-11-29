@@ -9,6 +9,8 @@ import AnscombeQuartetImage from "../../public/AnscombeQuartetNote.jpg";
 import DatasetTypeImage from "../../public/DatasetTypeNote.jpg";
 import AttributeTypeImage from "../../public/AttributeTypeNote.jpg";
 import MarginConventionImage from '../../public/MarginConventionExample.jpg';
+import BarCharNote from "../examples/charts/BarChartExample.jsx";
+import BarChartNoteImage from "../../public/BarChartNote.png";
 import { noteSnippets } from './snippets/noteSnippets';
 
 
@@ -203,6 +205,16 @@ export const noteData = [
             noteSnippets['DataVizReact_3'],
             noteSnippets['DataVizReact_4'],
             noteSnippets['DataVizReact_5'],
+        ]
+    },
+    {   
+        id : 12,
+        pathname : "/charts",
+        withRespectTo : "bar charts",
+        component: <BarCharNote/>,
+        img : BarChartNoteImage,
+        description: null,
+        keyTakeAways: [
     
         ]
     },

@@ -20,7 +20,7 @@ export const videoData = [
     },
     {
         id: 2,
-        url: "https://www.youtube.com/embed/2LhoCfjm8R4?start=18655",
+        url: "https://www.youtube.com/embed/2LhoCfjm8R4?start=16993",
         title:"Data Viz (React)",
         description: 
             <p>
@@ -43,6 +43,23 @@ export const videoData = [
                 <br/>
                 provides very <span className="emphasis">illustrative</span> and <span className="emphasis">technically descriptive guidance</span> useful for various topics related to <b>integrating <code>D3 Data Visualizations</code> within web-facing <code>React</code> applications</b>.
                 <br/>
+            </p>
+    },
+    {
+        id: 3,
+        url: "https://www.d3indepth.com/scales/#constructing-scales",
+        title:"D3 Scales in Depth",
+        description: 
+            <p>
+                This page, authored by <span className="emphasis">Peter Cook</span>,
+                <br/>
+                who is a senior data visualization devloper at <a href="https://flourish.studio/">Flourish</a>,
+                <br/>
+                <span className="emphasis">enumerates</span> and <span className="emphasis">exemplifies</span> each of <code><b>D3's Scale Functions</b></code>, 
+                <br/>
+                which <code className="emphasis"><b>transform data values into visual values</b></code> 
+                <br/>
+                such as <span className="emphasis"><b>positions</b></span> and <span className="emphasis"><b>colours</b></span>.
             </p>
     },
 ]

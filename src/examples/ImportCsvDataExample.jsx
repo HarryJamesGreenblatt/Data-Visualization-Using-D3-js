@@ -1,15 +1,16 @@
 import React from "react";
 import { csv } from "d3";
+import { worldPopulationsCsvDataUrl } from './utils.js';
 
 
 export default function ImportCsvDataExample (){
 
     const [csvData, setCsvData] = React.useState(null);
 
-    const csvInputUrl = 'https://raw.githubusercontent.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/main/src/data/import/world-populations.csv';
-
     React.useEffect( () => {
-            csv(csvInputUrl).then( d => setCsvData( d ) ); 
+            csv(
+                worldPopulationsCsvDataUrl
+            ).then( d => setCsvData( d ) ); 
         }, [] );
 
     return(

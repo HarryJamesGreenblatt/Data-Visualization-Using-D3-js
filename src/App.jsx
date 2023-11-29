@@ -7,7 +7,7 @@ import Home from './pages/Home.jsx';
 import SVG from './pages/SVG.jsx';
 import VizThoery from './pages/VizTheory';
 import FetchData from './pages/FetchData.jsx';
-import Charts from './pages/Charts.jsx';
+import Charts  from './pages/Charts.jsx';
 import Examples from './pages/Examples.jsx';
 import ExampleDetails from './pages/ExampleDetails.jsx';
 import { noteData } from './data/noteData.jsx';
@@ -18,11 +18,9 @@ import { exampleData } from './data/exampleData.jsx';
 function App() {
 
   const [ pathname, setPathname ] = React.useState('/');
-
   const [ notes , setNotes ] = React.useState( noteData ); 
   const [ videos , setVideos ] = React.useState( videoData ); 
   const [ examples , setExamples ] = React.useState( exampleData ); 
-  
   const [ withRespectTo, setWithRespectTo ] = React.useState( null );
 
 
