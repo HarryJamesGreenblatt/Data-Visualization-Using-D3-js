@@ -274,8 +274,7 @@ Contains a series of five commands and parameters used by those commands.
 
     DataVizReact_6 :
 <>
-    <p
-    >
+    <p>
         The <code><a style={{color:"darkblue"}} href="https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/src/notes/AxesNote.jsx">AxesNote() React component</a></code> provides the 
         <span><code style={{color:"red"}}>xAxis()</code></span> and <span><code style={{color:"blue"}}>yAxis()</code></span> functions,
         each of which <span>generates its own respective axis</span>.
@@ -304,4 +303,28 @@ Contains a series of five commands and parameters used by those commands.
     </g>
 </svg>
 `,
+        D3ScalesInDepth_1:
+    <p className="description">
+        When creating <b><code>bar charts</code></b>,  
+        <br/>
+        <br/>
+        <code><a style={{fontSize:"1.25rem", color:"whitesmoke", fontWeight:"bold"}} href="https://devdocs.io/d3~7/d3-scale#scaleband">d3.scaleBand()</a></code> helps to determine the <b>geometry of the bars</b>, 
+        <br/>
+        taking into account any <span>padding</span> between each bar. 
+        <br/>
+        <br/>
+        <br/>
+        The <span>domain</span> is specified as an <span>array of values</span> (one value for each band) 
+        <br/>
+        and the <span>range</span> is the <span>total width of the bar chart</span>.
+        <br/>
+        <br/>
+        <br/>
+        In effect,
+        scaleBand() will <span>split the range</span>  into <span>n bands</span>
+        <br/>
+        ( where <span>n</span> is the <code><b>number of values in the domain array</b></code>), 
+        <br/>
+        and then compute their <span>positions</span> and <span>bandwidths</span>.
+    </p>
 }

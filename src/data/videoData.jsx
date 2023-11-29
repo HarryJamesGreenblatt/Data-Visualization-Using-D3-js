@@ -47,7 +47,7 @@ export const videoData = [
     },
     {
         id: 3,
-        url: "https://www.d3indepth.com/scales/#constructing-scales",
+        url: "https://www.d3indepth.com/scales/#scaleband",
         title:"D3 Scales in Depth",
         description: 
             <p>

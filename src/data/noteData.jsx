@@ -213,7 +213,7 @@ export const noteData = [
         withRespectTo : "bar charts",
         component: <BarCharNote/>,
         img : BarChartNoteImage,
-        description: null,
+        description: noteSnippets['D3ScalesInDepth_1'],
         keyTakeAways: [
     
         ]
