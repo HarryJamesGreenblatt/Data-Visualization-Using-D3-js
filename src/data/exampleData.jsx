@@ -16,6 +16,7 @@ import ImportCsvDataExample from '../examples/ImportCsvDataExample';
 import ImportCsvDataImage from '../../public/ImportCsvDataExample.jpg';
 import MarginConventionExample from '../examples/MarginConventionExample.jsx';
 import MarginConventionImage  from '../../public/MarginConventionExample2.jpg';
+import BarChartExample from '../examples/charts/BarChartExample.jsx';
 import { codeSnippets } from "./snippets/codeSnippets.jsx";
 
 
@@ -163,6 +164,23 @@ export const exampleData = [
         </>,
         component: <BotomAxisD3WayExample />,
         codeSnippet: codeSnippets['DataViz2018_7']
+    },
+    {
+        id: 10,
+        source: "Data Viz (React)",
+        title:
+        <>
+            World Populations
+            <br/>
+            Bar Chart
+        </>,
+        img: BotomAxisD3WayImage,
+        description: 
+        <>
+            I sharted
+        </>,
+        component: <BarChartExample />,
+        codeSnippet: codeSnippets['DataVizReact_4']
     },
 ]
 

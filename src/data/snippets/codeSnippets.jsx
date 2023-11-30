@@ -262,4 +262,11 @@ const innerWidth =
 </svg>
 )
 `,
+
+    DataVizReact_4 : `
+<svg>
+
+</svg>
+
+`,
 }

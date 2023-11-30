@@ -17,7 +17,7 @@ import { exampleData } from './data/exampleData.jsx';
 
 function App() {
 
-  const [ pathname, setPathname ] = React.useState('/');
+  const [ pathname, setPathname ] = React.useState('/');  
   const [ notes , setNotes ] = React.useState( noteData ); 
   const [ videos , setVideos ] = React.useState( videoData ); 
   const [ examples , setExamples ] = React.useState( exampleData ); 
