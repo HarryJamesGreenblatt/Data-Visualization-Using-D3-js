@@ -409,10 +409,8 @@ const marks = csvData.map(
             height={ yScale.bandwidth() }
         >
         </rect>
-)
-
+);
 ...
-
 <svg  height={height}  width={width}>   
     <g
         transform={
