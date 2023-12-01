@@ -17,6 +17,7 @@ import ImportCsvDataImage from '../../public/ImportCsvDataExample.jpg';
 import MarginConventionExample from '../examples/MarginConventionExample.jsx';
 import MarginConventionImage  from '../../public/MarginConventionExample2.jpg';
 import BarChartExample from '../examples/charts/BarChartExample.jsx';
+import BarChartExampleImage from '../../public/BarChartExample.jpg';
 import { codeSnippets } from "./snippets/codeSnippets.jsx";
 
 
@@ -174,7 +175,7 @@ export const exampleData = [
             <br/>
             Bar Chart
         </>,
-        img: BotomAxisD3WayImage,
+        img: BarChartExampleImage,
         description: 
         <>
             I sharted

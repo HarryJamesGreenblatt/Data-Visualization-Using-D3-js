@@ -54,6 +54,7 @@ export default function BarCharNotes(){
 
 //
 
+
 // Since the initial state of the csvData is null,
 // render the component only after it has loaded
 if( csvData ){
@@ -65,6 +66,7 @@ if( csvData ){
         .domain( csvData.map( d => d.Country  ) )
         // and let the range be the full height of the chart,
         .range( [0, innerHeight] )
+        .paddingInner(.2)
 
 
 
@@ -77,7 +79,7 @@ if( csvData ){
 
 
 
-    // Create the Bottom coordinate axis
+    // Define the Bottom coordinate axis
     const xAxis = () => xScale.ticks().map( xTick => 
         <g
             key={nanoid()}
@@ -100,7 +102,7 @@ if( csvData ){
         </g>
     );
     
-    // Create the Left coordinate axis
+    // Define the Left coordinate axis
     const yAxis =  () => yScale.domain().map( yTick => 
         <g
             key={nanoid()}
@@ -132,9 +134,24 @@ if( csvData ){
     //
 
 
-    // Produce the final component
-        return(
+    // Define the marks (bars) of the visualization
+    const marks = csvData.map(
+        d => 
+            <rect
+                key={nanoid()} 
+                x={0} 
+                y={yScale(d.Country)} 
+                width={xScale(+d.Population)}  
+                height={yScale.bandwidth()}
+            >
+            </rect>
+    )
+    //
 
+
+    // Render the final component
+
+        return(
             // Generate an svg to contain the visualization area
             <svg
                 height={height}
@@ -151,23 +168,22 @@ if( csvData ){
                         `translate(${margin.left} ${margin.top})`
                     }
                 >
-                    {xAxis()}
-                    {yAxis()}
+                    
                     {
-                        csvData.map(
-                            d => 
-                                <rect
-                                    key={nanoid()} 
-                                    x={0} 
-                                    y={yScale(d.Country)} 
-                                    width={xScale(+d.Population)}  
-                                    height={yScale.bandwidth()}
-                                >
-                                </rect>
-                        )
+                        // render the Bottom Axis
+                        xAxis()
+                    }
+                    {
+                        // render the Left Axis
+                        yAxis()
+                    }
+                    {
+                        // Render the marks (bars)
+                        marks
                     }
                 </g>
             </svg>
         )
     }
+    //
 }
