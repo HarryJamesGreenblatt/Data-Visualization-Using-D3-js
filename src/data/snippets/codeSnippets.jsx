@@ -286,9 +286,10 @@ const marks = csvData.map(
             )\`
         }
     >
-        {  xAxis()  }
-        {  yAxis()  }
-        {  marks  }
+        {  xAxis()         }
+        {  yAxis()         }
+        {  marks           }
+        {  populationLabel }
     </g>
 </svg>
 

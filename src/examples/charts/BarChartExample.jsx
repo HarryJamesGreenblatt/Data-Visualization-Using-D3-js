@@ -103,6 +103,7 @@ if( csvData ){
         </g>
     );
     
+    
     // Define the Left coordinate axis
     const yAxis =  () => yScale.domain().map( yTick => 
         <g
@@ -150,8 +151,23 @@ if( csvData ){
     //
 
 
-    // Render the final component
+    // Define a Label to describe the Population data
+    const populationLabel = 
+        <text
+            x={innerWidth/1.8}
+            y={innerHeight - 5}
+            style={{
+                stroke:"red",
+                strokeWidth:".75",
+                fontSize: ".75rem"
+            }}
+        >
+            Population (millions)
+        </text>
+    //
 
+
+    // Render the final component
         return(
             // Generate an svg to contain the visualization area
             <svg
@@ -169,7 +185,6 @@ if( csvData ){
                         `translate(${margin.left} ${margin.top})`
                     }
                 >
-                    
                     {
                         // render the Bottom Axis
                         xAxis()
@@ -179,20 +194,13 @@ if( csvData ){
                         yAxis()
                     }
                     {
-                        // Render the marks (bars)
+                        // render the marks (bars)
                         marks
                     }
-                    <text
-                        x={innerWidth/1.8}
-                        y={innerHeight - 5}
-                        style={{
-                            stroke:"red",
-                            strokeWidth:".75",
-                            fontSize: ".75rem"
-                        }}
-                    >
-                        Population (millions)
-                    </text>
+                    {
+                        // render the Population axis Label
+                        populationLabel
+                    }
                 </g>
             </svg>
         )
