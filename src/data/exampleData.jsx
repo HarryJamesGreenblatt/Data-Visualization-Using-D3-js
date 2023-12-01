@@ -178,7 +178,7 @@ export const exampleData = [
         img: BarChartExampleImage,
         description: 
         <>
-            I sharted
+            Description goes here
         </>,
         component: <BarChartExample />,
         codeSnippet: codeSnippets['DataVizReact_4']
