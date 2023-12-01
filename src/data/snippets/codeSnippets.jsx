@@ -264,15 +264,14 @@ const innerWidth =
 `,
 
     DataVizReact_4 : `
-const marks = csvData.map(
-    d => 
-        <rect
-            x={ 0 }
-            y={ yScale(d.Country) }
-            width={ xScale(+d.Population) }
-            height={ yScale.bandwidth() }
-        >
-        </rect>
+const marks = csvData.map( d => 
+    <rect
+        x={ 0 }
+        y={ yScale(d.Country) }
+        width={ xScale(+d.Population) }
+        height={ yScale.bandwidth() }
+    >
+    </rect>
 );
 ...
 <svg  height={height}  width={width}>   
