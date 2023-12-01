@@ -34,8 +34,8 @@ export default function Examples({examples, withRespectTo}) {
             </div>
         </div>
         :
-        <div className="examples-list-container">
-            <div className="examples-list-content-container">
+        <div className="home-container" style={{background:"#fffffe"}}>
+            <div style={{marginTop: "2em", justifyContent:"center", background:"mintcream"}} className="home-content-container">
                 <p>Select a course below from which to extract examples:</p>
             </div>
         </div>

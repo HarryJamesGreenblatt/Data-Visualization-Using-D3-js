@@ -68,7 +68,7 @@ if( csvData ){
         .range( [0, innerHeight] )
         .paddingInner(.2)
 
-
+        
 
     // Define a Linear Scale to represent the Population sizes
     const xScale = scaleLinear()
@@ -103,7 +103,7 @@ if( csvData ){
         </g>
     );
     
-    
+
     // Define the Left coordinate axis
     const yAxis =  () => yScale.domain().map( yTick => 
         <g
