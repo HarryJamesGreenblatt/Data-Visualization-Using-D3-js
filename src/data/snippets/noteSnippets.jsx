@@ -314,11 +314,9 @@ Contains a series of five commands and parameters used by those commands.
     taking into account any <span>padding</span> between each bar. 
     <br/>
     <br/>
+    The <span>domain</span> is specified as an <b><em>array of values</em></b>  (one value for each band) 
     <br/>
-    The <span>domain</span> is specified as an <span>array of values</span> (one value for each band) 
-    <br/>
-    and the <span>range</span> is the <span>total width of the bar chart</span>.
-    <br/>
+    and the <span>range</span> is the <b><em>total width of the bar chart</em></b>.
     <br/>
     <br/>
     In effect,

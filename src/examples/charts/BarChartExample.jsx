@@ -31,47 +31,105 @@ export default function BarCharNotes(){
 
 //
 
-console.log(csvData)
-
 // Define the dimensions of the visualization 
     
-    // assign a designated height and width 
-    const height = 300, width = 300;
+    // assign a designated full height and width 
+    const height = 325, width = 340;
 
     // define margin distances which can support the 
     // inclusion of coordinate axes
     const margin = {
         top: 10,
-        right: 10,
-        bottom: 10,
-        left: 10,
+        right: 25,
+        bottom: 15,
+        left: 75,
     }
+
+    // define the inner height of the chart area,
+    const innerHeight = height - margin.top - margin.bottom;
+
+
+    // define the inner width of the chart area,
+    const innerWidth = width - margin.left - margin.right;
 
 //
 
+// Since the initial state of the csvData is null,
+// render the component only after it has loaded
+if( csvData ){
 
-if(csvData){
     // Define a Band Scale for Country Names
-    // which categorically comprise dataset
+    // which categorically comprise the dataset
     const yScale = scaleBand()
         // Let the domain be the number of country names
         .domain( csvData.map( d => d.Country  ) )
         // and let the range be the full height of the chart,
-        .range( [0, height - margin.bottom - margin.top] )
+        .range( [0, innerHeight] )
 
 
-// // Define a Linear Scale to represent the Population sizes
+
+    // Define a Linear Scale to represent the Population sizes
     const xScale = scaleLinear()
-        //let the domain be the maximum Population size
+        // let the domain be from 0 until the maximum Population size
         .domain([0, max(csvData, d => +d.Population)])
-        .range([0, width - margin.left - margin.right])
+        // and let the range be the full inner width of the chart area
+        .range([0, innerWidth])
 
 
 
-// Create the Bottom and Left coordinate axes
-
-
-//
+    // Create the Bottom coordinate axis
+    const xAxis = () => xScale.ticks().map( xTick => 
+        <g
+            key={nanoid()}
+            transform={`translate(${xScale(xTick)} ${0})`}
+        >
+            <line
+                y2={innerHeight}
+                stroke='red'
+            >
+            </line>
+            <text
+                y={innerHeight + 10}
+                fontSize={'.75em'}
+                fontWeight={300}
+                textAnchor="middle"
+                stroke="red"
+            >
+                {xTick/1000}
+            </text>
+        </g>
+    );
+    
+    // Create the Left coordinate axis
+    const yAxis =  () => yScale.domain().map( yTick => 
+        <g
+            key={nanoid()}
+            transform={
+                `translate(
+                    ${0} 
+                    ${ yScale(yTick) + (yScale.bandwidth() / 2) }
+                )`
+            }
+        >
+            <line
+                x1={-3}
+                x2={10}
+                stroke='blue'
+            >
+            </line>
+            <text
+                x={-5}
+                y={3}
+                fontSize={'.75em'}
+                fontWeight={300}
+                textAnchor="end"
+                stroke="blue"
+            >
+                {yTick}
+            </text>
+        </g>
+    );
+    //
 
 
     // Produce the final component
@@ -82,7 +140,7 @@ if(csvData){
                 height={height}
                 width={width}
                 style={{background:"whitesmoke"}}
-                transform="translate(50 0)"    
+                transform="translate(5 0)"    
             >   
                 {/* 
                     Translate the visualization area by the 
@@ -93,6 +151,8 @@ if(csvData){
                         `translate(${margin.left} ${margin.top})`
                     }
                 >
+                    {xAxis()}
+                    {yAxis()}
                     {
                         csvData.map(
                             d => 
