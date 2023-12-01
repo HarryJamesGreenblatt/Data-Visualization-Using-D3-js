@@ -88,6 +88,7 @@ if( csvData ){
             <line
                 y2={innerHeight}
                 stroke='red'
+                strokeWidth=".6"
             >
             </line>
             <text
@@ -181,6 +182,17 @@ if( csvData ){
                         // Render the marks (bars)
                         marks
                     }
+                    <text
+                        x={innerWidth/1.8}
+                        y={innerHeight - 5}
+                        style={{
+                            stroke:"red",
+                            strokeWidth:".75",
+                            fontSize: ".75rem"
+                        }}
+                    >
+                        Population (millions)
+                    </text>
                 </g>
             </svg>
         )
