@@ -43,7 +43,11 @@ const AxisBottom = ({xScale, innerHeight}) => xScale.ticks().map( xTick =>
         transform={`translate(${xScale(xTick)} ${0})`}
     >
         <line
-            y2={innerHeight}
+            y2={
+                (xTick/1000) < 800 
+                    ? innerHeight
+                    : innerHeight - 15
+            }
             stroke='red'
             strokeWidth=".6"
         >
@@ -98,12 +102,18 @@ const AxisLeft =  ({yScale}) => yScale.domain().map( yTick =>
 
 // Define a designated component 
 // to represent the marks (bars) of the visualization
-const Marks = ({csvData, xScale, yScale}) => csvData.map( d => 
+const Marks = ({
+        csvData, 
+        xScale,
+        yScale,
+        xValue, 
+        yValue
+    }) => csvData.map( d => 
     <rect
         key={nanoid()} 
         x={0} 
-        y={yScale(d.Country)} 
-        width={xScale(+d.Population)}  
+        y={yScale(yValue(d))} 
+        width={xScale(xValue(d))}  
         height={yScale.bandwidth()}
     >
     </rect>
@@ -165,11 +175,19 @@ export default function BarCharNotes(){
 // render the component only after it has loaded
 if( csvData ){
 
+
+    // Accessor functions which define the scale
+    // relative to each of the marks (bars)
+    const xValue = d => +d.Population;
+    const yValue = d => d.Country;
+
+
+
     // Define a Band Scale for Country Names
     // which categorically comprise the dataset
     const yScale = scaleBand()
         // Let the domain be the number of country names
-        .domain( csvData.map( d => d.Country  ) )
+        .domain( csvData.map( yValue ) )
         // and let the range be the full height of the chart,
         .range( [0, innerHeight] )
         .paddingInner(.2)
@@ -179,7 +197,7 @@ if( csvData ){
     // Define a Linear Scale to represent the Population sizes
     const xScale = scaleLinear()
         // let the domain be from 0 until the maximum Population size
-        .domain([0, max(csvData, d => +d.Population)])
+        .domain([0, max(csvData, xValue)])
         // and let the range be the full inner width of the chart area
         .range([0, innerWidth])
 
@@ -213,7 +231,13 @@ if( csvData ){
                     <AxisLeft yScale={yScale}/>
 
                     {/* render the Marks (bars) of the visualization */}
-                    <Marks csvData={csvData} xScale={xScale} yScale={yScale}/>
+                    <Marks 
+                        csvData={csvData} 
+                        xScale={xScale} 
+                        yScale={yScale}
+                        xValue={xValue}
+                        yValue={yValue}
+                    />
                 </g>
             </svg>
         )
