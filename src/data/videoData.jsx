@@ -20,7 +20,7 @@ export const videoData = [
     },
     {
         id: 2,
-        url: "https://www.youtube.com/embed/2LhoCfjm8R4?start=18759",
+        url: "https://www.youtube.com/embed/2LhoCfjm8R4?start=19314",
         title:"Data Viz (React)",
         description: 
             <p>

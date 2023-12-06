@@ -4,10 +4,11 @@ import { worldPopulationsCsvDataUrl } from '../utils.js';
 import { nanoid } from "nanoid";
 
 
-export default function BarCharNotes(){
-    
-// Fetch the data to visualize.
-// In this case, the import data is in  csv  format
+// A custom hook which fetches and loads the visualization's data 
+const useData = () => {
+
+    // Fetch the data to visualize.
+    // In this case, the import data is in  csv  format
     
     // Initialize state to store the csv data
     const [csvData, setCsvData] = useState(null);
@@ -29,12 +30,117 @@ export default function BarCharNotes(){
 
     );
 
+    return csvData;
+}
 //
 
-// Define the dimensions of the visualization 
+
+
+// Define a designated component to represent the Bottom Axis
+const AxisBottom = ({xScale, innerHeight}) => xScale.ticks().map( xTick => 
+    <g
+        key={nanoid()}
+        transform={`translate(${xScale(xTick)} ${0})`}
+    >
+        <line
+            y2={innerHeight}
+            stroke='red'
+            strokeWidth=".6"
+        >
+        </line>
+        <text
+            y={innerHeight + 10}
+            fontSize={'.75em'}
+            fontWeight={300}
+            textAnchor="middle"
+            stroke="red"
+        >
+            {xTick/1000}
+        </text>
+    </g>
+);
+//
+
+
+
+// Define a designated component to represent the Left Axis
+const AxisLeft =  ({yScale}) => yScale.domain().map( yTick => 
+    <g
+        key={nanoid()}
+        transform={
+            `translate(
+                ${0} 
+                ${ yScale(yTick) + (yScale.bandwidth() / 2) }
+            )`
+        }
+    >
+        <line
+            x1={-3}
+            x2={10}
+            stroke='blue'
+        >
+        </line>
+        <text
+            x={-5}
+            y={3}
+            fontSize={'.75em'}
+            fontWeight={300}
+            textAnchor="end"
+            stroke="blue"
+        >
+            {yTick}
+        </text>
+    </g>
+);
+//
+
+
+
+// Define a designated component 
+// to represent the marks (bars) of the visualization
+const Marks = ({csvData, xScale, yScale}) => csvData.map( d => 
+    <rect
+        key={nanoid()} 
+        x={0} 
+        y={yScale(d.Country)} 
+        width={xScale(+d.Population)}  
+        height={yScale.bandwidth()}
+    >
+    </rect>
+)
+//
+
+
+
+// Define a designated component to represent 
+// a Label describing the Population data
+const PopulationLabel = ({innerWidth, innerHeight}) => 
+    <text
+        x={innerWidth/1.8}
+        y={innerHeight - 5}
+        style={{
+            stroke:"red",
+            strokeWidth:".75",
+            fontSize: ".75rem"
+        }}
+    >
+        Population (millions)
+    </text>
+//
+
+
+
+
+export default function BarCharNotes(){
     
+    // import and load the CSV data for intended for visualization
+    const csvData = useData();
+
+
+    // Define the dimensions of the visualization
     // assign a designated full height and width 
     const height = 325, width = 340;
+
 
     // define margin distances which can support the 
     // inclusion of coordinate axes
@@ -79,94 +185,6 @@ if( csvData ){
 
 
 
-    // Define the Bottom coordinate axis
-    const xAxis = () => xScale.ticks().map( xTick => 
-        <g
-            key={nanoid()}
-            transform={`translate(${xScale(xTick)} ${0})`}
-        >
-            <line
-                y2={innerHeight}
-                stroke='red'
-                strokeWidth=".6"
-            >
-            </line>
-            <text
-                y={innerHeight + 10}
-                fontSize={'.75em'}
-                fontWeight={300}
-                textAnchor="middle"
-                stroke="red"
-            >
-                {xTick/1000}
-            </text>
-        </g>
-    );
-    
-
-    // Define the Left coordinate axis
-    const yAxis =  () => yScale.domain().map( yTick => 
-        <g
-            key={nanoid()}
-            transform={
-                `translate(
-                    ${0} 
-                    ${ yScale(yTick) + (yScale.bandwidth() / 2) }
-                )`
-            }
-        >
-            <line
-                x1={-3}
-                x2={10}
-                stroke='blue'
-            >
-            </line>
-            <text
-                x={-5}
-                y={3}
-                fontSize={'.75em'}
-                fontWeight={300}
-                textAnchor="end"
-                stroke="blue"
-            >
-                {yTick}
-            </text>
-        </g>
-    );
-    //
-
-
-    // Define the marks (bars) of the visualization
-    const marks = csvData.map(
-        d => 
-            <rect
-                key={nanoid()} 
-                x={0} 
-                y={yScale(d.Country)} 
-                width={xScale(+d.Population)}  
-                height={yScale.bandwidth()}
-            >
-            </rect>
-    )
-    //
-
-
-    // Define a Label to describe the Population data
-    const populationLabel = 
-        <text
-            x={innerWidth/1.8}
-            y={innerHeight - 5}
-            style={{
-                stroke:"red",
-                strokeWidth:".75",
-                fontSize: ".75rem"
-            }}
-        >
-            Population (millions)
-        </text>
-    //
-
-
     // Render the final component
         return(
             // Generate an svg to contain the visualization area
@@ -185,22 +203,17 @@ if( csvData ){
                         `translate(${margin.left} ${margin.top})`
                     }
                 >
-                    {
-                        // render the Bottom Axis
-                        xAxis()
-                    }
-                    {
-                        // render the Left Axis
-                        yAxis()
-                    }
-                    {
-                        // render the marks (bars)
-                        marks
-                    }
-                    {
-                        // render the Population axis Label
-                        populationLabel
-                    }
+                    {/* render the Bottom Axis */}
+                    <AxisBottom xScale={xScale} innerHeight={innerHeight} />
+
+                    {/* render the Bottom Axis label */}
+                    <PopulationLabel innerWidth={innerWidth} innerHeight={innerHeight}/>
+
+                    {/* render the Left Axis */}
+                    <AxisLeft yScale={yScale}/>
+
+                    {/* render the Marks (bars) of the visualization */}
+                    <Marks csvData={csvData} xScale={xScale} yScale={yScale}/>
                 </g>
             </svg>
         )

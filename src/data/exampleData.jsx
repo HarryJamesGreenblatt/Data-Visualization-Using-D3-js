@@ -19,6 +19,7 @@ import MarginConventionImage  from '../../public/MarginConventionExample2.jpg';
 import BarChartExample from '../examples/charts/BarChartExample.jsx';
 import BarChartExampleImage from '../../public/BarChartExample.jpg';
 import { codeSnippets } from "./snippets/codeSnippets.jsx";
+import GridExample from '../examples/GridExample.jsx';
 
 
 export const exampleData = [
@@ -188,6 +189,21 @@ export const exampleData = [
         component: <BarChartExample />,
         codeSnippet: codeSnippets['DataVizReact_4']
     },
+    // {
+    //     id: 11,
+    //     source: "",
+    //     title:
+    //     <>
+    //         Multi geometry instancing 
+    //     </>,
+    //     img: null,
+    //     description: 
+    //     <>
+    //         I don't belong here.
+    //     </>,
+    //     component: <GridExample />,
+    //     codeSnippet: codeSnippets['DataVizReact_4']
+    // },
 ]
 
 
