@@ -179,10 +179,11 @@ export default function BottomAxis(){
 }
 `,
 
-    DataVizReact_1 : `
-import { csv } from "d3";
+    DataVizReact_1 : 
+`import { csv } from "d3";
 
-const [csvData, setCsvData] = React.useState(null);
+const [csvData, setCsvData] = 
+    React.useState(null);
 
 React.useEffect( () => {
     csv( csvInputUrl )
@@ -193,16 +194,14 @@ React.useEffect( () => {
     <tr>
         <td>Country</td>
         <td>,</td>
-        <td>
-            Population
-        </td>
+        <td>Population</td>
     </tr>
     {
         csvData?.map( d =>
             <tr key={ +d.Population }>
                 <td>{ d.Country }</td>
                 <td>,</td>
-                <td>{ +d.Population * 1000 }</td>
+                <td>{ +d.Population }</td>
             </tr>
         ) 
     }

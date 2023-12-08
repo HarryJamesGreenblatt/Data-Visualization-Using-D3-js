@@ -1,5 +1,3 @@
-import { codeSnippets } from "./codeSnippets";
-
 export const noteSnippets = {
     DataViz2018_1 :  `
     This is the Ghostscript Tiger.

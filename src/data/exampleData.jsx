@@ -116,7 +116,7 @@ export const exampleData = [
         description: 
         <>
             <code><a href='https://devdocs.io/d3~7/d3-fetch#csv'>d3.csv()</a></code> fetches the CSV file at the 
-            <span> <b> specified input URL </b> </span>.
+            <span> <b> specified URL </b> </span>.
             <br/>
             <br/>
             It returns a <code>Promise</code> which can be assigned a <code>callback function</code> that iterates through the csv data for processeing. 
@@ -132,7 +132,7 @@ export const exampleData = [
         description: 
         <>
             <code><a href='https://devdocs.io/d3~7/d3-request#json'>d3.json()</a></code> fetches the JSON file at the 
-            <span> <b> specified input URL </b> </span>.
+            <span> <b> specified URL </b> </span>.
             <br/>
             <br/>
             It returns a <code>Promise</code> which can be assigned a <code>callback function</code> that iterates through the json data for processeing. 
