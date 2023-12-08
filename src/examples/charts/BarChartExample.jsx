@@ -1,4 +1,4 @@
-import { csv, scaleBand, scaleLinear, max } from "d3";
+import { csv, scaleBand, scaleLinear, max, format } from "d3";
 import { useState, useEffect } from "react";
 import { worldPopulationsCsvDataUrl } from '../utils.js';
 import { nanoid } from "nanoid";
@@ -37,14 +37,17 @@ const useData = () => {
 
 
 // Define a designated component to represent the Bottom Axis
-const AxisBottom = ({xScale, innerHeight}) => xScale.ticks().map( xTick => 
+const AxisBottom = ({
+    xScale,
+    innerHeight,
+    tickFormat }) => xScale.ticks().map( xTick => 
     <g
         key={nanoid()}
         transform={`translate(${xScale(xTick)} ${0})`}
     >
         <line
             y2={
-                (xTick/1000) < 800 
+                (xTick/1000) < 800 || (xTick/1000) == 1400 
                     ? innerHeight
                     : innerHeight - 15
             }
@@ -59,7 +62,7 @@ const AxisBottom = ({xScale, innerHeight}) => xScale.ticks().map( xTick =>
             textAnchor="middle"
             stroke="red"
         >
-            {xTick/1000}
+            {tickFormat(xTick*1000)}
         </text>
     </g>
 );
@@ -106,16 +109,18 @@ const Marks = ({
         csvData, 
         xScale,
         yScale,
-        xValue, 
-        yValue
+        xAttribute, 
+        yAttribute,
+        tooltipFormat
     }) => csvData.map( d => 
     <rect
         key={nanoid()} 
         x={0} 
-        y={yScale(yValue(d))} 
-        width={xScale(xValue(d))}  
+        y={yScale(yAttribute(d))} 
+        width={xScale(xAttribute(d))}  
         height={yScale.bandwidth()}
     >
+        <title>{tooltipFormat(xAttribute(d))}</title>
     </rect>
 )
 //
@@ -134,7 +139,7 @@ const PopulationLabel = ({innerWidth, innerHeight}) =>
             fontSize: ".75rem"
         }}
     >
-        Population (millions)
+        Population Size
     </text>
 //
 
@@ -146,7 +151,6 @@ export default function BarCharExample(){
     // import and load the CSV data for intended for visualization
     const csvData = useData();
 
-    console.log(csvData)
 
     // Define the dimensions of the visualization
     // assign a designated full height and width 
@@ -179,16 +183,19 @@ if( csvData ){
     
     // Define accessor functions which represent
     // the scale factors relative to each of the marks (bars)
-    const xValue = d => +d.Population;
-    const yValue = d => d.Country;
+    const xAttribute = d => +d.Population;
+    const yAttribute = d => d.Country;
 
+
+    const siFormat = format('.2s');
+    const xAxisTickFormat =  xTick => siFormat(xTick).replace('G', 'B');
 
 
     // Define a Band Scale for Country Names
     // which categorically comprise the dataset
     const yScale = scaleBand()
     // Let the domain be the number of country names
-    .domain( csvData.map( yValue ) )
+    .domain( csvData.map( yAttribute ) )
     // and let the range be the full height of the chart,
     .range( [0, innerHeight] )
     .paddingInner(.2)
@@ -198,7 +205,7 @@ if( csvData ){
     // Define a Linear Scale to represent the Population sizes
     const xScale = scaleLinear()
     // let the domain be from 0 until the maximum Population size
-    .domain([0, max(csvData, xValue)])
+    .domain([0, max(csvData, xAttribute)])
     // and let the range be the full inner width of the chart area
     .range([0, innerWidth])
 
@@ -223,10 +230,15 @@ if( csvData ){
                     }
                 >
                     {/* render the Bottom Axis */}
-                    <AxisBottom xScale={xScale} innerHeight={innerHeight} />
+                    <AxisBottom 
+                        xScale={xScale} 
+                        innerHeight={innerHeight} 
+                        tickFormat={xAxisTickFormat} />
 
                     {/* render the Bottom Axis label */}
-                    <PopulationLabel innerWidth={innerWidth} innerHeight={innerHeight}/>
+                    <PopulationLabel 
+                        innerWidth={innerWidth} 
+                        innerHeight={innerHeight} />
 
                     {/* render the Left Axis */}
                     <AxisLeft yScale={yScale}/>
@@ -236,8 +248,9 @@ if( csvData ){
                         csvData={csvData} 
                         xScale={xScale} 
                         yScale={yScale}
-                        xValue={xValue}
-                        yValue={yValue}
+                        xAttribute={xAttribute}
+                        yAttribute={yAttribute}
+                        tooltipFormat={xAxisTickFormat}
                     />
                 </g>
             </svg>
