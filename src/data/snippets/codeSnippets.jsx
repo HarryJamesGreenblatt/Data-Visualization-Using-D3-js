@@ -299,7 +299,7 @@ const [jsonData, setJsonData] =
     React.useState(null);
 
 React.useEffect( () => {
-    json( jsonData Url )
+    json( jsonDataUrl )
         .then( d => setJsonData( d ) ); 
 }, [] );
 ...

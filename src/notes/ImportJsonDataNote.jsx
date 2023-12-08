@@ -20,12 +20,12 @@ export default function ImportJsonDataNote (){
             <thead>
                 <tr style={{fontWeight:"bold"}}>
                     <td>Species</td>
-                    <td style={{paddingLeft: "1.5rem"}}>Sepal Length</td>
-                    <td style={{paddingLeft: "1.5rem"}}>
+                    <td style={{paddingLeft: "1.1rem"}}>Sepal Length</td>
+                    <td style={{paddingLeft: "1.1rem"}}>
                         Sepal Width
                     </td>
-                    <td style={{paddingLeft: "1.5rem"}}>Petal Length</td>
-                    <td style={{paddingLeft: "1.5rem"}}>
+                    <td style={{paddingLeft: "1.1rem"}}>Petal Length</td>
+                    <td style={{paddingLeft: "1.1rem"}}>
                         Petal Width
                     </td>
                 </tr>
@@ -35,12 +35,12 @@ export default function ImportJsonDataNote (){
                 jsonData?.slice(0,10).map( d =>
                     <tr key={nanoid()}>
                         <td>{d.species}</td>
-                        <td style={{paddingLeft: "1.5rem"}}>{+d.sepal_length}</td>
-                        <td style={{paddingLeft: "1.5rem"}}>
+                        <td style={{paddingLeft: "1.1rem"}}>{+d.sepal_length}</td>
+                        <td style={{paddingLeft: "1.1rem"}}>
                             { +d.sepal_width }
                         </td>
-                        <td style={{paddingLeft: "1.5rem"}}>{+d.petal_length}</td>
-                        <td style={{paddingLeft: "1.5rem"}}>
+                        <td style={{paddingLeft: "1.1rem"}}>{+d.petal_length}</td>
+                        <td style={{paddingLeft: "1.1rem"}}>
                             { +d.petal_width }
                         </td>
                     </tr> 
