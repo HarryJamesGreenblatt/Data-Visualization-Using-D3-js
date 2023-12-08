@@ -291,7 +291,7 @@ Contains a series of five commands and parameters used by those commands.
                 \${margin.left} \${margin.top}
                 )\`
             }
-            >
+    >
         <rect
             height={innerHeight}
             width={innerWidth}
@@ -301,7 +301,7 @@ Contains a series of five commands and parameters used by those commands.
         </rect>
         { xAxis() }
         { yAxis() }
-</g>
+    </g>
 </svg>
 `,
 
