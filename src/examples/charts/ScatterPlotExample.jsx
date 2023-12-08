@@ -1,6 +1,6 @@
-import { csv, scaleBand, scaleLinear, max } from "d3";
+import { json, scaleBand, scaleLinear, max } from "d3";
 import { useState, useEffect } from "react";
-import { worldPopulationsCsvDataUrl } from '../utils.js';
+import { irisDatasetJsonUrl } from '../utils.js';
 import { nanoid } from "nanoid";
 
 
@@ -8,19 +8,19 @@ import { nanoid } from "nanoid";
 const useData = () => {
 
     // Fetch the data to visualize.
-    // In this case, the import data is in  csv  format
+    // In this case, the import data is in  json  format
     
-    // Initialize state to store the csv data
-    const [csvData, setCsvData] = useState(null);
+    // Initialize state to store the json data
+    const [jsonData, setJsonData] = useState(null);
 
     // Ensure the data gets fetched once, and only once
     useEffect( () => {
 
-            // invoke d3.csv to retrieve the data at the specified URL,
+            // invoke d3.json to retrieve the data at the specified URL,
             // while providing a callback function which sets it as state
-            csv( 
-                worldPopulationsCsvDataUrl
-            ).then( d => setCsvData( d ) );
+            json( 
+                irisDatasetJsonUrl
+            ).then( d => setJsonData( d ) );
         
         }, 
 
@@ -30,7 +30,7 @@ const useData = () => {
 
     );
 
-    return csvData;
+    return jsonData;
 }
 //
 
@@ -102,22 +102,22 @@ const AxisLeft =  ({yScale}) => yScale.domain().map( yTick =>
 
 // Define a designated component 
 // to represent the marks (bars) of the visualization
-const Marks = ({
-        csvData, 
-        xScale,
-        yScale,
-        xValue, 
-        yValue
-    }) => csvData.map( d => 
-    <rect
-        key={nanoid()} 
-        x={0} 
-        y={yScale(yValue(d))} 
-        width={xScale(xValue(d))}  
-        height={yScale.bandwidth()}
-    >
-    </rect>
-)
+// const Marks = ({
+//         jsonData, 
+//         xScale,
+//         yScale,
+//         xValue, 
+//         yValue
+//     }) => jsonData.map( d => 
+//     <rect
+//         key={nanoid()} 
+//         x={0} 
+//         y={yScale(yValue(d))} 
+//         width={xScale(xValue(d))}  
+//         height={yScale.bandwidth()}
+//     >
+//     </rect>
+// )
 //
 
 
@@ -141,12 +141,14 @@ const PopulationLabel = ({innerWidth, innerHeight}) =>
 
 
 
-export default function BarCharExample(){
+export default function ScatterPlotExample(){
     
-    // import and load the CSV data for intended for visualization
-    const csvData = useData();
+    // import and load the json data for intended for visualization
+    const jsonData = useData();
 
-    console.log(csvData)
+
+    console.log(jsonData);
+
 
     // Define the dimensions of the visualization
     // assign a designated full height and width 
@@ -172,35 +174,35 @@ export default function BarCharExample(){
 //
 
 
-// Since the initial state of the csvData is null,
+// Since the initial state of the jsonData is null,
 // render the component only after it has loaded
-if( csvData ){
+if( jsonData ){
 
     
+    // Define a Band Scale for Country Names
+    // // which categorically comprise the dataset
+    // const yScale = scaleBand()
+    // // Let the domain be the number of country names
+    // .domain( jsonData.map( yValue ) )
+    // // and let the range be the full height of the chart,
+    // .range( [0, innerHeight] )
+    // .paddingInner(.2)
+    
+    
+    
+    // // Define a Linear Scale to represent the Population sizes
+    // const xScale = scaleLinear()
+    // // let the domain be from 0 until the maximum Population size
+    // .domain([0, max(jsonData, xValue)])
+    // // and let the range be the full inner width of the chart area
+    // .range([0, innerWidth])
+    
+
+
     // Define accessor functions which represent
     // the scale factors relative to each of the marks (bars)
-    const xValue = d => +d.Population;
-    const yValue = d => d.Country;
-
-
-
-    // Define a Band Scale for Country Names
-    // which categorically comprise the dataset
-    const yScale = scaleBand()
-    // Let the domain be the number of country names
-    .domain( csvData.map( yValue ) )
-    // and let the range be the full height of the chart,
-    .range( [0, innerHeight] )
-    .paddingInner(.2)
-    
-    
-    
-    // Define a Linear Scale to represent the Population sizes
-    const xScale = scaleLinear()
-    // let the domain be from 0 until the maximum Population size
-    .domain([0, max(csvData, xValue)])
-    // and let the range be the full inner width of the chart area
-    .range([0, innerWidth])
+    // const xValue = d => +d.Population;
+    // const yValue = d => d.Country;
 
     
 
@@ -223,22 +225,22 @@ if( csvData ){
                     }
                 >
                     {/* render the Bottom Axis */}
-                    <AxisBottom xScale={xScale} innerHeight={innerHeight} />
+                    {/* <AxisBottom xScale={xScale} innerHeight={innerHeight} /> */}
 
                     {/* render the Bottom Axis label */}
-                    <PopulationLabel innerWidth={innerWidth} innerHeight={innerHeight}/>
+                    {/* <PopulationLabel innerWidth={innerWidth} innerHeight={innerHeight}/> */}
 
                     {/* render the Left Axis */}
-                    <AxisLeft yScale={yScale}/>
+                    {/* <AxisLeft yScale={yScale}/> */}
 
                     {/* render the Marks (bars) of the visualization */}
-                    <Marks 
-                        csvData={csvData} 
+                    {/* <Marks 
+                        jsonData={jsonData} 
                         xScale={xScale} 
                         yScale={yScale}
                         xValue={xValue}
                         yValue={yValue}
-                    />
+                    /> */}
                 </g>
             </svg>
         )

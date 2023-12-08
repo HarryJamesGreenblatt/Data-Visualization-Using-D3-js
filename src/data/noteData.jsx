@@ -3,6 +3,7 @@ import GroupElementNote from '../notes/GroupElementNote.jsx';
 import ImportCSVDataNote from '../notes/ImportCsvDataNote.jsx';
 import AxesNote from "../notes/AxesNote.jsx";
 import ImportCSVDataImage from '../../public/ImportCsvDataNote.jpg';
+import ImportJsonDataImage from '../../public/ImportJsonDataNote.jpg';
 import SVGPathNoteImage from '../../public/SVGPathNote.jpg';
 import ExternalRepresentationImage from "../../public/ExternalRepresentationNote.jpg";
 import AnscombeQuartetImage from "../../public/AnscombeQuartetNote.jpg";
@@ -167,7 +168,7 @@ export const noteData = [
         id : 9,
         pathname : "/fetch-data",
         withRespectTo : "importing csv",
-        component: <ImportCSVDataNote/>,
+        component: null,
         img : ImportCSVDataImage,
         description: noteSnippets['DataVizReact_1'],
         keyTakeAways: [
@@ -180,7 +181,7 @@ export const noteData = [
         id : 10,
         pathname : "/charts",
         withRespectTo : "margin convention",
-        component: <ImportCSVDataNote/>,
+        component: null,
         img : MarginConventionImage,
         description: noteSnippets['DataVizReact_2'],
         keyTakeAways: [
@@ -216,6 +217,17 @@ export const noteData = [
         description: noteSnippets['D3ScalesInDepth_1'],
         keyTakeAways: [
     
+        ]
+    },
+    {   
+        id : 13,
+        pathname : "/fetch-data",
+        withRespectTo : "importing json",
+        component: null,
+        img : ImportJsonDataImage,
+        description: noteSnippets['DataVizReact_9'],
+        keyTakeAways: [
+
         ]
     },
 ]

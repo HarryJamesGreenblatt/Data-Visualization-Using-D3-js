@@ -1,3 +1,5 @@
+import { codeSnippets } from "./codeSnippets";
+
 export const noteSnippets = {
     DataViz2018_1 :  `
     This is the Ghostscript Tiger.
@@ -282,15 +284,16 @@ Contains a series of five commands and parameters used by those commands.
 </>
 ,
 
+
     DataVizReact_7 :
 `<svg style={{background:"white"}}>
     <g
         transform={
             \`translate(
                 \${margin.left} \${margin.top}
-            )\`
-        }
-    >
+                )\`
+            }
+            >
         <rect
             height={innerHeight}
             width={innerWidth}
@@ -300,9 +303,45 @@ Contains a series of five commands and parameters used by those commands.
         </rect>
         { xAxis() }
         { yAxis() }
-    </g>
+</g>
 </svg>
 `,
+
+
+    DataVizReact_8 :
+`import { csv } from "d3";
+
+const [csvData, setCsvData] = React.useState(null);
+
+React.useEffect( () => {
+    csv( csvInputUrl )
+        .then( d => setCsvData( d ) ); 
+}, [] );
+`,
+
+    
+    DataVizReact_9 :
+<>
+    <p className="description">
+        Similar to <code>d3.csv()</code>, 
+        <br/>
+        <br/>
+        <span>JSON data</span> may also be fetched via url
+        (and generally is, in most cases), 
+        <br/>
+        and then converted into an <span>Array of objects</span>.
+        <br/>
+        <br/>
+        <br/>
+        This is accomplished by leveraging <code><a href="https://devdocs.io/d3~7/d3-request#json" style={{color:"white", fontSize:"1.5rem"}}>d3.json()</a></code>, which, similar to <code>d3.csv()</code>,
+        <br/>
+        returns a <span>Promise</span> and must be provided a <span>Callback Function</span> 
+        <br/>
+        <br/>
+        in order to <span>expose it's data</span> and <span>save it as state</span>.
+    </p>
+</>,
+
 
     D3ScalesInDepth_1:
 <p className="description">

@@ -264,31 +264,63 @@ const innerWidth =
 `,
 
     DataVizReact_4 : `
-const marks = csvData.map( d => 
-    <rect
-        x={ 0 }
-        y={ yScale(d.Country) }
-        width={ xScale(+d.Population) }
-        height={ yScale.bandwidth() }
-    >
-    </rect>
-);
-...
-<svg  height={height}  width={width}>   
+<svg height={height} width={width}>   
     <g
         transform={
             \`translate(
                 \${margin.left} 
                 \${margin.top}
             )\`
-        }
-    >
-        {  xAxis()         }
-        {  yAxis()         }
-        {  marks           }
-        {  populationLabel }
+        }>
+        <AxisBottom 
+            xScale={xScale} 
+            innerHeight={innerHeight} />
+
+        <PopulationLabel 
+            innerWidth={innerWidth} 
+            innerHeight={innerHeight} />
+
+        <AxisLeft yScale={yScale}/>
+
+        <Marks 
+            csvData={csvData} 
+            xScale={xScale} 
+            yScale={yScale}
+            xValue={xValue}
+            yValue={yValue} />
     </g>
 </svg>
+`,
 
+    DataVizReact_5 : 
+`import { json } from "d3";
+
+const [jsonData, setJsonData] = 
+    React.useState(null);
+
+React.useEffect( () => {
+    json( jsonData Url )
+        .then( d => setJsonData( d ) ); 
+}, [] );
+...
+<table>
+    <tr>
+        <td>Species</td>
+        <td>Sepal Length</td>
+        <td>Sepal Width</td>
+        <td>Petal Length</td>
+        <td>Petal Width</td>
+    </tr>
+    {
+        jsonData?.slice(0,10).map( d =>
+            <tr>
+                <td>{d.species}</td>
+                <td>{+d.sepal_length}</td>
+                <td>{+d.sepal_width}</td>
+                <td>{+d.petal_length}</td>
+                <td>{+d.petal_width}</td>
+            </tr>)
+    }
+</table>
 `,
 }

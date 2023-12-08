@@ -14,12 +14,15 @@ import BotomAxisD3WayExample from "../examples/axis/BotomAxisD3WayExample.jsx";
 import BotomAxisD3WayImage from "../../public/BottomAxisD3WayExample.jpg";
 import ImportCsvDataExample from '../examples/ImportCsvDataExample';
 import ImportCsvDataImage from '../../public/ImportCsvDataExample.jpg';
+import ImportJsonDataImage from '../../public/ImportJsonDataExample.jpg';
 import MarginConventionExample from '../examples/MarginConventionExample.jsx';
 import MarginConventionImage  from '../../public/MarginConventionExample2.jpg';
 import BarChartExample from '../examples/charts/BarChartExample.jsx';
 import BarChartExampleImage from '../../public/BarChartExample.jpg';
 import { codeSnippets } from "./snippets/codeSnippets.jsx";
 import GridExample from '../examples/GridExample.jsx';
+import ScatterPlotExample from '../examples/charts/ScatterPlotExample.jsx';
+import ImportJsonDataNote from '../notes/ImportJsonDataNote.jsx';
 
 
 export const exampleData = [
@@ -112,7 +115,7 @@ export const exampleData = [
         img: ImportCsvDataImage,
         description: 
         <>
-            <code><a href='https://devdocs.io/d3~7/d3-fetch#csv'>d3.csv</a></code> fetches the CSV file at the 
+            <code><a href='https://devdocs.io/d3~7/d3-fetch#csv'>d3.csv()</a></code> fetches the CSV file at the 
             <span> <b> specified input URL </b> </span>.
             <br/>
             <br/>
@@ -120,6 +123,22 @@ export const exampleData = [
         </>,
         component: <ImportCsvDataExample />,
         codeSnippet: codeSnippets['DataVizReact_1']
+    },
+    {
+        id: 70,
+        source: "Data Viz (React)",
+        title:"Fetching JSON Data",
+        img: ImportJsonDataImage,
+        description: 
+        <>
+            <code><a href='https://devdocs.io/d3~7/d3-fetch#json'>d3.json()</a></code> fetches the JSON file at the 
+            <span> <b> specified input URL </b> </span>.
+            <br/>
+            <br/>
+            It returns a <code>Promise</code> which can be assigned a <code>callback function</code> that iterates through the json data for processeing. 
+        </>,
+        component: <ImportJsonDataNote />,
+        codeSnippet: codeSnippets['DataVizReact_5']
     },
     {
         id: 8,
@@ -189,21 +208,21 @@ export const exampleData = [
         component: <BarChartExample />,
         codeSnippet: codeSnippets['DataVizReact_4']
     },
-    // {
-    //     id: 11,
-    //     source: "",
-    //     title:
-    //     <>
-    //         Multi geometry instancing 
-    //     </>,
-    //     img: null,
-    //     description: 
-    //     <>
-    //         I don't belong here.
-    //     </>,
-    //     component: <GridExample />,
-    //     codeSnippet: codeSnippets['DataVizReact_4']
-    // },
+    {
+        id: 11,
+        source: "Data Viz (React)",
+        title:
+        <>
+            Scatter Plot
+        </>,
+        img: null,
+        description: 
+        <>
+            Iris dataset
+        </>,
+        component: <ScatterPlotExample />,
+        codeSnippet: null
+    },
 ]
 
 
