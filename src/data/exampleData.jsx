@@ -131,7 +131,7 @@ export const exampleData = [
         img: ImportJsonDataImage,
         description: 
         <>
-            <code><a href='https://devdocs.io/d3~7/d3-fetch#json'>d3.json()</a></code> fetches the JSON file at the 
+            <code><a href='https://devdocs.io/d3~7/d3-request#json'>d3.json()</a></code> fetches the JSON file at the 
             <span> <b> specified input URL </b> </span>.
             <br/>
             <br/>
