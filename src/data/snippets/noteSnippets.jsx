@@ -362,5 +362,20 @@ React.useEffect( () => {
     ( where <span>n</span> is the <code><b>number of values in the domain array</b></code>), 
     <br/>
     and then compute their <span>positions</span> and <span>bandwidths</span>.
-</p>
+</p>,
+
+
+    D3ScalesInDepth_2:
+<p className="description">
+    <b><code>scatterplots</code></b> generally have both axes represented by  
+    <code><a style={{fontSize:"1.25rem", color:"whitesmoke", fontWeight:"bold"}} href="https://devdocs.io/d3~7/d3-scale#scalelinear">d3.scaleLinear()</a></code>,
+    <br/>
+    <br/>
+    <br/>
+    which <span>maps</span> a <b>continuous, quantitative</b><span>input domain</span>   
+    <br/>
+    to a <b>continuous</b> <span>output range</span> 
+    <br/>
+    using a <span>linear transformation</span> <em>(translate and scale)</em>.
+</p>,
 }

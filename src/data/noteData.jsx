@@ -12,6 +12,7 @@ import AttributeTypeImage from "../../public/AttributeTypeNote.jpg";
 import MarginConventionImage from '../../public/MarginConventionExample.jpg';
 import BarCharNote from "../examples/charts/BarChartExample.jsx";
 import BarChartNoteImage from "../../public/BarChartNote.png";
+import LinearScaleImage from '../../public/LinearScaleNote.jpg'
 import { noteSnippets } from './snippets/noteSnippets';
 
 
@@ -221,6 +222,17 @@ export const noteData = [
     },
     {   
         id : 13,
+        pathname : "/charts",
+        withRespectTo : "scatterplots",
+        component: null,
+        img : LinearScaleImage,
+        description: noteSnippets['D3ScalesInDepth_2'],
+        keyTakeAways: [
+    
+        ]
+    },
+    {   
+        id : 14,
         pathname : "/fetch-data",
         withRespectTo : "importing json",
         component: null,

@@ -1,4 +1,4 @@
-import { json, scaleBand, scaleLinear, max } from "d3";
+import { json, scaleLinear, extent, max, min } from "d3";
 import { useState, useEffect } from "react";
 import { irisDatasetJsonUrl } from '../utils.js';
 import { nanoid } from "nanoid";
@@ -16,10 +16,22 @@ const useData = () => {
     // Ensure the data gets fetched once, and only once
     useEffect( () => {
 
+            const row = d => {
+
+                d.sepal_length =  +d.sepal_length;
+                d.sepal_width  =  +d.sepal_width;
+                d.petal_length =  +d.petal_length;
+                d.petal_width  =  +d.petal_width;
+
+                return d;
+
+            }
+
             // invoke d3.json to retrieve the data at the specified URL,
             // while providing a callback function which sets it as state
             json( 
-                irisDatasetJsonUrl
+                irisDatasetJsonUrl,
+                row
             ).then( d => setJsonData( d ) );
         
         }, 
@@ -43,23 +55,19 @@ const AxisBottom = ({xScale, innerHeight}) => xScale.ticks().map( xTick =>
         transform={`translate(${xScale(xTick)} ${0})`}
     >
         <line
-            y2={
-                (xTick/1000) < 800 
-                    ? innerHeight
-                    : innerHeight - 15
-            }
+            y2={innerHeight}
             stroke='red'
             strokeWidth=".6"
         >
         </line>
         <text
-            y={innerHeight + 10}
+            y={innerHeight + 12}
             fontSize={'.75em'}
             fontWeight={300}
             textAnchor="middle"
             stroke="red"
         >
-            {xTick/1000}
+            {xTick}
         </text>
     </g>
 );
@@ -67,26 +75,45 @@ const AxisBottom = ({xScale, innerHeight}) => xScale.ticks().map( xTick =>
 
 
 
+// Define a designated component to represent 
+// a Label describing the Sepal Width
+const XAxisLabel = ({innerWidth, innerHeight, xLabel}) => 
+    <text
+        x={innerWidth/2}
+        y={innerHeight}
+        style={{
+            stroke:"red",
+            strokeWidth:".75",
+            fontSize: ".9rem",
+            textAnchor: "middle"
+        }}
+    >
+        {xLabel}
+    </text>
+//
+
+
+
+
 // Define a designated component to represent the Left Axis
-const AxisLeft =  ({yScale}) => yScale.domain().map( yTick => 
+const AxisLeft =  ({yScale, innerWidth}) => yScale.ticks().map( yTick => 
     <g
         key={nanoid()}
         transform={
             `translate(
                 ${0} 
-                ${ yScale(yTick) + (yScale.bandwidth() / 2) }
+                ${ yScale(yTick) }
             )`
         }
     >
         <line
-            x1={-3}
-            x2={10}
+            x2={innerWidth}
             stroke='blue'
         >
         </line>
         <text
             x={-5}
-            y={3}
+            y={".25em"}
             fontSize={'.75em'}
             fontWeight={300}
             textAnchor="end"
@@ -98,56 +125,62 @@ const AxisLeft =  ({yScale}) => yScale.domain().map( yTick =>
 );
 //
 
-
-
-// Define a designated component 
-// to represent the marks (bars) of the visualization
-// const Marks = ({
-//         jsonData, 
-//         xScale,
-//         yScale,
-//         xValue, 
-//         yValue
-//     }) => jsonData.map( d => 
-//     <rect
-//         key={nanoid()} 
-//         x={0} 
-//         y={yScale(yValue(d))} 
-//         width={xScale(xValue(d))}  
-//         height={yScale.bandwidth()}
-//     >
-//     </rect>
-// )
-//
-
-
-
 // Define a designated component to represent 
-// a Label describing the Population data
-const PopulationLabel = ({innerWidth, innerHeight}) => 
+// a Label describing the Sepal Height
+const YAxisLabel = ({innerHeight, yLabel}) => 
     <text
-        x={innerWidth/1.8}
-        y={innerHeight - 5}
         style={{
-            stroke:"red",
+            stroke:"blue",
             strokeWidth:".75",
-            fontSize: ".75rem"
+            fontSize: ".9rem",
+            textAnchor: "middle"
         }}
+        transform={`
+            translate(
+                -35, 
+                ${innerHeight / 2}
+            ) 
+            rotate(-90)
+    `}
     >
-        Population (millions)
+        {yLabel}
     </text>
 //
 
 
+
+// Define a designated component 
+// to represent the marks (plots) of the visualization
+const Marks = ({
+    jsonData, 
+    xScale,
+    yScale,
+    xValue, 
+    yValue
+}) => jsonData.map( d => 
+    <circle
+        key={nanoid()} 
+        cx={xScale(xValue(d))} 
+        cy={yScale(yValue(d))} 
+        r={4.5}
+    >
+       <title>
+            {
+                `Sepal Width: ${xValue(d)}`
+                +
+                '\n'
+                +
+                `Sepal Length: ${yValue(d)}`
+            }
+        </title>
+    </circle>
+)
 
 
 export default function ScatterPlotExample(){
     
     // import and load the json data for intended for visualization
     const jsonData = useData();
-
-
-    console.log(jsonData);
 
 
     // Define the dimensions of the visualization
@@ -160,8 +193,8 @@ export default function ScatterPlotExample(){
     const margin = {
         top: 10,
         right: 25,
-        bottom: 15,
-        left: 75,
+        bottom: 40,
+        left: 55,
     }
 
     // define the inner height of the chart area,
@@ -179,30 +212,39 @@ export default function ScatterPlotExample(){
 if( jsonData ){
 
     
-    // Define a Band Scale for Country Names
-    // // which categorically comprise the dataset
-    // const yScale = scaleBand()
-    // // Let the domain be the number of country names
-    // .domain( jsonData.map( yValue ) )
-    // // and let the range be the full height of the chart,
-    // .range( [0, innerHeight] )
-    // .paddingInner(.2)
-    
-    
-    
-    // // Define a Linear Scale to represent the Population sizes
-    // const xScale = scaleLinear()
-    // // let the domain be from 0 until the maximum Population size
-    // .domain([0, max(jsonData, xValue)])
-    // // and let the range be the full inner width of the chart area
-    // .range([0, innerWidth])
-    
-
-
     // Define accessor functions which represent
-    // the scale factors relative to each of the marks (bars)
-    // const xValue = d => +d.Population;
-    // const yValue = d => d.Country;
+    // the scale factors relative to each of the marks (plots)
+    const xValue = d => d.sepal_width;
+    const yValue = d => d.sepal_length;
+
+
+    // Provide labels for the x and y axis
+    const xLabel = "Sepal Width"; 
+    const yLabel = "Sepal Length"; 
+
+
+    // Define Offsets to adjust the x and y axis labels
+    const xAxisOffset = 30;
+    const yAxisOffset = 30;
+    
+
+    // Define a Linear Scale to represent the sepal widths
+    const xScale = scaleLinear()
+    // let the domain be from the minimum until the maximum sepal length
+    .domain(extent(jsonData, xValue))
+    // and let the range be the full inner width of the chart area
+    .range([0, innerWidth])
+    
+
+    // Define a Linear Scale to represent the sepal lengths
+    const yScale = scaleLinear()
+    // let the domain be from the minimum until the maximum sepal width
+    .domain([min(jsonData, yValue) - .3, max(jsonData, yValue)])
+    // and let the range be the full inner height of the chart,
+    .range( [innerHeight, 0] )
+    
+    
+
 
     
 
@@ -225,22 +267,33 @@ if( jsonData ){
                     }
                 >
                     {/* render the Bottom Axis */}
-                    {/* <AxisBottom xScale={xScale} innerHeight={innerHeight} /> */}
+                    <AxisBottom xScale={xScale} innerHeight={innerHeight} />
 
                     {/* render the Bottom Axis label */}
-                    {/* <PopulationLabel innerWidth={innerWidth} innerHeight={innerHeight}/> */}
+                    <XAxisLabel 
+                        innerWidth={innerWidth} 
+                        innerHeight={innerHeight + xAxisOffset} 
+                        xLabel={xLabel}
+                    />
 
                     {/* render the Left Axis */}
-                    {/* <AxisLeft yScale={yScale}/> */}
+                    <AxisLeft yScale={yScale} innerWidth={innerWidth}/>
 
-                    {/* render the Marks (bars) of the visualization */}
-                    {/* <Marks 
+                    {/* render the Left Axis label */}
+                    <YAxisLabel 
+                        innerWidth={innerWidth} 
+                        innerHeight={innerHeight + yAxisOffset} 
+                        yLabel={yLabel}
+                    />
+
+                    {/* render the Marks (plots) of the visualization */}
+                    <Marks 
                         jsonData={jsonData} 
                         xScale={xScale} 
                         yScale={yScale}
                         xValue={xValue}
                         yValue={yValue}
-                    /> */}
+                    />
                 </g>
             </svg>
         )
