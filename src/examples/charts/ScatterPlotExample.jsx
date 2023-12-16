@@ -263,7 +263,7 @@ if( jsonData ){
             <svg
                 height={height}
                 width={width}
-                style={{background:"white", border:"1px solid black"}}
+                style={{background:"white", border:"1px solid lightgray"}}
                 transform="translate(5 0)"    
             >   
                 {/* 
