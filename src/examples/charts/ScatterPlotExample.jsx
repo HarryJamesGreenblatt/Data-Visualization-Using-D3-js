@@ -236,22 +236,22 @@ if( jsonData ){
 
     // Define a Linear Scale to represent the sepal widths
     const xScale = scaleLinear()
-    // let the domain be from the minimum until the maximum sepal length
-    .domain(extent(jsonData, xAttr))
-    // and let the range be the full inner width of the chart area
-    .range([0, innerWidth])
+        // let the domain be from the minimum until the maximum sepal length
+        .domain(extent(jsonData, xAttr))
+        // and let the range be the full inner width of the chart area
+        .range([0, innerWidth])
     
 
     // Define a Linear Scale to represent the sepal lengths
     const yScale = scaleLinear()
-    // let the domain be from the minimum until the maximum sepal width
-    .domain([
-        min(jsonData, yAttr) - yBoundsOffset, 
-        max(jsonData, yAttr) + yBoundsOffset
-    ])
-    // and let the range be the full inner height of the chart,
-    .range( [innerHeight, 0] )
-    
+        // let the domain be from the minimum until the maximum sepal width
+        .domain([
+            min(jsonData, yAttr) - yBoundsOffset, 
+            max(jsonData, yAttr) + yBoundsOffset
+        ])
+        // and let the range be the full inner height of the chart,
+        .range( [innerHeight, 0] )
+        
     
 
 
