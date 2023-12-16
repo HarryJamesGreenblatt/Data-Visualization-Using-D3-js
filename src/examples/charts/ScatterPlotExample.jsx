@@ -55,6 +55,7 @@ const AxisBottom = ({xScale, innerHeight}) => xScale.ticks().map( xTick =>
         transform={`translate(${xScale(xTick)} ${0})`}
     >
         <line
+            y1={13}
             y2={innerHeight}
             stroke='red'
             strokeWidth=".6"
@@ -161,7 +162,8 @@ const Marks = ({
     <circle
         key={nanoid()} 
         cx={xScale(xValue(d))} 
-        cy={yScale(yValue(d))} 
+        cy={yScale(yValue(d))}
+        fill="darkgreen" 
         r={4.5}
     >
        <title>
@@ -191,8 +193,8 @@ export default function ScatterPlotExample(){
     // define margin distances which can support the 
     // inclusion of coordinate axes
     const margin = {
-        top: 10,
-        right: 25,
+        top: 2,
+        right: 30,
         bottom: 40,
         left: 55,
     }
@@ -224,8 +226,12 @@ if( jsonData ){
 
 
     // Define Offsets to adjust the x and y axis labels
-    const xAxisOffset = 30;
-    const yAxisOffset = 30;
+    const xAxisLabelOffset = 30;
+    const yAxisLabelOffset = 30;
+
+
+    // Define Offsets to adjust the y axis boundaries
+    const yBoundsOffset = .3;
     
 
     // Define a Linear Scale to represent the sepal widths
@@ -239,7 +245,10 @@ if( jsonData ){
     // Define a Linear Scale to represent the sepal lengths
     const yScale = scaleLinear()
     // let the domain be from the minimum until the maximum sepal width
-    .domain([min(jsonData, yValue) - .3, max(jsonData, yValue)])
+    .domain([
+        min(jsonData, yValue) - yBoundsOffset, 
+        max(jsonData, yValue) + yBoundsOffset
+    ])
     // and let the range be the full inner height of the chart,
     .range( [innerHeight, 0] )
     
@@ -254,7 +263,7 @@ if( jsonData ){
             <svg
                 height={height}
                 width={width}
-                style={{background:"whitesmoke"}}
+                style={{background:"white", border:"1px solid lightgray"}}
                 transform="translate(5 0)"    
             >   
                 {/* 
@@ -272,7 +281,7 @@ if( jsonData ){
                     {/* render the Bottom Axis label */}
                     <XAxisLabel 
                         innerWidth={innerWidth} 
-                        innerHeight={innerHeight + xAxisOffset} 
+                        innerHeight={innerHeight + xAxisLabelOffset} 
                         xLabel={xLabel}
                     />
 
@@ -282,7 +291,7 @@ if( jsonData ){
                     {/* render the Left Axis label */}
                     <YAxisLabel 
                         innerWidth={innerWidth} 
-                        innerHeight={innerHeight + yAxisOffset} 
+                        innerHeight={innerHeight + yAxisLabelOffset} 
                         yLabel={yLabel}
                     />
 

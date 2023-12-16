@@ -22,6 +22,7 @@ import BarChartExampleImage from '../../public/BarChartExample.jpg';
 import { codeSnippets } from "./snippets/codeSnippets.jsx";
 import GridExample from '../examples/GridExample.jsx';
 import ScatterPlotExample from '../examples/charts/ScatterPlotExample.jsx';
+import ScatterPlotImage from '../../public/ScatterplotExample.jpg';
 import ImportJsonDataNote from '../notes/ImportJsonDataNote.jsx';
 
 
@@ -213,9 +214,11 @@ export const exampleData = [
         source: "Data Viz (React)",
         title:
         <>
-            Scatter Plot
+            Iris Dataset
+            <br/>
+            Scatterplot
         </>,
-        img: null,
+        img: ScatterPlotImage,
         description: 
         <>
             Iris dataset
