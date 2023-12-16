@@ -225,7 +225,7 @@ if( jsonData ){
     const yLabel = "Sepal Length"; 
 
 
-    // Define Offsets to adjust the x and y axis labels
+    // Define Offsets to adjust the x and y axis label positions
     const xAxisLabelOffset = 30;
     const yAxisLabelOffset = 30;
 
@@ -263,7 +263,7 @@ if( jsonData ){
             <svg
                 height={height}
                 width={width}
-                style={{background:"white", border:"1px solid lightgray"}}
+                style={{background:"white", border:"1px solid black"}}
                 transform="translate(5 0)"    
             >   
                 {/* 
