@@ -156,23 +156,23 @@ const Marks = ({
     jsonData, 
     xScale,
     yScale,
-    xValue, 
-    yValue
+    xAttr, 
+    yAttr
 }) => jsonData.map( d => 
     <circle
         key={nanoid()} 
-        cx={xScale(xValue(d))} 
-        cy={yScale(yValue(d))}
+        cx={xScale(xAttr(d))} 
+        cy={yScale(yAttr(d))}
         fill="darkgreen" 
         r={4.5}
     >
        <title>
             {
-                `Sepal Width: ${xValue(d)}`
+                `Sepal Width: ${xAttr(d)}`
                 +
                 '\n'
                 +
-                `Sepal Length: ${yValue(d)}`
+                `Sepal Length: ${yAttr(d)}`
             }
         </title>
     </circle>
@@ -216,8 +216,8 @@ if( jsonData ){
     
     // Define accessor functions which represent
     // the scale factors relative to each of the marks (plots)
-    const xValue = d => d.sepal_width;
-    const yValue = d => d.sepal_length;
+    const xAttr = d => d.sepal_width;
+    const yAttr = d => d.sepal_length;
 
 
     // Provide labels for the x and y axis
@@ -237,7 +237,7 @@ if( jsonData ){
     // Define a Linear Scale to represent the sepal widths
     const xScale = scaleLinear()
     // let the domain be from the minimum until the maximum sepal length
-    .domain(extent(jsonData, xValue))
+    .domain(extent(jsonData, xAttr))
     // and let the range be the full inner width of the chart area
     .range([0, innerWidth])
     
@@ -246,8 +246,8 @@ if( jsonData ){
     const yScale = scaleLinear()
     // let the domain be from the minimum until the maximum sepal width
     .domain([
-        min(jsonData, yValue) - yBoundsOffset, 
-        max(jsonData, yValue) + yBoundsOffset
+        min(jsonData, yAttr) - yBoundsOffset, 
+        max(jsonData, yAttr) + yBoundsOffset
     ])
     // and let the range be the full inner height of the chart,
     .range( [innerHeight, 0] )
@@ -300,8 +300,8 @@ if( jsonData ){
                         jsonData={jsonData} 
                         xScale={xScale} 
                         yScale={yScale}
-                        xValue={xValue}
-                        yValue={yValue}
+                        xAttr={xAttr}
+                        yAttr={yAttr}
                     />
                 </g>
             </svg>
