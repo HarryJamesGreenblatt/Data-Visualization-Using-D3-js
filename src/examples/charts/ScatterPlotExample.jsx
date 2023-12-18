@@ -264,7 +264,7 @@ if( jsonData ){
                 height={height}
                 width={width}
                 style={{background:"white", border:"1px solid lightgray"}}
-                transform="translate(5 0)"    
+                transform="translate(0 0)"    
             >   
                 {/* 
                     Translate the visualization area by the 

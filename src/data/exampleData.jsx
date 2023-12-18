@@ -24,6 +24,7 @@ import GridExample from '../examples/GridExample.jsx';
 import ScatterPlotExample from '../examples/charts/ScatterPlotExample.jsx';
 import ScatterPlotImage from '../../public/ScatterplotExample.jpg';
 import ImportJsonDataNote from '../notes/ImportJsonDataNote.jsx';
+import { noteSnippets } from './snippets/noteSnippets.jsx';
 
 
 export const exampleData = [
@@ -219,12 +220,14 @@ export const exampleData = [
             Scatterplot
         </>,
         img: ScatterPlotImage,
-        description: 
-        <>
-            Iris dataset
-        </>,
+        description:
+        <p className="description">
+            This <a href="https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/src/examples/charts/ScatterPlotExample.jsx"><code>ScatterplotExample</code> component</a> visualizes the <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">Iris Dataset</a>
+            <br/>
+            by organizing plotted points in a way that intuitively exposes the <em>relationship bewteen the <b>Sepal Widths</b> and <b>Sepal Heights</b></em> relative to several different species of Iris flowers.
+        </p>,
         component: <ScatterPlotExample />,
-        codeSnippet: null
+        codeSnippet: codeSnippets['DataVizReact_6']
     },
 ]
 
