@@ -240,6 +240,7 @@ if( jsonData ){
         .domain(extent(jsonData, xAttr))
         // and let the range be the full inner width of the chart area
         .range([0, innerWidth])
+        .nice();
     
 
     // Define a Linear Scale to represent the sepal lengths
