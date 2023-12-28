@@ -16,20 +16,19 @@ const useData = () => {
     // Ensure the data gets fetched once, and only once
     useEffect( () => {
 
-            const row = d => {
-
-                d.temperature = "fart";
-
-                return d;
-
-            }
-
             // invoke d3.json to retrieve the data at the specified URL,
             // while providing a callback function which sets it as state
-            json( 
-                sanDiegoWeatherJsonUrl,
-                row
-            ).then( d => setJsonData( d ) );
+            json( sanDiegoWeatherJsonUrl )
+                .then( 
+                    prevData => setJsonData( 
+                        prevData.map( d => 
+                            ({
+                                date : new Date ( Date.parse( d.date ) ),
+                                temperature : +d.temperature
+                            })
+                        )
+                    ) 
+                );
         
         }, 
 

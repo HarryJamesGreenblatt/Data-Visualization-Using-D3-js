@@ -16,23 +16,24 @@ const useData = () => {
     // Ensure the data gets fetched once, and only once
     useEffect( () => {
 
-            const row = d => {
-
-                d.sepal_length =  +d.sepal_length;
-                d.sepal_width  =  +d.sepal_width;
-                d.petal_length =  +d.petal_length;
-                d.petal_width  =  +d.petal_width;
-
-                return d;
-
-            }
 
             // invoke d3.json to retrieve the data at the specified URL,
             // while providing a callback function which sets it as state
             json( 
                 irisDatasetJsonUrl,
-                row
-            ).then( d => setJsonData( d ) );
+            ).then( 
+                prevData =>  setJsonData( 
+                    prevData.map( d => 
+                        ({
+                            ...d, 
+                            sepal_length : +d.sepal_length,
+                            sepal_width  : +d.sepal_width,
+                            petal_length : +d.petal_length,
+                            petal_width  : +d.petal_width,
+                        })
+                    ) 
+                )
+            );
         
         }, 
 
