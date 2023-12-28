@@ -13,6 +13,7 @@ import MarginConventionImage from '../../public/MarginConventionExample.jpg';
 import BarCharNote from "../examples/charts/BarChartExample.jsx";
 import BarChartNoteImage from "../../public/BarChartNote.png";
 import LinearScaleImage from '../../public/LinearScaleNote.jpg'
+import TimeScaleImage from '../../public/TimeScaleNote.jpg';
 import { noteSnippets } from './snippets/noteSnippets';
 
 
@@ -181,7 +182,7 @@ export const noteData = [
     {   
         id : 10,
         pathname : "/charts",
-        withRespectTo : "margin convention",
+        withRespectTo : "margins",
         component: null,
         img : MarginConventionImage,
         description: noteSnippets['DataVizReact_2'],
@@ -233,6 +234,17 @@ export const noteData = [
     },
     {   
         id : 14,
+        pathname : "/charts",
+        withRespectTo : "line charts",
+        component: null,
+        img : TimeScaleImage,
+        description: noteSnippets['D3ScalesInDepth_3'],
+        keyTakeAways: [
+    
+        ]
+    },
+    {   
+        id : 15,
         pathname : "/fetch-data",
         withRespectTo : "importing json",
         component: null,

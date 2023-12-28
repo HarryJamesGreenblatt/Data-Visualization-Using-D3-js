@@ -378,4 +378,20 @@ React.useEffect( () => {
     <br/>
     using a <span>linear transformation</span> <em>(translate and scale)</em>.
 </p>,
+
+
+    D3ScalesInDepth_3:
+<p className="description">
+    <b><code>Line Charts</code></b> are similar to scatterplots 
+    <br/>
+    in that they <em>both apply Linear Transformations across each axis</em>.
+    <br/>
+    <br/>
+    <br/>
+    However, since  Line Charts  are  often to used to visualize <b>change over time</b>, 
+    <br/>
+    the  <code><a style={{fontSize:"1.25rem", color:"whitesmoke", fontWeight:"bold"}} href="https://devdocs.io/d3~7/d3-scale#scaletime">d3.scaleTime()</a></code> method assists in transforming a <span>Domain of Dates</span> 
+    <br/>
+    into a <span>Range of Screen Coordinates</span>.
+</p>,
 }
