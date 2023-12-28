@@ -238,7 +238,7 @@ export const exampleData = [
             <br/>
             Line Chart
         </>,
-        img: ScatterPlotImage,
+        img: null,
         description:
         <p className="description">
         </p>,
