@@ -20,9 +20,9 @@ import MarginConventionImage  from '../../public/MarginConventionExample2.jpg';
 import BarChartExample from '../examples/charts/BarChartExample.jsx';
 import BarChartExampleImage from '../../public/BarChartExample.jpg';
 import { codeSnippets } from "./snippets/codeSnippets.jsx";
-import GridExample from '../examples/GridExample.jsx';
 import ScatterPlotExample from '../examples/charts/ScatterPlotExample.jsx';
 import ScatterPlotImage from '../../public/ScatterplotExample.jpg';
+import LineChartExample from '../examples/charts/LineChartExample.jsx';
 import ImportJsonDataNote from '../notes/ImportJsonDataNote.jsx';
 import { noteSnippets } from './snippets/noteSnippets.jsx';
 
@@ -228,6 +228,22 @@ export const exampleData = [
         </p>,
         component: <ScatterPlotExample />,
         codeSnippet: codeSnippets['DataVizReact_6']
+    },
+    {
+        id: 12,
+        source: "Data Viz (React)",
+        title:
+        <>
+            San Diego Avg. Temp
+            <br/>
+            Line Chart
+        </>,
+        img: ScatterPlotImage,
+        description:
+        <p className="description">
+        </p>,
+        component: <LineChartExample />,
+        codeSnippet: null
     },
 ]
 

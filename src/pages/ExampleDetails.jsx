@@ -28,7 +28,7 @@ export default function ExampleDetails({examples}){
                 </div>
         
                 <div className="example-description">
-                    <p>{selectedExample.description}</p>
+                    {selectedExample.description}
                 </div>
         
             </div>

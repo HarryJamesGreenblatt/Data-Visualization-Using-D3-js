@@ -184,6 +184,8 @@ export default function ScatterPlotExample(){
     // import and load the json data for intended for visualization
     const jsonData = useData();
 
+    console.log(jsonData)
+
 
     // Define the dimensions of the visualization
     // assign a designated full height and width 
