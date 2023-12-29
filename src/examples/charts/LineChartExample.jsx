@@ -1,4 +1,4 @@
-import { json, scaleLinear, scaleTime, extent, max, min } from "d3";
+import { json, scaleLinear, scaleTime, extent, max, min, timeFormat } from "d3";
 import { useState, useEffect } from "react";
 import { sanDiegoWeatherJsonUrl } from '../utils.js';
 import { nanoid } from "nanoid";
@@ -45,134 +45,134 @@ const useData = () => {
 
 
 // // Define a designated component to represent the Bottom Axis
-// const AxisBottom = ({xScale, innerHeight}) => xScale.ticks().map( xTick => 
-//     <g
-//         key={nanoid()}
-//         transform={`translate(${xScale(xTick)} ${0})`}
-//     >
-//         <line
-//             y1={13}
-//             y2={innerHeight}
-//             stroke='red'
-//             strokeWidth=".6"
-//         >
-//         </line>
-//         <text
-//             y={innerHeight + 12}
-//             fontSize={'.75em'}
-//             fontWeight={300}
-//             textAnchor="middle"
-//             stroke="red"
-//         >
-//             {xTick}
-//         </text>
-//     </g>
-// );
-// //
+const AxisBottom = ({xScale, innerHeight, tickFormat}) => xScale.ticks().map( xTick => 
+    <g
+        key={nanoid()}
+        transform={`translate(${xScale(xTick)} ${0})`}
+    >
+        <line
+            y1={innerHeight}
+            y2={innerHeight - 13}
+            stroke='red'
+            strokeWidth=".6"
+        >
+        </line>
+        <text
+            y={innerHeight + 12}
+            fontSize={'.55em'}
+            fontWeight={300}
+            textAnchor="middle"
+            stroke="red"
+        >
+            {tickFormat(xTick)}
+        </text>
+    </g>
+);
+//
 
 
 
-// // Define a designated component to represent 
-// // a Label describing the Sepal Width
-// const XAxisLabel = ({innerWidth, innerHeight, xLabel}) => 
-//     <text
-//         x={innerWidth/2}
-//         y={innerHeight}
-//         style={{
-//             stroke:"red",
-//             strokeWidth:".75",
-//             fontSize: ".9rem",
-//             textAnchor: "middle"
-//         }}
-//     >
-//         {xLabel}
-//     </text>
-// //
+// Define a designated component to represent 
+// a Label describing the Sepal Width
+const XAxisLabel = ({innerWidth, innerHeight, xLabel}) => 
+    <text
+        x={innerWidth/2}
+        y={innerHeight}
+        style={{
+            stroke:"red",
+            strokeWidth:".75",
+            fontSize: ".9rem",
+            textAnchor: "middle"
+        }}
+    >
+        {xLabel}
+    </text>
+//
 
 
 
 
-// // Define a designated component to represent the Left Axis
-// const AxisLeft =  ({yScale, innerWidth}) => yScale.ticks().map( yTick => 
-//     <g
-//         key={nanoid()}
-//         transform={
-//             `translate(
-//                 ${0} 
-//                 ${ yScale(yTick) }
-//             )`
-//         }
-//     >
-//         <line
-//             x2={innerWidth}
-//             stroke='blue'
-//         >
-//         </line>
-//         <text
-//             x={-5}
-//             y={".25em"}
-//             fontSize={'.75em'}
-//             fontWeight={300}
-//             textAnchor="end"
-//             stroke="blue"
-//         >
-//             {yTick}
-//         </text>
-//     </g>
-// );
-// //
+// Define a designated component to represent the Left Axis
+const AxisLeft =  ({yScale, innerWidth}) => yScale.ticks().map( yTick => 
+    <g
+        key={nanoid()}
+        transform={
+            `translate(
+                ${0} 
+                ${ yScale(yTick) }
+            )`
+        }
+    >
+        <line
+            x2={innerWidth}
+            stroke='blue'
+        >
+        </line>
+        <text
+            x={-5}
+            y={".25em"}
+            fontSize={'.75em'}
+            fontWeight={300}
+            textAnchor="end"
+            stroke="blue"
+        >
+            {yTick}
+        </text>
+    </g>
+);
+//
 
-// // Define a designated component to represent 
-// // a Label describing the Sepal Height
-// const YAxisLabel = ({innerHeight, yLabel}) => 
-//     <text
-//         style={{
-//             stroke:"blue",
-//             strokeWidth:".75",
-//             fontSize: ".9rem",
-//             textAnchor: "middle"
-//         }}
-//         transform={`
-//             translate(
-//                 -35, 
-//                 ${innerHeight / 2}
-//             ) 
-//             rotate(-90)
-//     `}
-//     >
-//         {yLabel}
-//     </text>
-// //
+// Define a designated component to represent 
+// a Label describing the Sepal Height
+const YAxisLabel = ({innerHeight, yLabel}) => 
+    <text
+        style={{
+            stroke:"blue",
+            strokeWidth:".75",
+            fontSize: ".9rem",
+            textAnchor: "middle"
+        }}
+        transform={`
+            translate(
+                -35, 
+                ${innerHeight / 2}
+            ) 
+            rotate(-90)
+    `}
+    >
+        {yLabel}
+    </text>
+//
 
 
 
-// // Define a designated component 
-// // to represent the marks (plots) of the visualization
-// const Marks = ({
-//     jsonData, 
-//     xScale,
-//     yScale,
-//     xAttr, 
-//     yAttr
-// }) => jsonData.map( d => 
-//     <circle
-//         key={nanoid()} 
-//         cx={xScale(xAttr(d))} 
-//         cy={yScale(yAttr(d))}
-//         fill="darkgreen" 
-//         r={4.5}
-//     >
-//        <title>
-//             {
-//                 `Sepal Width: ${xAttr(d)}`
-//                 +
-//                 '\n'
-//                 +
-//                 `Sepal Length: ${yAttr(d)}`
-//             }
-//         </title>
-//     </circle>
-// )
+// Define a designated component 
+// to represent the marks (plots) of the visualization
+const Marks = ({
+    jsonData, 
+    xScale,
+    yScale,
+    xAttr, 
+    yAttr
+}) => jsonData.map( d => 
+    <circle
+        key={nanoid()} 
+        cx={xScale(xAttr(d))} 
+        cy={yScale(yAttr(d))}
+        fill="darkgreen" 
+        r={4.5}
+    >
+       <title>
+            {
+                `Sepal Width: ${xAttr(d)}`
+                +
+                '\n'
+                +
+                `Sepal Length: ${yAttr(d)}`
+            }
+        </title>
+    </circle>
+)
 
 
 export default function LineChartExample(){
@@ -213,13 +213,14 @@ if( jsonData ){
     
     // Define accessor functions which represent
     // the scale factors relative to each of the marks (plots)
-    const xAttr = d => d.sepal_width;
-    const yAttr = d => d.sepal_length;
+    const xAttr = d => d.date;
+    const yAttr = d => d.temperature;
+
 
 
     // Provide labels for the x and y axis
-    const xLabel = "Sepal Width"; 
-    const yLabel = "Sepal Length"; 
+    const xLabel = "Date"; 
+    const yLabel = "Temperature in San Diego"; 
 
 
     // Define Offsets to adjust the x and y axis label positions
@@ -230,14 +231,14 @@ if( jsonData ){
     // Define Offsets to adjust the y axis boundaries
     const yBoundsOffset = .3;
     
-
-    // Define a Linear Scale to represent the sepal widths
-    const xScale = scaleLinear()
-        // let the domain be from the minimum until the maximum sepal length
+    // Define a Time Scale to represent the days of the week 
+    //over which the temperature is recorded.
+    const xScale = scaleTime()
+        // let the domain extend from the range of dates
         .domain(extent(jsonData, xAttr))
         // and let the range be the full inner width of the chart area
         .range([0, innerWidth])
-        .nice();
+        .nice()
     
 
     // Define a Linear Scale to represent the sepal lengths
@@ -273,7 +274,37 @@ if( jsonData ){
                         `translate(${margin.left} ${margin.top})`
                     }
                 >
+                    {/* render the Bottom Axis */}
+                    <AxisBottom 
+                        xScale={xScale}
+                        tickFormat={timeFormat('%a %d')} 
+                        innerHeight={innerHeight} />
 
+                    {/* render the Bottom Axis label */}
+                    <XAxisLabel 
+                        innerWidth={innerWidth} 
+                        innerHeight={innerHeight + xAxisLabelOffset} 
+                        xLabel={xLabel}
+                    />
+
+                    {/* render the Left Axis */}
+                    <AxisLeft yScale={yScale} innerWidth={innerWidth}/>
+
+                    {/* render the Left Axis label */}
+                    <YAxisLabel 
+                        innerWidth={innerWidth} 
+                        innerHeight={innerHeight + yAxisLabelOffset} 
+                        yLabel={yLabel}
+                    />
+
+                    {/* render the Marks (plots) of the visualization */}
+                    <Marks 
+                        jsonData={jsonData} 
+                        xScale={xScale} 
+                        yScale={yScale}
+                        xAttr={xAttr}
+                        yAttr={yAttr}
+                    />
                 </g>
             </svg>
         )
