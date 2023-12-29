@@ -23,6 +23,7 @@ import { codeSnippets } from "./snippets/codeSnippets.jsx";
 import ScatterPlotExample from '../examples/charts/ScatterPlotExample.jsx';
 import ScatterPlotImage from '../../public/ScatterplotExample.jpg';
 import LineChartExample from '../examples/charts/LineChartExample.jsx';
+import LineChartImage from '../../public/LineChartExample.jpg';
 import ImportJsonDataNote from '../notes/ImportJsonDataNote.jsx';
 import { noteSnippets } from './snippets/noteSnippets.jsx';
 
@@ -238,7 +239,7 @@ export const exampleData = [
             <br/>
             Line Chart
         </>,
-        img: null,
+        img: LineChartImage,
         description:
         <p className="description">
         </p>,

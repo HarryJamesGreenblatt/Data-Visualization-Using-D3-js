@@ -1,4 +1,4 @@
-import { json, scaleLinear, scaleTime, extent, max, min, timeFormat } from "d3";
+import { json, scaleLinear, scaleTime, extent, max, min, timeFormat, timeParse, line } from "d3";
 import { useState, useEffect } from "react";
 import { sanDiegoWeatherJsonUrl } from '../utils.js';
 import { nanoid } from "nanoid";
@@ -16,6 +16,8 @@ const useData = () => {
     // Ensure the data gets fetched once, and only once
     useEffect( () => {
 
+            const parseDate = timeParse('%Y-%m-%d');
+
             // invoke d3.json to retrieve the data at the specified URL,
             // while providing a callback function which sets it as state
             json( sanDiegoWeatherJsonUrl )
@@ -23,7 +25,7 @@ const useData = () => {
                     prevData => setJsonData( 
                         prevData.map( d => 
                             ({
-                                date : new Date ( Date.parse( d.date ) ),
+                                date : parseDate(d.date),
                                 temperature : +d.temperature
                             })
                         )
@@ -45,21 +47,26 @@ const useData = () => {
 
 
 // // Define a designated component to represent the Bottom Axis
-const AxisBottom = ({xScale, innerHeight, tickFormat}) => xScale.ticks().map( xTick => 
+const AxisBottom = ({
+    xScale, 
+    innerHeight, 
+    tickFormat,
+    tickCount 
+}) => xScale.ticks(tickCount).map( xTick => 
     <g
         key={nanoid()}
         transform={`translate(${xScale(xTick)} ${0})`}
     >
         <line
-            y1={innerHeight}
-            y2={innerHeight - 13}
+            y1={13}
+            y2={innerHeight}
             stroke='red'
             strokeWidth=".6"
         >
         </line>
         <text
-            y={innerHeight + 12}
-            fontSize={'.55em'}
+            y={innerHeight + 10}
+            fontSize={'.65em'}
             fontWeight={300}
             textAnchor="middle"
             stroke="red"
@@ -154,24 +161,42 @@ const Marks = ({
     yScale,
     xAttr, 
     yAttr
-}) => jsonData.map( d => 
-    <circle
-        key={nanoid()} 
-        cx={xScale(xAttr(d))} 
-        cy={yScale(yAttr(d))}
-        fill="darkgreen" 
-        r={4.5}
+}) => (
+<>
+    <path 
+        d={
+            line()
+                .x(d => xScale(xAttr(d)))
+                .y(d => yScale(yAttr(d)))(jsonData)
+        }
+        fill="none"
+        stroke="green"
+        strokeWidth="1.5"
     >
-       <title>
-            {
-                `Sepal Width: ${xAttr(d)}`
-                +
-                '\n'
-                +
-                `Sepal Length: ${yAttr(d)}`
-            }
-        </title>
-    </circle>
+
+    </path>
+    {
+        jsonData.map( d => 
+            <circle
+                key={nanoid()} 
+                cx={xScale(xAttr(d))} 
+                cy={yScale(yAttr(d))}
+                fill="darkgreen" 
+                r={4.5}
+            >
+            <title>
+                    {
+                        `${yAttr(d)} F`
+                        +
+                        '\n'
+                        +
+                        `${xAttr(d)}`
+                    }
+                </title>
+            </circle>
+        )
+    }
+</>
 )
 
 
@@ -180,7 +205,6 @@ export default function LineChartExample(){
     // import and load the json data for intended for visualization
     const jsonData = useData();
 
-    console.log(jsonData);
 
     // Define the dimensions of the visualization
     // assign a designated full height and width 
@@ -229,7 +253,7 @@ if( jsonData ){
 
 
     // Define Offsets to adjust the y axis boundaries
-    const yBoundsOffset = .3;
+    const yBoundsOffset = .65;
     
     // Define a Time Scale to represent the days of the week 
     //over which the temperature is recorded.
@@ -240,6 +264,7 @@ if( jsonData ){
         .range([0, innerWidth])
         .nice()
     
+
 
     // Define a Linear Scale to represent the sepal lengths
     const yScale = scaleLinear()
@@ -277,8 +302,9 @@ if( jsonData ){
                     {/* render the Bottom Axis */}
                     <AxisBottom 
                         xScale={xScale}
-                        tickFormat={timeFormat('%a %d')} 
-                        innerHeight={innerHeight} />
+                        tickFormat={timeFormat('%m/%d')} 
+                        innerHeight={innerHeight} 
+                        tickCount={jsonData.length} />
 
                     {/* render the Bottom Axis label */}
                     <XAxisLabel 
