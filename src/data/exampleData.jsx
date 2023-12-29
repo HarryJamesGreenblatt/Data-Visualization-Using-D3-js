@@ -60,9 +60,9 @@ export const exampleData = [
         title: "A CSS-Styled Rectangle",
         img: CssStylingImage,
         description: 
-        <>
+        <p>
             Properties such as <span>fill color</span>, <span>stroke</span>(color), and <span>stroke-width</span> may be alternatively set using CSS
-        </>,
+        </p>,
         component: <CssStylingExample />,
         codeSnippet: codeSnippets['DataViz2018_3']
     },
