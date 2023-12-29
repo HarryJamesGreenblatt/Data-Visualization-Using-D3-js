@@ -117,13 +117,13 @@ export const exampleData = [
         title:"Fetching CSV Data",
         img: ImportCsvDataImage,
         description: 
-        <>
+        <p>
             <code><a href='https://devdocs.io/d3~7/d3-fetch#csv'>d3.csv()</a></code> fetches the CSV file at the 
             <span> <b> specified URL </b> </span>.
             <br/>
             <br/>
             It returns a <code>Promise</code> which can be assigned a <code>callback function</code> that iterates through the csv data for processeing. 
-        </>,
+        </p>,
         component: <ImportCsvDataExample />,
         codeSnippet: codeSnippets['DataVizReact_1']
     },
@@ -133,13 +133,13 @@ export const exampleData = [
         title:"Fetching JSON Data",
         img: ImportJsonDataImage,
         description: 
-        <>
+        <p>
             <code><a href='https://devdocs.io/d3~7/d3-request#json'>d3.json()</a></code> fetches the JSON file at the 
             <span> <b> specified URL </b> </span>.
             <br/>
             <br/>
             It returns a <code>Promise</code> which can be assigned a <code>callback function</code> that iterates through the json data for processeing. 
-        </>,
+        </p>,
         component: <ImportJsonDataNote />,
         codeSnippet: codeSnippets['DataVizReact_5']
     },
@@ -149,7 +149,7 @@ export const exampleData = [
         title:"The Margin Convention",
         img: MarginConventionImage,
         description: 
-        <>
+        <p>
             The <b>Margin</b> apportions space for any desired coordinate axes. 
             <br/> 
             <br/> 
@@ -160,7 +160,7 @@ export const exampleData = [
                 The <span>Inner Width</span> and <span>Inner Height</span> is the remaining space after <span>subtracting a fixed sized margin</span> from the width and height of the SVG containing the visualization.
             </blockquote>
             <br/>
-        </>,
+        </p>,
         component: <MarginConventionExample />,
         codeSnippet: codeSnippets['DataVizReact_2']
     },
@@ -175,7 +175,7 @@ export const exampleData = [
         </>,
         img: BotomAxisD3WayImage,
         description: 
-        <>
+        <p>
             <code>d3</code> provides helper functions such as <a href='https://devdocs.io/d3~7/d3-scale#scalelinear'><code>scaleLinear</code></a> and <a href='https://devdocs.io/d3~7/d3-axis#axisbottom'><code>axisBottom</code></a> which <span>generate coordinate axes</span>. 
             <br/>
             <br/>
@@ -185,7 +185,7 @@ export const exampleData = [
             <p style={{marginBottom:"1.5rem"}}>
               The worst shortfall surrounding reliance on this method is that any <b>custom changes to the axis require direct modification to the d3 source code</b>. 
             </p>
-        </>,
+        </p>,
         component: <BotomAxisD3WayExample />,
         codeSnippet: codeSnippets['DataViz2018_7']
     },
