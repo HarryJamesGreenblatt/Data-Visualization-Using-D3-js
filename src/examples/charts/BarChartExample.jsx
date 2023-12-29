@@ -55,8 +55,9 @@ const AxisBottom = ({
         transform={`translate(${xScale(xTick)} ${0})`}
     >
         <line
+            y1={12}
             y2={
-                xTick < 80000000 || xTick == 1400000000 
+                xTick < 8000000000 || xTick == 1400000000 
                     ? innerHeight
                     : innerHeight - 15
             }
@@ -207,7 +208,7 @@ if( csvData ){
     .domain( csvData.map( yAttribute ) )
     // and let the range be the full height of the chart,
     .range( [0, innerHeight] )
-    .paddingInner(.2)
+    .padding(.2)
     
     
     
