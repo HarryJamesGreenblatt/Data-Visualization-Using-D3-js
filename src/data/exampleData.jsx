@@ -200,14 +200,14 @@ export const exampleData = [
         </>,
         img: BarChartExampleImage,
         description: 
-        <>
+        <p>
             This <a href='https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/src/examples/charts/BarChartExample.jsx'>
                 <code>BarChartExample component</code>
             </a> 
             uses a <em> Band Scale</em> to define the <em>height</em> of each of the 
             <em> rectangular marks</em>, and a <b> Linear Scale</b> to express the 
             <b> Population</b> relative to each <b>Country</b>.
-        </>,
+        </p>,
         component: <BarChartExample />,
         codeSnippet: codeSnippets['DataVizReact_4']
     },
