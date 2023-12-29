@@ -16,11 +16,20 @@ const useData = () => {
     // Ensure the data gets fetched once, and only once
     useEffect( () => {
 
+
             // invoke d3.csv to retrieve the data at the specified URL,
             // while providing a callback function which sets it as state
-            csv( 
-                worldPopulationsCsvDataUrl
-            ).then( d => setCsvData( d ) );
+            csv( worldPopulationsCsvDataUrl )
+                .then( 
+                    prevData => setCsvData( 
+                        prevData.map( d=>
+                            ({
+                                ...d,
+                                Population: +d.Population * 1000
+                            })
+                        )
+                    )
+                );
         
         }, 
 
@@ -47,7 +56,7 @@ const AxisBottom = ({
     >
         <line
             y2={
-                (xTick/1000) < 800 || (xTick/1000) == 1400 
+                xTick < 80000000 || xTick == 1400000000 
                     ? innerHeight
                     : innerHeight - 15
             }
@@ -62,7 +71,7 @@ const AxisBottom = ({
             textAnchor="middle"
             stroke="red"
         >
-            {tickFormat(xTick*1000)}
+            {tickFormat(xTick)}
         </text>
     </g>
 );
