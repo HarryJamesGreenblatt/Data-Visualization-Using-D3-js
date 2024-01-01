@@ -73,7 +73,7 @@ if( jsonData ){
 
     // Define a Linear Scale to represent the sepal lengths
     const yScale = scaleLinear()
-        // let the domain be from the minimum until the maximum sepal width
+        // let the domain be from the minimum until the maximum temperature
         .domain([
             min(jsonData, yAttr) - yBoundsOffset, 
             max(jsonData, yAttr) + yBoundsOffset
