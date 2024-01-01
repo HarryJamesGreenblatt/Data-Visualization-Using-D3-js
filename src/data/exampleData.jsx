@@ -244,7 +244,7 @@ export const exampleData = [
         <p className="description">
             This <a href="https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/src/examples/charts/LineChartExample.jsx"><code>LineChartExample</code> component</a> visualizes 
             <br/>
-            the <span>average daily temperature</span> 
+            the <span>average daily temperatures</span> 
             <br/>
             observed over the week of <span>12/19/23 - 12/26/23</span> 
             <br/>
