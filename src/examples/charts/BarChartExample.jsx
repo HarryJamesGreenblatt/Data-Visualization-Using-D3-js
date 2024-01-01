@@ -4,6 +4,122 @@ import { worldPopulationsCsvDataUrl } from '../utils.js';
 import { nanoid } from "nanoid";
 
 
+export default function BarCharExample(){
+    
+    // import and load the CSV data for intended for visualization
+    const csvData = useData();
+
+
+    // Define the dimensions of the visualization
+    // assign a designated full height and width 
+    const height = 325, width = 340;
+
+
+    // define margin distances which can support the 
+    // inclusion of coordinate axes
+    const margin = {
+        top: 10,
+        right: 25,
+        bottom: 15,
+        left: 75,
+    }
+
+    // define the inner height of the chart area,
+    const innerHeight = height - margin.top - margin.bottom;
+
+
+    // define the inner width of the chart area,
+    const innerWidth = width - margin.left - margin.right;
+
+//
+
+
+// Since the initial state of the csvData is null,
+// render the component only after it has loaded
+if( csvData ){
+
+    
+    // Define accessor functions which represent
+    // the scale factors relative to each of the marks (bars)
+    const xAttribute = d => +d.Population;
+    const yAttribute = d => d.Country;
+
+
+    const siFormat = format('.2s');
+    const xAxisTickFormat =  xTick => siFormat(xTick).replace('G', 'B');
+
+
+    // Define a Band Scale for Country Names
+    // which categorically comprise the dataset
+    const yScale = scaleBand()
+    // Let the domain be the number of country names
+    .domain( csvData.map( yAttribute ) )
+    // and let the range be the full height of the chart,
+    .range( [0, innerHeight] )
+    .padding(.2)
+    
+    
+    
+    // Define a Linear Scale to represent the Population sizes
+    const xScale = scaleLinear()
+    // let the domain be from 0 until the maximum Population size
+    .domain([0, max(csvData, xAttribute)])
+    // and let the range be the full inner width of the chart area
+    .range([0, innerWidth])
+
+    
+
+    // Render the final component
+        return(
+            // Generate an svg to contain the visualization area
+            <svg
+                height={height}
+                width={width}
+                style={{background:"whitesmoke"}}
+                transform="translate(5 0)"    
+            >   
+                {/* 
+                    Translate the visualization area by the 
+                    distances defined by the margins
+                */}
+                <g
+                    transform={
+                        `translate(${margin.left} ${margin.top})`
+                    }
+                >
+                    {/* render the Bottom Axis */}
+                    <AxisBottom 
+                        xScale={xScale} 
+                        innerHeight={innerHeight} 
+                        tickFormat={xAxisTickFormat} />
+
+                    {/* render the Bottom Axis label */}
+                    <PopulationLabel 
+                        innerWidth={innerWidth} 
+                        innerHeight={innerHeight} />
+
+                    {/* render the Left Axis */}
+                    <AxisLeft yScale={yScale}/>
+
+                    {/* render the Marks (bars) of the visualization */}
+                    <Marks 
+                        csvData={csvData} 
+                        xScale={xScale} 
+                        yScale={yScale}
+                        xAttribute={xAttribute}
+                        yAttribute={yAttribute}
+                        tooltipFormat={xAxisTickFormat}
+                    />
+                </g>
+            </svg>
+        )
+    }
+    //
+}
+//
+
+
+
 // A custom hook which fetches and loads the visualization's data 
 const useData = () => {
 
@@ -156,115 +272,3 @@ const PopulationLabel = ({innerWidth, innerHeight}) =>
 
 
 
-export default function BarCharExample(){
-    
-    // import and load the CSV data for intended for visualization
-    const csvData = useData();
-
-
-    // Define the dimensions of the visualization
-    // assign a designated full height and width 
-    const height = 325, width = 340;
-
-
-    // define margin distances which can support the 
-    // inclusion of coordinate axes
-    const margin = {
-        top: 10,
-        right: 25,
-        bottom: 15,
-        left: 75,
-    }
-
-    // define the inner height of the chart area,
-    const innerHeight = height - margin.top - margin.bottom;
-
-
-    // define the inner width of the chart area,
-    const innerWidth = width - margin.left - margin.right;
-
-//
-
-
-// Since the initial state of the csvData is null,
-// render the component only after it has loaded
-if( csvData ){
-
-    
-    // Define accessor functions which represent
-    // the scale factors relative to each of the marks (bars)
-    const xAttribute = d => +d.Population;
-    const yAttribute = d => d.Country;
-
-
-    const siFormat = format('.2s');
-    const xAxisTickFormat =  xTick => siFormat(xTick).replace('G', 'B');
-
-
-    // Define a Band Scale for Country Names
-    // which categorically comprise the dataset
-    const yScale = scaleBand()
-    // Let the domain be the number of country names
-    .domain( csvData.map( yAttribute ) )
-    // and let the range be the full height of the chart,
-    .range( [0, innerHeight] )
-    .padding(.2)
-    
-    
-    
-    // Define a Linear Scale to represent the Population sizes
-    const xScale = scaleLinear()
-    // let the domain be from 0 until the maximum Population size
-    .domain([0, max(csvData, xAttribute)])
-    // and let the range be the full inner width of the chart area
-    .range([0, innerWidth])
-
-    
-
-    // Render the final component
-        return(
-            // Generate an svg to contain the visualization area
-            <svg
-                height={height}
-                width={width}
-                style={{background:"whitesmoke"}}
-                transform="translate(5 0)"    
-            >   
-                {/* 
-                    Translate the visualization area by the 
-                    distances defined by the margins
-                */}
-                <g
-                    transform={
-                        `translate(${margin.left} ${margin.top})`
-                    }
-                >
-                    {/* render the Bottom Axis */}
-                    <AxisBottom 
-                        xScale={xScale} 
-                        innerHeight={innerHeight} 
-                        tickFormat={xAxisTickFormat} />
-
-                    {/* render the Bottom Axis label */}
-                    <PopulationLabel 
-                        innerWidth={innerWidth} 
-                        innerHeight={innerHeight} />
-
-                    {/* render the Left Axis */}
-                    <AxisLeft yScale={yScale}/>
-
-                    {/* render the Marks (bars) of the visualization */}
-                    <Marks 
-                        csvData={csvData} 
-                        xScale={xScale} 
-                        yScale={yScale}
-                        xAttribute={xAttribute}
-                        yAttribute={yAttribute}
-                        tooltipFormat={xAxisTickFormat}
-                    />
-                </g>
-            </svg>
-        )
-    }
-    //
-}

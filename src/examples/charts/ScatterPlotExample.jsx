@@ -4,6 +4,142 @@ import { irisDatasetJsonUrl } from '../utils.js';
 import { nanoid } from "nanoid";
 
 
+export default function ScatterPlotExample(){
+    
+    // import and load the json data for intended for visualization
+    const jsonData = useData();
+
+    console.log(jsonData)
+
+
+    // Define the dimensions of the visualization
+    // assign a designated full height and width 
+    const height = 325, width = 340;
+
+
+    // define margin distances which can support the 
+    // inclusion of coordinate axes
+    const margin = {
+        top: 2,
+        right: 30,
+        bottom: 40,
+        left: 55,
+    }
+
+    // define the inner height of the chart area,
+    const innerHeight = height - margin.top - margin.bottom;
+
+
+    // define the inner width of the chart area,
+    const innerWidth = width - margin.left - margin.right;
+
+
+
+// Since the initial state of the jsonData is null,
+// render the component only after it has loaded
+if( jsonData ){
+
+    
+    // Define accessor functions which represent
+    // the scale factors relative to each of the marks (plots)
+    const xAttr = d => d.sepal_width;
+    const yAttr = d => d.sepal_length;
+
+
+    // Provide labels for the x and y axis
+    const xLabel = "Sepal Width"; 
+    const yLabel = "Sepal Length"; 
+
+
+    // Define Offsets to adjust the x and y axis label positions
+    const xAxisLabelOffset = 30;
+    const yAxisLabelOffset = 30;
+
+
+    // Define Offsets to adjust the y axis boundaries
+    const yBoundsOffset = .3;
+    
+
+    // Define a Linear Scale to represent the sepal widths
+    const xScale = scaleLinear()
+        // let the domain be from the minimum until the maximum sepal length
+        .domain(extent(jsonData, xAttr))
+        // and let the range be the full inner width of the chart area
+        .range([0, innerWidth])
+        .nice();
+    
+
+    // Define a Linear Scale to represent the sepal lengths
+    const yScale = scaleLinear()
+        // let the domain be from the minimum until the maximum sepal width
+        .domain([
+            min(jsonData, yAttr) - yBoundsOffset, 
+            max(jsonData, yAttr) + yBoundsOffset
+        ])
+        // and let the range be the full inner height of the chart,
+        .range( [innerHeight, 0] )
+        
+    
+
+
+    
+
+    // Render the final component
+        return(
+            // Generate an svg to contain the visualization area
+            <svg
+                height={height}
+                width={width}
+                style={{background:"white", border:"1px solid lightgray"}}
+                transform="translate(0 0)"    
+            >   
+                {/* 
+                    Translate the visualization area by the 
+                    distances defined by the margins
+                */}
+                <g
+                    transform={
+                        `translate(${margin.left} ${margin.top})`
+                    }
+                >
+                    {/* render the Bottom Axis */}
+                    <AxisBottom xScale={xScale} innerHeight={innerHeight} />
+
+                    {/* render the Bottom Axis label */}
+                    <XAxisLabel 
+                        innerWidth={innerWidth} 
+                        innerHeight={innerHeight + xAxisLabelOffset} 
+                        xLabel={xLabel}
+                    />
+
+                    {/* render the Left Axis */}
+                    <AxisLeft yScale={yScale} innerWidth={innerWidth}/>
+
+                    {/* render the Left Axis label */}
+                    <YAxisLabel 
+                        innerWidth={innerWidth} 
+                        innerHeight={innerHeight + yAxisLabelOffset} 
+                        yLabel={yLabel}
+                    />
+
+                    {/* render the Marks (plots) of the visualization */}
+                    <Marks 
+                        jsonData={jsonData} 
+                        xScale={xScale} 
+                        yScale={yScale}
+                        xAttr={xAttr}
+                        yAttr={yAttr}
+                    />
+                </g>
+            </svg>
+        )
+    }
+    //
+}
+//
+
+
+
 // A custom hook which fetches and loads the visualization's data 
 const useData = () => {
 
@@ -178,138 +314,3 @@ const Marks = ({
         </title>
     </circle>
 )
-
-
-export default function ScatterPlotExample(){
-    
-    // import and load the json data for intended for visualization
-    const jsonData = useData();
-
-    console.log(jsonData)
-
-
-    // Define the dimensions of the visualization
-    // assign a designated full height and width 
-    const height = 325, width = 340;
-
-
-    // define margin distances which can support the 
-    // inclusion of coordinate axes
-    const margin = {
-        top: 2,
-        right: 30,
-        bottom: 40,
-        left: 55,
-    }
-
-    // define the inner height of the chart area,
-    const innerHeight = height - margin.top - margin.bottom;
-
-
-    // define the inner width of the chart area,
-    const innerWidth = width - margin.left - margin.right;
-
-//
-
-
-// Since the initial state of the jsonData is null,
-// render the component only after it has loaded
-if( jsonData ){
-
-    
-    // Define accessor functions which represent
-    // the scale factors relative to each of the marks (plots)
-    const xAttr = d => d.sepal_width;
-    const yAttr = d => d.sepal_length;
-
-
-    // Provide labels for the x and y axis
-    const xLabel = "Sepal Width"; 
-    const yLabel = "Sepal Length"; 
-
-
-    // Define Offsets to adjust the x and y axis label positions
-    const xAxisLabelOffset = 30;
-    const yAxisLabelOffset = 30;
-
-
-    // Define Offsets to adjust the y axis boundaries
-    const yBoundsOffset = .3;
-    
-
-    // Define a Linear Scale to represent the sepal widths
-    const xScale = scaleLinear()
-        // let the domain be from the minimum until the maximum sepal length
-        .domain(extent(jsonData, xAttr))
-        // and let the range be the full inner width of the chart area
-        .range([0, innerWidth])
-        .nice();
-    
-
-    // Define a Linear Scale to represent the sepal lengths
-    const yScale = scaleLinear()
-        // let the domain be from the minimum until the maximum sepal width
-        .domain([
-            min(jsonData, yAttr) - yBoundsOffset, 
-            max(jsonData, yAttr) + yBoundsOffset
-        ])
-        // and let the range be the full inner height of the chart,
-        .range( [innerHeight, 0] )
-        
-    
-
-
-    
-
-    // Render the final component
-        return(
-            // Generate an svg to contain the visualization area
-            <svg
-                height={height}
-                width={width}
-                style={{background:"white", border:"1px solid lightgray"}}
-                transform="translate(0 0)"    
-            >   
-                {/* 
-                    Translate the visualization area by the 
-                    distances defined by the margins
-                */}
-                <g
-                    transform={
-                        `translate(${margin.left} ${margin.top})`
-                    }
-                >
-                    {/* render the Bottom Axis */}
-                    <AxisBottom xScale={xScale} innerHeight={innerHeight} />
-
-                    {/* render the Bottom Axis label */}
-                    <XAxisLabel 
-                        innerWidth={innerWidth} 
-                        innerHeight={innerHeight + xAxisLabelOffset} 
-                        xLabel={xLabel}
-                    />
-
-                    {/* render the Left Axis */}
-                    <AxisLeft yScale={yScale} innerWidth={innerWidth}/>
-
-                    {/* render the Left Axis label */}
-                    <YAxisLabel 
-                        innerWidth={innerWidth} 
-                        innerHeight={innerHeight + yAxisLabelOffset} 
-                        yLabel={yLabel}
-                    />
-
-                    {/* render the Marks (plots) of the visualization */}
-                    <Marks 
-                        jsonData={jsonData} 
-                        xScale={xScale} 
-                        yScale={yScale}
-                        xAttr={xAttr}
-                        yAttr={yAttr}
-                    />
-                </g>
-            </svg>
-        )
-    }
-    //
-}

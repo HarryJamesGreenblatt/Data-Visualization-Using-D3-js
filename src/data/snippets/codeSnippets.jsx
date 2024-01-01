@@ -324,6 +324,36 @@ React.useEffect( () => {
 `,
 
 
+    DataVizReact_7 : 
+`<svg height={height} width={width}>   
+    <g transform={
+        \`translate(
+            \${margin.left} 
+            \${margin.top})\`}>
+        <AxisBottom 
+            xScale={xScale}       
+            innerHeight={innerHeight} 
+            tickFormat={timeFormat('%m/%d')} 
+            tickCount={jsonData.length} />
+        <XAxisLabel 
+            xLabel={xLabel}
+            innerWidth={innerWidth} 
+            innerHeight={
+                innerHeight + xAxisLabelOffset}/>
+        <AxisLeft innerWidth={innerWidth}
+                  yScale={yScale} />
+        <YAxisLabel 
+            yLabel={yLabel}
+            innerWidth={innerWidth}
+            innerHeight={
+                innerHeight + yAxisLabelOffset}/>
+        <Marks xScale={xScale} xAttr={xAttr}
+               yScale={yScale} yAttr={yAttr}    
+               jsonData={jsonData} />
+    </g>
+</svg>`,
+
+
     DataVizReact_6 : 
 `<svg height={height} width={width}>   
     <g
