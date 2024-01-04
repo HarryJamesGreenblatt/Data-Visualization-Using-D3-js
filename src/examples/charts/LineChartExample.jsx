@@ -316,6 +316,7 @@ const Marks = ({
         fill="none"
         stroke="green"
         strokeWidth="1.5"
+        strokeLinejoin="round"
     >
 
     </path>
