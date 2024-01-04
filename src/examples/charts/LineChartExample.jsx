@@ -1,4 +1,4 @@
-import { json, scaleLinear, scaleTime, extent, max, min, timeFormat, timeParse, line } from "d3";
+import { json, scaleLinear, scaleTime, extent, max, min, timeFormat, timeParse, line, curveNatural } from "d3";
 import { useState, useEffect } from "react";
 import { sanDiegoWeatherJsonUrl } from '../utils.js';
 import { nanoid } from "nanoid";
@@ -311,7 +311,8 @@ const Marks = ({
         d={
             line()
                 .x(d => xScale(xAttr(d)))
-                .y(d => yScale(yAttr(d)))(jsonData)
+                .y(d => yScale(yAttr(d)))
+                .curve(curveNatural)(jsonData)
         }
         fill="none"
         stroke="green"
