@@ -245,6 +245,7 @@ const Marks = ({
         y={yScale(yAttribute(d))} 
         width={xScale(xAttribute(d))}  
         height={yScale.bandwidth()}
+        fill="green"
     >
         <title>{tooltipFormat(xAttribute(d))}</title>
     </rect>
