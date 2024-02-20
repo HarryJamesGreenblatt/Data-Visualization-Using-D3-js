@@ -260,12 +260,11 @@ export const exampleData = [
         img: ResponsiveSVGContainerExampleImage,
         description: 
         <p>
-            As demonstrated above, SVG is by default <em>non-responsive</em>. Consequently, 
-            <br/>
-            SVG-based visualizations are prone to cropping issues on smaller screens.
-            <br/>
-            <br/>
-            The <a href='#'><code>ResponsiveSVGContainer()</code> Component</a>
+            As demonstrated above, SVG is by default <em>non-responsive</em>.  
+            <br/> 
+            Consequently,
+            SVG-based visualizations are prone to cropping issues on smaller screens. The <a href='https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/src/examples/responsive/ResponsiveSVGContainer.jsx'><code>ResponsiveSVGContainer()</code> Component</a> leverages the <b>ResizeObserver API</b> to adjust the size of the SVG whenever its container's size changes.
+            <br/> 
 
         </p>,
         component: <ResponsiveSVGContainer />,
