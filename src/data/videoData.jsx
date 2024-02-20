@@ -35,7 +35,7 @@ export const videoData = [
     },
     {
         id: 3,
-        url: "https://2019.wattenberger.com/blog/react-and-d3#axes",
+        url: "https://2019.wattenberger.com/blog/react-and-d3#sizing-responsivity",
         title:"React + D3.js",
         description: 
             <p>

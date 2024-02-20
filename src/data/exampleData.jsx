@@ -26,6 +26,9 @@ import LineChartExample from '../examples/charts/LineChartExample.jsx';
 import LineChartImage from '../../public/LineChartExample.jpg';
 import ImportJsonDataNote from '../notes/ImportJsonDataNote.jsx';
 import { noteSnippets } from './snippets/noteSnippets.jsx';
+import ResponsiveSVGContainer from '../examples/responsive/ResponsiveSVGContainer.jsx';
+import ResponsiveSVGContainerExampleImage from '../../public/ResponsiveSVGContainerExample.jpg';
+
 
 
 export const exampleData = [
@@ -242,16 +245,31 @@ export const exampleData = [
         img: LineChartImage,
         description:
         <p className="description">
-            This <a href="https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/src/examples/charts/LineChartExample.jsx"><code>LineChartExample</code> component</a> visualizes 
-            <br/>
-            the <span>average daily temperatures</span> 
-            <br/>
-            observed over the week of <span>12/19/23 - 12/26/23</span> 
-            <br/>
-            in the city of <span>San Diego, CA</span>.
+            This <a href="https://github.com/HarryJamesGreenblatt/Data-Visualization-Using-D3-js/blob/main/src/examples/charts/LineChartExample.jsx"><code>LineChartExample</code> component</a> visualizes the <b>change in average temperature</b> recorded over the week of <em>12/19/23</em> through <em>12/26/23</em> in San Diego, CA
         </p>,
         component: <LineChartExample />,
         codeSnippet: codeSnippets['DataVizReact_7']
+    },
+    {
+        id: 13,
+        source: "React + D3.js",
+        title:
+        <>
+            A Responsive SVG Container
+        </>,
+        img: ResponsiveSVGContainerExampleImage,
+        description: 
+        <p>
+            As demonstrated above, SVG is by default <em>non-responsive</em>. Consequently, 
+            <br/>
+            SVG-based visualizations are prone to cropping issues on smaller screens.
+            <br/>
+            <br/>
+            The <a href='#'><code>ResponsiveSVGContainer()</code> Component</a>
+
+        </p>,
+        component: <ResponsiveSVGContainer />,
+        codeSnippet: null
     },
 ]
 

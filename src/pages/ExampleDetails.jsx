@@ -15,16 +15,36 @@ export default function ExampleDetails({examples}){
             <div className="example-content-container">
                 
                 <div className="example-component-container">
-                    <div className="example-component-left-column">
-                        <div className="example-component-rendered">
-                            {selectedExample.component}
+                    {
+                        selectedExample.codeSnippet 
+                        ?
+                        <>
+                            <div className="example-component-left-column">
+                                <div className="example-component-rendered">
+                                    {selectedExample.component}
+                                </div>
+                            </div>
+                            <div className="example-component-right-column">
+                                <div className="example-component-code">
+                                    <pre>{selectedExample.codeSnippet}</pre>
+                                </div>
+                            </div>
+                        </> 
+                        :
+                        <div 
+                            className="example-component-left-column"
+                            style={{
+                                width: '100%',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                overflow: "hidden"
+                            }}
+                        >
+                            <div className="example-component-rendered">
+                                {selectedExample.component}
+                            </div>
                         </div>
-                    </div>
-                    <div className="example-component-right-column">
-                        <div className="example-component-code">
-                            <pre>{selectedExample.codeSnippet}</pre>
-                        </div>
-                    </div>
+                    }
                 </div>
         
                 <div className="example-description">
