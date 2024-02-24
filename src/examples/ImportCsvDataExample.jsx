@@ -1,6 +1,6 @@
 import React from "react";
 import { csv } from "d3";
-import { worldPopulationsCsvDataUrl } from './utils.js';
+import { worldPopulationsCsvDataUrl } from '../utils.js';
 
 
 export default function ImportCsvDataExample (){

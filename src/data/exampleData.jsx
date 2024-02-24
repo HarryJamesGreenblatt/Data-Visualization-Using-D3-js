@@ -6,7 +6,7 @@ import LineExample from '../examples/LineExample.jsx';
 import LineImage from "../../public/LineExample.jpg";
 import CssStylingExample from '../examples/CssStylingExample'; 
 import CssStylingImage from "../../public/CssStylingExample.jpg";
-import CompooundTransformationsExample from '../examples/CompooundTransformationsExample';
+import CompoundTransformationsExample from '../examples/CompoundTransformationsExample';
 import CoumpoundTransformationsImage from '../../public/CompoundTransformationsExample.jpg';
 import HappyFaceExample from '../examples/HappyFaceExample';
 import HappyFaceImage from "../../public/HappyFaceExample.jpg";
@@ -93,7 +93,7 @@ export const exampleData = [
                 For example, <code>translate()</code> and <code>rotate()</code> are very commonly used.
             </p>
         </>, 
-        component: <CompooundTransformationsExample />,
+        component: <CompoundTransformationsExample />,
         codeSnippet: codeSnippets['DataViz2018_5']
     },
     {

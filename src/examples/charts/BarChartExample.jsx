@@ -1,6 +1,6 @@
 import { csv, scaleBand, scaleLinear, max, format } from "d3";
 import { useState, useEffect } from "react";
-import { worldPopulationsCsvDataUrl } from '../utils.js';
+import { worldPopulationsCsvDataUrl } from '../../utils.js';
 import { nanoid } from "nanoid";
 
 

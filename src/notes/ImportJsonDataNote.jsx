@@ -1,6 +1,6 @@
 import React from "react";
 import { json } from "d3";
-import { irisDatasetJsonUrl } from "../examples/utils";
+import { irisDatasetJsonUrl } from "../utils";
 import { nanoid } from "nanoid";
 
 

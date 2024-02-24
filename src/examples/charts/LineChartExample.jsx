@@ -1,6 +1,6 @@
 import { json, scaleLinear, scaleTime, extent, max, min, timeFormat, timeParse, line, curveNatural } from "d3";
 import { useState, useEffect } from "react";
-import { sanDiegoWeatherJsonUrl } from '../utils.js';
+import { sanDiegoWeatherJsonUrl } from '../../utils.js';
 import { nanoid } from "nanoid";
 
 

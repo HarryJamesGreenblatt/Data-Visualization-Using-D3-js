@@ -1,4 +1,4 @@
-import getRandomColor from "./utils";
+import getRandomColor from "../utils";
 
 export default function GroupOfShapesExample() {
 

@@ -1,6 +1,6 @@
 import { json, scaleLinear, extent, max, min } from "d3";
 import { useState, useEffect } from "react";
-import { irisDatasetJsonUrl } from '../utils.js';
+import { irisDatasetJsonUrl } from '../../utils.js';
 import { nanoid } from "nanoid";
 
 
