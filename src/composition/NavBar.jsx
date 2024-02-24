@@ -1,6 +1,6 @@
 import {Link, NavLink} from "react-router-dom";
 
-export default function Navigation() {
+export default function NavBar() {
 
     return(
         <nav className="navigation">

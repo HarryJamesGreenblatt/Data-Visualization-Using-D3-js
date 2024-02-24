@@ -2,7 +2,7 @@ import './App.css'
 
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Layout from './components/Layout.jsx';
+import Layout from './composition/Layout.jsx';
 import Home from './pages/Home.jsx';
 import SVG from './pages/SVG.jsx';
 import VizThoery from './pages/VizTheory';
