@@ -3,13 +3,13 @@ import './App.css'
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Layout from './composition/Layout.jsx';
-import Home from './pages/Home.jsx';
-import SVG from './pages/SVG.jsx';
-import VizThoery from './pages/VizTheory';
-import FetchData from './pages/FetchData.jsx';
-import Charts  from './pages/Charts.jsx';
-import Examples from './pages/Examples.jsx';
-import ExampleDetails from './pages/ExampleDetails.jsx';
+import Home from './navigation/Home.jsx';
+import SVG from './navigation/SVG.jsx';
+import VizThoery from './navigation/VizTheory';
+import FetchData from './navigation/FetchData.jsx';
+import Charts  from './navigation/Charts.jsx';
+import Examples from './navigation/Examples.jsx';
+import ExampleDetails from './navigation/ExampleDetails.jsx';
 import { noteData } from './data/noteData.jsx';
 import { videoData } from './data/videoData.jsx';
 import { exampleData } from './data/exampleData.jsx';
