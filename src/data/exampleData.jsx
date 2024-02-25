@@ -16,7 +16,7 @@ import ImportCsvDataExample from '../examples/ImportCsvDataExample';
 import ImportCsvDataImage from '../../public/ImportCsvDataExample.jpg';
 import ImportJsonDataImage from '../../public/ImportJsonDataExample.jpg';
 import MarginConventionExample from '../examples/MarginConventionExample.jsx';
-import MarginConventionImage  from '../../public/MarginConventionExample2.jpg';
+import MarginConventionImage  from '../../public/MarginConventionNote.jpg';
 import BarChartExample from '../examples/charts/BarChartExample.jsx';
 import BarChartExampleImage from '../../public/BarChartExample.jpg';
 import { codeSnippets } from "./snippets/codeSnippets.jsx";

@@ -1,6 +1,5 @@
 import { nanoid } from "nanoid";
 import GroupElementNote from '../notes/GroupElementNote.jsx';
-import ImportCSVDataNote from '../notes/ImportCsvDataNote.jsx';
 import AxesNote from "../notes/AxesNote.jsx";
 import ImportCSVDataImage from '../../public/ImportCsvDataNote.jpg';
 import ImportJsonDataImage from '../../public/ImportJsonDataNote.jpg';
@@ -9,7 +8,7 @@ import ExternalRepresentationImage from "../../public/ExternalRepresentationNote
 import AnscombeQuartetImage from "../../public/AnscombeQuartetNote.jpg";
 import DatasetTypeImage from "../../public/DatasetTypeNote.jpg";
 import AttributeTypeImage from "../../public/AttributeTypeNote.jpg";
-import MarginConventionImage from '../../public/MarginConventionExample.jpg';
+import MarginConventionImage from '../../public/MarginConventionNote.jpg';
 import BarCharNote from "../examples/charts/BarChartExample.jsx";
 import BarChartNoteImage from "../../public/BarChartNote.png";
 import LinearScaleImage from '../../public/LinearScaleNote.jpg'
