@@ -7,22 +7,21 @@ import React from "react";
 
 export default function Layout(
     {
-        notes, 
-        videos,
-        examples, 
-        handleClickNotes, 
-        handleClickHome,
-        handleClickExamples,
+        notes, // an array of note objects
+        videos, // an array of video objects
+        examples, // an array of example objects
+        handleClickNotes, // a function to handle the click event on notes
+        handleClickHome, // a function to handle the click event on home
+        handleClickExamples, // a function to handle the click event on examples
     }
 )
 {
 
 
-    const { pathname } = useLocation();
+    const { pathname } = useLocation(); // get the current pathname from the location object
 
 
-
-
+    // filter the notes array by the current pathname and map it to an array of respectiveTo values
     const respectiveToNotes = notes.filter(
         note => note.pathname === pathname
     ).map( 
@@ -31,12 +30,14 @@ export default function Layout(
 
 
 
+    // map the videos array to an array of titles
     const respectiveToVideos = videos.map( 
         video => video.title 
     );
 
 
 
+    // map the examples array to an array of sources and remove any duplicates
     const respectiveToExamples = examples.map( 
         example => example.source 
     ).filter( (element, index, self) => 
@@ -46,6 +47,7 @@ export default function Layout(
 
 
 
+    // a function that returns the respectiveTo array based on the current pathname
     const respectiveToSelection = () => {
         
         switch (pathname) {
@@ -60,6 +62,7 @@ export default function Layout(
     }
 
 
+    // a function that returns the handleClick function based on the current pathname
     const handleClickSelection = () => {
         
         switch (pathname) {
@@ -79,26 +82,29 @@ export default function Layout(
     return(
         <div className='page-container'>
 
-            <Header />
+            {/* render the Header component */}
+            <Header /> 
 
             <div className='content-container'>
                 <main className="main">
-                    <Outlet />
+                    
+                    {/* render the child routes */}
+                    <Outlet /> 
+                
                 </main>
             </div>
             
             <Footer 
                 respectiveTo={
-                    respectiveToSelection()
+                    // pass the respectiveTo array as a prop
+                    respectiveToSelection() 
                 }
                 onClick={
-                    handleClickSelection()
+                    // pass the handleClick function as a prop
+                    handleClickSelection() 
                 }
             />
 
         </div>
     )
 }
-
-
-
