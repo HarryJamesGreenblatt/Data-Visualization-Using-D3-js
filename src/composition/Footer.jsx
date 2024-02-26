@@ -19,7 +19,7 @@ export default function Footer({respectiveTo, onClick}) {
     // Getting the current pathname
     const { pathname } = useLocation();
 
-    // Checking if the pathname matches the pattern /examples/\d+
+    // Checking if the pathname matches the pattern /examples/number
     const exampleOpened = pathname.match( /examples\/\d+/ );
 
     // Rendering the Footer component
