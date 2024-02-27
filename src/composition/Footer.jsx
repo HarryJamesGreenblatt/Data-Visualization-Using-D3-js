@@ -31,7 +31,7 @@ export default function Footer({respectiveTo, onClick}) {
                 exampleOpened
                 ?
                 <Link 
-                    to=".." 
+                    to="/examples"
                 >
                     <button>Back to Examples</button>
                 </Link>
